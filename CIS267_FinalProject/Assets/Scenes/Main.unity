@@ -26066,7 +26066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef8e3d79e3c40b48a05ea9d0af301d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scriptableWeapon: {fileID: 11400000, guid: 4adb87f31407bd74786400d2edf2c7ec, type: 2}
+  scriptableWeapon: {fileID: 11400000, guid: 01bc2820357b21b438859b515f201111, type: 2}
 --- !u!212 &1927723667
 SpriteRenderer:
   m_ObjectHideFlags: 0

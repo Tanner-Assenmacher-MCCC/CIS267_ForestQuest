@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39f18241f467a5b47979c8ffea269227, type: 3}
-  m_Name: BlightDagger
+  m_Name: Blight Dagger
   m_EditorClassIdentifier: 
   name: Blight Dagger
   sprite: {fileID: 21300000, guid: 68dd40766f3f9db49b4ddefae8b18972, type: 3}
