@@ -33,14 +33,15 @@ public class Player : MonoBehaviour
         moveDelta = new Vector3(x, y, 0);
 
         // /* ANIMATION STUFF
-        animator.SetFloat("Horizontal", moveDelta.x);
-        animator.SetFloat("Vertical", moveDelta.y);
 
-        if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
+        if (Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1 || Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1)
         {
             animator.SetFloat("lastMoveHorizontal", moveDelta.x);
             animator.SetFloat("lastMoveVertical", moveDelta.y);
         }
+
+        animator.SetFloat("Vertical", moveDelta.y);
+        animator.SetFloat("Horizontal", moveDelta.x);
 
         //  END */
     }
