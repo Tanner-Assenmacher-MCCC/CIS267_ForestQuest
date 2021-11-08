@@ -4,18 +4,24 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] ScriptableWeapon scriptableWeapon;
+    public ScriptableWeapon scriptableWeapon = null;
+    public bool hasWeapon = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<SpriteRenderer>().sprite = scriptableWeapon.sprite;
-        this.name = scriptableWeapon.name;
+        if (hasWeapon)
+        {
+            GetComponent<SpriteRenderer>().sprite = scriptableWeapon.sprite;
+            this.name = scriptableWeapon.name;
 
-        
-
-        Debug.Log("Weapon Equipped: " + scriptableWeapon.name);
-        Debug.Log("Damage: " + scriptableWeapon.damage);
+            Debug.Log("Weapon Equipped: " + scriptableWeapon.name);
+            Debug.Log("Damage: " + scriptableWeapon.damage);
+        }
+        else
+        {
+            Debug.Log("No Scriptable Weapon");
+        }
     }
 
     // Update is called once per frame
