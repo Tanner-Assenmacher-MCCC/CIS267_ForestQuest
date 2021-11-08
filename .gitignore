@@ -6,6 +6,8 @@
 [Ll]ogs/
 **/Logs/**
 **/logs/**
+**/Logs/*
+**/logs/*
 Assets/AssetStoreTools*
 
 # Visual Studio cache directory
