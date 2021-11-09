@@ -7,4 +7,5 @@ public class Item : ScriptableObject
 {
     public new string name = "New Item";
     public Sprite sprite = null;
+    public GameObject prefab;
 }

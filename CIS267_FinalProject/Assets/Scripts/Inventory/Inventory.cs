@@ -6,7 +6,7 @@ public class Inventory : MonoBehaviour
 {
     public static Inventory instance;
     public static int maxItems = 24;
-    public List<GameObject> items = new List<GameObject>(maxItems);
+    public List<Item> items = new List<Item>(maxItems);
     private void Awake()
     {
         instance = this;
@@ -17,19 +17,19 @@ public class Inventory : MonoBehaviour
         return items.Count >= items.Capacity;
     }
 
-    public bool AddItem(GameObject gameObject)
+    public bool Add(Item item)
     {
         if (IsFull()) return false;
-        items.Add(gameObject);
+        items.Add(item);
         return true;
     }
 
-    public void RemoveItem(GameObject gameObject)
+    public void Remove(Item item)
     {
-        items.Remove(gameObject);
+        items.Remove(item);
     }
 
-    public void RemoveItem(int i)
+    public void RemoveIndex(int i)
     {
         items.RemoveAt(i);
     }
