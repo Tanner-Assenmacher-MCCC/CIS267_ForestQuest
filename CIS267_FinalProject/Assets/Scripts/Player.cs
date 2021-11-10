@@ -25,8 +25,19 @@ public class Player : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
-        // Move player
-        rb2d.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed * Time.fixedDeltaTime;
+        // Press shift to Sprint
+        if (Input.GetKey("left shift"))
+        {
+            rb2d.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed * 1.5f * Time.fixedDeltaTime;
+            animator.speed = 1.5f;
+        }
+
+        else
+        {
+            // Move player at normal speed
+            rb2d.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed * Time.fixedDeltaTime;
+            animator.speed = 1f;
+        }
 
         // Reset MoveDelta
         moveDelta = new Vector3(x, y, 0);
