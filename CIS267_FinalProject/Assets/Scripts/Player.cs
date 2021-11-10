@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        
+
     }
     private void FixedUpdate()
     {
@@ -26,8 +26,7 @@ public class Player : MonoBehaviour
         float y = Input.GetAxisRaw("Vertical");
 
         // Move player
-        rb2d.velocity = new Vector2(x * speed, y * speed);
-
+        rb2d.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed * Time.fixedDeltaTime;
 
         // Reset MoveDelta
         moveDelta = new Vector3(x, y, 0);
