@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2477308979493395832}
   m_LocalRotation: {x: -0, y: -0, z: 0.81915206, w: 0.57357645}
-  m_LocalPosition: {x: -0.15, y: -0.411, z: 0}
-  m_LocalScale: {x: 1.4999999, y: 0.75, z: 1}
+  m_LocalPosition: {x: -0.15, y: -0.51199996, z: 0}
+  m_LocalScale: {x: 1.4999999, y: 1.4999999, z: 1}
   m_Children: []
   m_Father: {fileID: 3580456226963291423}
   m_RootOrder: 0
@@ -46,7 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptableWeapon: {fileID: 11400000, guid: 929bfba69a95ce74883c5b64e03dacc4, type: 2}
-  hasWeapon: 1
 --- !u!212 &1758148714261851334
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -86,7 +85,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -122,8 +121,8 @@ GameObject:
   - component: {fileID: 3580456226963291422}
   - component: {fileID: 3580456226963291408}
   - component: {fileID: 3580456226963291409}
-  - component: {fileID: 1280417547}
-  - component: {fileID: 1280417546}
+  - component: {fileID: 1603826310}
+  - component: {fileID: 1603826309}
   m_Layer: 0
   m_Name: MainCharacter
   m_TagString: Player
@@ -140,7 +139,7 @@ Transform:
   m_GameObject: {fileID: 3580456226963291421}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.09, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 1732229956974865285}
   m_Father: {fileID: 0}
@@ -185,7 +184,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7103749574173715010, guid: 0e528bbc04738314386b48d85ec3f391, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -209,8 +208,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63984de294aa20a4587d96a3e299c088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 1280417546}
-  speed: 150
+  animator: {fileID: 1603826309}
+  speed: 5
 --- !u!61 &3580456226963291409
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -224,7 +223,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.42700875}
+  m_Offset: {x: 0, y: -0.09629254}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -235,9 +234,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5079146, y: 0.0855515}
+  m_Size: {x: 0.5079146, y: 0.7604537}
   m_EdgeRadius: 0
---- !u!50 &1280417547
+--- !u!50 &1603826310
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -254,11 +253,11 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!95 &1280417546
+--- !u!95 &1603826309
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0

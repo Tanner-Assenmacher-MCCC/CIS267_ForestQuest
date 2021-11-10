@@ -5,15 +5,21 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public static Inventory instance;
-    public static int maxItems = 24;
+    public static int maxItems = 16;
     public List<Item> items = new List<Item>(maxItems);
-    public delegate void onItemChange();
-    public onItemChange itemChanged;
+    InventoryUI inventoryUI;
+    //public delegate void onItemChange();
+    //public onItemChange itemChanged;
     //itemChanged is callback
     
     private void Awake()
     {
         instance = this;
+    }
+
+    private void Start()
+    {
+        inventoryUI = FindObjectOfType<InventoryUI>();
     }
 
     public bool IsFull()
@@ -25,23 +31,26 @@ public class Inventory : MonoBehaviour
     {
         if (IsFull()) return false;
         items.Add(item);
-        if (itemChanged != null) 
-        itemChanged.Invoke();
+        inventoryUI.updateUI();
+        //if (itemChanged != null) 
+        //itemChanged.Invoke();
         return true;
     }
 
     public void Remove(Item item)
     {
         items.Remove(item);
-        if (itemChanged != null)
-        itemChanged.Invoke();
+        inventoryUI.updateUI();
+        //if (itemChanged != null)
+        //itemChanged.Invoke();
     }
 
     public void RemoveIndex(int i)
     {
         items.RemoveAt(i);
-        if (itemChanged != null)
-        itemChanged.Invoke();
+        inventoryUI.updateUI();
+        //if (itemChanged != null)
+        //itemChanged.Invoke();
     }
 
 }

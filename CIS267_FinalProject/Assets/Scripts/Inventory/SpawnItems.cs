@@ -43,10 +43,11 @@ public class SpawnItems : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-
+            InventoryUI inventoryUI = FindObjectOfType<InventoryUI>();
             GameObject obj = Instantiate(Inventory.instance.items[0].prefab, transform.position + new Vector3(0f, 1.5f, 0f), transform.rotation);
             MoveItem(obj);
             Inventory.instance.Remove(Inventory.instance.items[0]);
+            inventoryUI.updateUI();
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
@@ -58,5 +59,7 @@ public class SpawnItems : MonoBehaviour
             Instantiate(Inventory.instance.items[2].prefab, transform.position + new Vector3(0f, 1.5f, 0f), transform.rotation);
             Inventory.instance.Remove(Inventory.instance.items[2]);
         }
+
+        
     }
 }
