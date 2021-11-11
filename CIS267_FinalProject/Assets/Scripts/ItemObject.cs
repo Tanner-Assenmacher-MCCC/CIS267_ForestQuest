@@ -11,19 +11,29 @@ public class ItemObject : MonoBehaviour
     [Range(0.0f, 5f)]
     public float frequncy;
     private float originalY;
-    public bool shouldFloat = true;   
+    public bool shouldFloat = true;
+    private float positionY;
+
+    private bool wentThroughOnce = false;
 
     private void Start()
     {
         this.rb = GetComponent<Rigidbody2D>();
-        this.originalY = rb.position.y;
     }
 
     private void Update()
     {
+        positionY = gameObject.transform.position.y;
+        if (!shouldFloat)
+        {
+            rb.position = new Vector2(transform.position.x, ((Mathf.Sin(frequncy * Time.time) * amplitude)) / 10);
+            shouldFloat = true;
+        }
+
         if (shouldFloat && rb.velocity.y == 0)
         {
-            rb.position = new Vector2(transform.position.x, originalY + (Mathf.Sin(frequncy * Time.time) * amplitude));
+            rb.position = new Vector2(transform.position.x, positionY + ((Mathf.Sin(frequncy * Time.time) * amplitude)) / 15);
         }
     }
 }
+

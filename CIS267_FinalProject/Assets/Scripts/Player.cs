@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
     }
 
     public void DropItem(int i)
-    {    
+    {
         float drag = 4.5f;
         float force = 100f;
         float itemDropOffset = 1.5f;

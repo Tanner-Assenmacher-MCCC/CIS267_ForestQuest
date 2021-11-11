@@ -4743,11 +4743,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6891607407430632457, guid: 713ac1d33425ddf4a8caa0730be2ab10, type: 3}
       propertyPath: frequncy
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6891607407430632457, guid: 713ac1d33425ddf4a8caa0730be2ab10, type: 3}
       propertyPath: amplitude
-      value: 0.05
+      value: 0.045
+      objectReference: {fileID: 0}
+    - target: {fileID: 6891607407430632457, guid: 713ac1d33425ddf4a8caa0730be2ab10, type: 3}
+      propertyPath: shouldFloat
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 713ac1d33425ddf4a8caa0730be2ab10, type: 3}
@@ -5422,6 +5426,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6546616347640021852, guid: 1dab02d749181c742a66ce886bfd3867, type: 3}
+      propertyPath: frequncy
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546616347640021852, guid: 1dab02d749181c742a66ce886bfd3867, type: 3}
+      propertyPath: amplitude
+      value: 0.045
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546616347640021852, guid: 1dab02d749181c742a66ce886bfd3867, type: 3}
+      propertyPath: shouldFloat
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dab02d749181c742a66ce886bfd3867, type: 3}
 --- !u!1 &1261399038
@@ -5563,6 +5579,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 158539416858100853, guid: b046e5b95d0d5e04f9c971605a835b65, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419740941244861115, guid: b046e5b95d0d5e04f9c971605a835b65, type: 3}
+      propertyPath: frequncy
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419740941244861115, guid: b046e5b95d0d5e04f9c971605a835b65, type: 3}
+      propertyPath: amplitude
+      value: 0.045
+      objectReference: {fileID: 0}
+    - target: {fileID: 1419740941244861115, guid: b046e5b95d0d5e04f9c971605a835b65, type: 3}
+      propertyPath: shouldFloat
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5541936342561829303, guid: b046e5b95d0d5e04f9c971605a835b65, type: 3}
