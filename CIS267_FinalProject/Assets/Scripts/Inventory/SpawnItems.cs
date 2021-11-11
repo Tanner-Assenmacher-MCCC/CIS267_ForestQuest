@@ -11,12 +11,6 @@ public class SpawnItems : MonoBehaviour
     public float drag;
     public float force;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     private void MoveItem(GameObject gameObject)
     {
         gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, force));
@@ -43,11 +37,12 @@ public class SpawnItems : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            InventoryUI inventoryUI = FindObjectOfType<InventoryUI>();
-            GameObject obj = Instantiate(Inventory.instance.items[0].prefab, transform.position + new Vector3(0f, 1.5f, 0f), transform.rotation);
-            MoveItem(obj);
-            Inventory.instance.Remove(Inventory.instance.items[0]);
-            inventoryUI.updateUI();
+            //InventoryUI inventoryUI = FindObjectOfType<InventoryUI>();
+            //GameObject obj = Instantiate(Inventory.instance.items[0].prefab, transform.position + new Vector3(0f, 1.5f, 0f), transform.rotation);
+            //MoveItem(obj);
+            //Inventory.instance.Remove(Inventory.instance.items[0]);
+            //inventoryUI.updateUI();
+            FindObjectOfType<Player>().DropItem(0);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {

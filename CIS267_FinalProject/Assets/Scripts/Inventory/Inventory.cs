@@ -7,19 +7,16 @@ public class Inventory : MonoBehaviour
     public static Inventory instance;
     public static int maxItems = 16;
     public List<Item> items = new List<Item>(maxItems);
-    InventoryUI inventoryUI;
-    //public delegate void onItemChange();
-    //public onItemChange itemChanged;
-    //itemChanged is callback
+    [SerializeField] private InventoryUI inventoryUI;
+
+    public delegate void OnChange();
+    public OnChange onChangeCallback;
+    // If we need a function called after an item is added or removed you can add it like this:
+    // Inventory.instance.onChangeCallback += function;
     
     private void Awake()
     {
         instance = this;
-    }
-
-    private void Start()
-    {
-        inventoryUI = FindObjectOfType<InventoryUI>();
     }
 
     public bool IsFull()
@@ -32,8 +29,7 @@ public class Inventory : MonoBehaviour
         if (IsFull()) return false;
         items.Add(item);
         inventoryUI.updateUI();
-        //if (itemChanged != null) 
-        //itemChanged.Invoke();
+        if (onChangeCallback != null) onChangeCallback();
         return true;
     }
 
@@ -41,16 +37,14 @@ public class Inventory : MonoBehaviour
     {
         items.Remove(item);
         inventoryUI.updateUI();
-        //if (itemChanged != null)
-        //itemChanged.Invoke();
+        if (onChangeCallback != null) onChangeCallback();
     }
 
     public void RemoveIndex(int i)
     {
         items.RemoveAt(i);
         inventoryUI.updateUI();
-        //if (itemChanged != null)
-        //itemChanged.Invoke();
+        if (onChangeCallback != null) onChangeCallback();
     }
 
 }

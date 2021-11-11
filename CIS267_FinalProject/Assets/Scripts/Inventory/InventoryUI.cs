@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class InventoryUI : MonoBehaviour
 {
@@ -10,9 +11,7 @@ public class InventoryUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Inventory.instance.itemChanged += updateUI;
         slots = slotsContainer.GetComponentsInChildren<InventorySlot>();
-        Debug.Log(slots);
     }
 
     // Update is called once per frame
@@ -22,23 +21,29 @@ public class InventoryUI : MonoBehaviour
         {
             inventoryUI.SetActive(!inventoryUI.activeInHierarchy);
         }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            GameObject selectedObject = EventSystem.current.currentSelectedGameObject;
+            if (selectedObject != null && selectedObject.name.Contains("Button"))
+            {
+                int index = int.Parse(selectedObject.name.Split('_')[1]) - 1;
+                if (!slots[index].GetComponent<InventorySlot>().IsClear())
+                {
+                    FindObjectOfType<Player>().DropItem(index);
+                }
+            }   
+            //Debug.Log(EventSystem.current.currentSelectedGameObject.name);
+        }
+    }
+
+    public void OnItemClick()
+    {
+        Debug.Log(EventSystem.current.currentSelectedGameObject.name);
     }
 
     public void updateUI()
     {
-        //Debug.Log("Update UI");
-        //for (int i = 0; i < slots.Length; i++)
-        //{
-        //    if (i < inventory.items.Count)
-        //    {
-        //        slots[i].addItem(inventory.items[i]);
-        //    }
-        //    else
-        //    {
-        //        slots[i].clearSlot();
-        //    }
-        //}
-
         for (int i = 0; i < Inventory.maxItems; i++)
         {
             if (i < Inventory.instance.items.Count)
@@ -50,6 +55,5 @@ public class InventoryUI : MonoBehaviour
                 slots[i].clearSlot();
             }
         }
-
     }
 }

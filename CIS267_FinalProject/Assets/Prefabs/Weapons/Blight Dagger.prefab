@@ -124,6 +124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 929bfba69a95ce74883c5b64e03dacc4, type: 2}
+  amplitude: 0.06
+  frequncy: 2.5
 --- !u!50 &8024526387096507946
 Rigidbody2D:
   serializedVersion: 4

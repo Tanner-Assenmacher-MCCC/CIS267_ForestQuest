@@ -6,17 +6,11 @@ using UnityEngine.UI;
 public class InventorySlot : MonoBehaviour
 {
     public GameObject slotObject;
-    public Item item;
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
+    public Item item = null;
 
-    // Update is called once per frame
-    void Update()
+    public bool IsClear()
     {
-        
+        return item == null;
     }
 
     public void addItem(Item newItem)
@@ -33,10 +27,5 @@ public class InventorySlot : MonoBehaviour
         item = null;
         slotObject.GetComponent<SpriteRenderer>().sprite = null;
         slotObject.SetActive(false);
-    }
-
-    public void removeItem()
-    {
-        Inventory.instance.Remove(item);
     }
 }

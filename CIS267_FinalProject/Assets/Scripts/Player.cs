@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     Vector3 moveDelta;
     RaycastHit2D hit;
     public int speed;
+
+
     void Start()
     {
         rb2d = gameObject.GetComponent<Rigidbody2D>();
@@ -58,5 +60,42 @@ public class Player : MonoBehaviour
         animator.SetFloat("Horizontal", moveDelta.x);
 
         //  END */
+    }
+
+    public void DropItem(int i)
+    {    
+        float drag = 4.5f;
+        float force = 100f;
+        float itemDropOffset = 1.5f;
+        float horizontal = animator.GetFloat("lastMoveHorizontal");
+        float vertical = animator.GetFloat("lastMoveVertical");
+        if (horizontal == 0f && vertical == 1f) // up
+        {
+            GameObject gameObject = Instantiate(Inventory.instance.items[i].prefab, transform.position + new Vector3(0f, itemDropOffset, 0f), transform.rotation);
+            gameObject.GetComponent<Rigidbody2D>().drag = drag;
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, force));
+            Inventory.instance.Remove(Inventory.instance.items[i]);
+        }
+        else if (horizontal == 1f && vertical == 0f) // right
+        {
+            GameObject gameObject = Instantiate(Inventory.instance.items[i].prefab, transform.position + new Vector3(itemDropOffset, 0f, 0f), transform.rotation);
+            gameObject.GetComponent<Rigidbody2D>().drag = drag;
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(force, 0f));
+            Inventory.instance.Remove(Inventory.instance.items[i]);
+        }
+        else if (horizontal == 0f && vertical == -1f) // down
+        {
+            GameObject gameObject = Instantiate(Inventory.instance.items[i].prefab, transform.position + new Vector3(0f, -itemDropOffset - 0.1f, 0f), transform.rotation);
+            gameObject.GetComponent<Rigidbody2D>().drag = drag;
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -force));
+            Inventory.instance.Remove(Inventory.instance.items[i]);
+        }
+        else // left
+        {
+            GameObject gameObject = Instantiate(Inventory.instance.items[i].prefab, transform.position + new Vector3(-itemDropOffset, 0f, 0f), transform.rotation);
+            gameObject.GetComponent<Rigidbody2D>().drag = drag;
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-force, 0f));
+            Inventory.instance.Remove(Inventory.instance.items[i]);
+        }
     }
 }
