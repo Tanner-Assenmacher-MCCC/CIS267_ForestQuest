@@ -21,20 +21,6 @@ public class InventoryUI : MonoBehaviour
         {
             inventoryUI.SetActive(!inventoryUI.activeInHierarchy);
         }
-
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            GameObject selectedObject = EventSystem.current.currentSelectedGameObject;
-            if (selectedObject != null && selectedObject.name.Contains("Button"))
-            {
-                int index = int.Parse(selectedObject.name.Split('_')[1]) - 1;
-                if (!slots[index].GetComponent<InventorySlot>().IsClear())
-                {
-                    FindObjectOfType<Player>().DropItem(index);
-                }
-            }   
-            //Debug.Log(EventSystem.current.currentSelectedGameObject.name);
-        }
     }
 
     public void OnItemClick()

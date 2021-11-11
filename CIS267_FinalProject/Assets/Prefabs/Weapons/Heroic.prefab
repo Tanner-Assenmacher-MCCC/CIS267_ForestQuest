@@ -126,6 +126,7 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: 4adb87f31407bd74786400d2edf2c7ec, type: 2}
   amplitude: 0.03
   frequncy: 2
+  shouldFloat: 1
 --- !u!50 &4085889779448548995
 Rigidbody2D:
   serializedVersion: 4

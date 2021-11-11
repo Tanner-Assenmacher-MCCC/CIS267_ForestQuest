@@ -71,30 +71,30 @@ public class Player : MonoBehaviour
         float vertical = animator.GetFloat("lastMoveVertical");
         if (horizontal == 0f && vertical == 1f) // up
         {
-            GameObject gameObject = Instantiate(Inventory.instance.items[i].prefab, transform.position + new Vector3(0f, itemDropOffset, 0f), transform.rotation);
-            gameObject.GetComponent<Rigidbody2D>().drag = drag;
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, force));
+            GameObject instance = Instantiate(Inventory.instance.items[i].prefab, transform.position + new Vector3(0f, itemDropOffset, 0f), transform.rotation);
+            instance.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, force));
+            instance.GetComponent<Rigidbody2D>().drag = drag;
             Inventory.instance.Remove(Inventory.instance.items[i]);
         }
         else if (horizontal == 1f && vertical == 0f) // right
         {
-            GameObject gameObject = Instantiate(Inventory.instance.items[i].prefab, transform.position + new Vector3(itemDropOffset, 0f, 0f), transform.rotation);
-            gameObject.GetComponent<Rigidbody2D>().drag = drag;
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(force, 0f));
+            GameObject instance = Instantiate(Inventory.instance.items[i].prefab, transform.position + new Vector3(itemDropOffset, 0f, 0f), transform.rotation);
+            instance.GetComponent<Rigidbody2D>().AddForce(new Vector2(force, 0f));
+            instance.GetComponent<Rigidbody2D>().drag = drag;
             Inventory.instance.Remove(Inventory.instance.items[i]);
         }
         else if (horizontal == 0f && vertical == -1f) // down
         {
-            GameObject gameObject = Instantiate(Inventory.instance.items[i].prefab, transform.position + new Vector3(0f, -itemDropOffset - 0.1f, 0f), transform.rotation);
-            gameObject.GetComponent<Rigidbody2D>().drag = drag;
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -force));
+            GameObject instance = Instantiate(Inventory.instance.items[i].prefab, transform.position + new Vector3(0f, -itemDropOffset, 0f), transform.rotation);
+            instance.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, -force));
+            instance.GetComponent<Rigidbody2D>().drag = drag;
             Inventory.instance.Remove(Inventory.instance.items[i]);
         }
         else // left
         {
-            GameObject gameObject = Instantiate(Inventory.instance.items[i].prefab, transform.position + new Vector3(-itemDropOffset, 0f, 0f), transform.rotation);
-            gameObject.GetComponent<Rigidbody2D>().drag = drag;
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-force, 0f));
+            GameObject instance = Instantiate(Inventory.instance.items[i].prefab, transform.position + new Vector3(-itemDropOffset, 0f, 0f), transform.rotation);
+            instance.GetComponent<Rigidbody2D>().AddForce(new Vector2(-force, 0f));
+            instance.GetComponent<Rigidbody2D>().drag = drag;
             Inventory.instance.Remove(Inventory.instance.items[i]);
         }
     }

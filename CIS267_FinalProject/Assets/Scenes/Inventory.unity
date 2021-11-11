@@ -6907,6 +6907,7 @@ GameObject:
   - component: {fileID: 1646384791}
   - component: {fileID: 1646384792}
   - component: {fileID: 1646384793}
+  - component: {fileID: 1646384794}
   m_Layer: 0
   m_Name: Slot_1
   m_TagString: Untagged
@@ -6995,6 +6996,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotObject: {fileID: 1632741607}
   item: {fileID: 0}
+--- !u!50 &1646384794
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646384790}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1661549132
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,15 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class InventorySlot : MonoBehaviour
+public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public GameObject slotObject;
     public Item item = null;
-
-    public bool IsClear()
+    private bool isHovered = false;
+    private void Update()
     {
-        return item == null;
+        if (isHovered && Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            if (item != null)
+            {
+                int i = int.Parse(this.name.Split('_')[1]) - 1;
+                FindObjectOfType<Player>().DropItem(i);
+            }
+        }
     }
 
     public void addItem(Item newItem)
@@ -27,5 +35,15 @@ public class InventorySlot : MonoBehaviour
         item = null;
         slotObject.GetComponent<SpriteRenderer>().sprite = null;
         slotObject.SetActive(false);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        isHovered = true;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        isHovered = false;
     }
 }

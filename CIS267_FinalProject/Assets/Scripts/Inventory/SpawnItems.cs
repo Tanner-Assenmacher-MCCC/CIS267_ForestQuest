@@ -37,22 +37,15 @@ public class SpawnItems : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            //InventoryUI inventoryUI = FindObjectOfType<InventoryUI>();
-            //GameObject obj = Instantiate(Inventory.instance.items[0].prefab, transform.position + new Vector3(0f, 1.5f, 0f), transform.rotation);
-            //MoveItem(obj);
-            //Inventory.instance.Remove(Inventory.instance.items[0]);
-            //inventoryUI.updateUI();
             FindObjectOfType<Player>().DropItem(0);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            Instantiate(Inventory.instance.items[1].prefab, transform.position + new Vector3(0f, 1.5f, 0f), transform.rotation);
-            Inventory.instance.Remove(Inventory.instance.items[1]);
+            FindObjectOfType<Player>().DropItem(1);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            Instantiate(Inventory.instance.items[2].prefab, transform.position + new Vector3(0f, 1.5f, 0f), transform.rotation);
-            Inventory.instance.Remove(Inventory.instance.items[2]);
+            FindObjectOfType<Player>().DropItem(3);
         }
 
         
