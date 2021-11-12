@@ -58405,6 +58405,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4217887115061735404, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
+      propertyPath: scriptableWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 929bfba69a95ce74883c5b64e03dacc4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
 --- !u!4 &1280417544 stripped
@@ -99317,7 +99321,7 @@ Tilemap:
       - {fileID: -1655761581076612383, guid: 989acf00c3791754fb33c7e4c31f2d75, type: 3}
       - {fileID: -5657005582927067749, guid: 989acf00c3791754fb33c7e4c31f2d75, type: 3}
       - {fileID: 2896179404482671487, guid: 989acf00c3791754fb33c7e4c31f2d75, type: 3}
-      m_AnimationSpeed: 3.5970538
+      m_AnimationSpeed: 2.8718524
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
