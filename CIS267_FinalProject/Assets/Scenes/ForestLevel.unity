@@ -58303,7 +58303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1732229956974865285, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.411
+      value: -0.47
       objectReference: {fileID: 0}
     - target: {fileID: 1732229956974865285, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -58330,6 +58330,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 68dd40766f3f9db49b4ddefae8b18972, type: 3}
     - target: {fileID: 1758148714261851334, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758148714261851334, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
@@ -58337,13 +58341,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 3580456226963291422, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3580456226963291422, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3580456226963291422, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 457801097510357027, guid: 2631d35c7acf3dc4e9541892c06af76d, type: 3}
     - target: {fileID: 3580456226963291423, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3580456226963291423, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3580456226963291423, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 3580456226963291423, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -99297,7 +99317,7 @@ Tilemap:
       - {fileID: -1655761581076612383, guid: 989acf00c3791754fb33c7e4c31f2d75, type: 3}
       - {fileID: -5657005582927067749, guid: 989acf00c3791754fb33c7e4c31f2d75, type: 3}
       - {fileID: 2896179404482671487, guid: 989acf00c3791754fb33c7e4c31f2d75, type: 3}
-      m_AnimationSpeed: 9.376015
+      m_AnimationSpeed: 3.5970538
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
