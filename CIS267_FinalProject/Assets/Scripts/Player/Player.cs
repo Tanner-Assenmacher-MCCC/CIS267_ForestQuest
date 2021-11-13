@@ -31,30 +31,34 @@ public class Player : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
-        // Press shift to Sprint
-        if (Input.GetKey("left shift"))
+        if (!gameObject.GetComponent<PlayerAttack>().currentlyAttacking)
         {
-            rb2d.velocity = new Vector2(x, y) * speed * 1.5f * Time.fixedDeltaTime;
-            animator.speed = 1.5f;
+            // Press shift to Sprint
+            if (Input.GetKey("left shift"))
+            {
+                rb2d.velocity = new Vector2(x, y) * speed * 1.5f * Time.fixedDeltaTime;
+                animator.speed = 1.5f;
+            }
+
+            else
+            {
+                // Move player at normal speed
+                rb2d.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed * Time.fixedDeltaTime;
+                animator.speed = 1f;
+            }
+
+            // Reset MoveDelta
+            moveDelta = new Vector3(x, y, 0);
+
+            // /* ANIMATION STUFF
+
+            if (Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1 || Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1)
+            {
+                animator.SetFloat("lastMoveHorizontal", moveDelta.x);
+                animator.SetFloat("lastMoveVertical", moveDelta.y);
+            }
         }
 
-        else
-        {
-            // Move player at normal speed
-            rb2d.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed * Time.fixedDeltaTime;
-            animator.speed = 1f;
-        }
-
-        // Reset MoveDelta
-        moveDelta = new Vector3(x, y, 0);
-
-        // /* ANIMATION STUFF
-
-        if (Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1 || Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1)
-        {
-            animator.SetFloat("lastMoveHorizontal", moveDelta.x);
-            animator.SetFloat("lastMoveVertical", moveDelta.y);
-        }
 
         animator.SetFloat("Vertical", moveDelta.y);
         animator.SetFloat("Horizontal", moveDelta.x);

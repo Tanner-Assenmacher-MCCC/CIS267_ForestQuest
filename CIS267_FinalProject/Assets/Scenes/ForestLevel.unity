@@ -58299,11 +58299,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1732229956974865285, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.15
+      value: -0.456
       objectReference: {fileID: 0}
     - target: {fileID: 1732229956974865285, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.47
+      value: -0.371
       objectReference: {fileID: 0}
     - target: {fileID: 1732229956974865285, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -58353,6 +58353,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 457801097510357027, guid: 2631d35c7acf3dc4e9541892c06af76d, type: 3}
+    - target: {fileID: 3580456226963291422, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3580456226963291423, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -58416,6 +58420,31 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3580456226963291423, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
   m_PrefabInstance: {fileID: 1280417543}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1280417545 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3580456226963291421, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
+  m_PrefabInstance: {fileID: 1280417543}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1280417546 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1603826309, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
+  m_PrefabInstance: {fileID: 1280417543}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1280417547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280417545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c852b46dffe2749b54c1fcb5e8311e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1280417546}
+  currentlyAttacking: 0
+  attackCooldown: 0.5
 --- !u!1 &1345379126
 GameObject:
   m_ObjectHideFlags: 3
@@ -99321,7 +99350,7 @@ Tilemap:
       - {fileID: -1655761581076612383, guid: 989acf00c3791754fb33c7e4c31f2d75, type: 3}
       - {fileID: -5657005582927067749, guid: 989acf00c3791754fb33c7e4c31f2d75, type: 3}
       - {fileID: 2896179404482671487, guid: 989acf00c3791754fb33c7e4c31f2d75, type: 3}
-      m_AnimationSpeed: 2.8718524
+      m_AnimationSpeed: 2.6364574
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
