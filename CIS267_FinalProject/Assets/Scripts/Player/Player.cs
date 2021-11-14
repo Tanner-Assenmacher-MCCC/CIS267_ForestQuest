@@ -11,8 +11,8 @@ public class Player : MonoBehaviour
     Vector3 moveDelta;
     RaycastHit2D hit;
     public int speed;
-
-
+    bool waited = true;
+    bool done = false;
     void Start()
     {
         rb2d = gameObject.GetComponent<Rigidbody2D>();
@@ -28,42 +28,71 @@ public class Player : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        float x = Input.GetAxisRaw("Horizontal");
-        float y = Input.GetAxisRaw("Vertical");
-
         if (!gameObject.GetComponent<PlayerAttack>().currentlyAttacking)
         {
-            // Press shift to Sprint
-            if (Input.GetKey("left shift"))
-            {
-                rb2d.velocity = new Vector2(x, y) * speed * 1.5f * Time.fixedDeltaTime;
-                animator.speed = 1.5f;
-            }
+            // // Press shift to Sprint
+            // if (Input.GetKey("left shift"))
+            // {
+            //     rb2d.velocity = new Vector2(x, y) * speed * 1.5f * Time.fixedDeltaTime;
+            //     animator.speed = 1.5f;
+            // }
 
-            else
-            {
-                // Move player at normal speed
-                rb2d.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed * Time.fixedDeltaTime;
-                animator.speed = 1f;
-            }
-
-            // Reset MoveDelta
-            moveDelta = new Vector3(x, y, 0);
-
-            // /* ANIMATION STUFF
-
-            if (Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1 || Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1)
-            {
-                animator.SetFloat("lastMoveHorizontal", moveDelta.x);
-                animator.SetFloat("lastMoveVertical", moveDelta.y);
-            }
+            Move();
         }
-
 
         animator.SetFloat("Vertical", moveDelta.y);
         animator.SetFloat("Horizontal", moveDelta.x);
+    }
 
-        //  END */
+
+    IEnumerator SteppingSounds()
+    {
+        done = false;
+        if (!FindObjectOfType<AudioManager>().isPlaying("StepRight") && waited)
+        {
+            FindObjectOfType<AudioManager>().PlayOneShot("StepRight");
+        }
+
+        yield return new WaitForSeconds(5f);
+
+        if (!FindObjectOfType<AudioManager>().isPlaying("StepLeft"))
+        {
+            FindObjectOfType<AudioManager>().PlayOneShot("StepLeft");
+        }
+
+        done = true;
+    }
+
+    void Move()
+    {
+        float x = Input.GetAxisRaw("Horizontal");
+        float y = Input.GetAxisRaw("Vertical");
+
+        // Move player at normal speed
+        rb2d.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed * Time.fixedDeltaTime;
+        animator.speed = 1f;
+
+        // Reset MoveDelta
+        moveDelta = new Vector3(x, y, 0);
+
+        // /* ANIMATION STUFF
+
+        if (Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1 || Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1)
+        {
+            animator.SetFloat("lastMoveHorizontal", moveDelta.x);
+            animator.SetFloat("lastMoveVertical", moveDelta.y);
+
+
+            if (!FindObjectOfType<AudioManager>().isPlaying("StepRight") && !FindObjectOfType<AudioManager>().isPlaying("StepLeft"))
+            {
+                FindObjectOfType<AudioManager>().PlayOneShot("StepLeft");
+            }
+
+            else if (!FindObjectOfType<AudioManager>().isPlaying("StepRight"))
+            {
+                FindObjectOfType<AudioManager>().PlayOneShot("StepRight");
+            }
+        }
     }
 
     public void DropItem(int i)

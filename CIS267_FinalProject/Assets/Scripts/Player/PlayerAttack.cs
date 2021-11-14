@@ -6,6 +6,7 @@ public class PlayerAttack : MonoBehaviour
 {
     Rigidbody2D rb2d;
     public Animator animator;
+    public AudioSource slash;
     private bool attacking = false;
     public bool currentlyAttacking = false;
     private float attackTime;
@@ -28,6 +29,7 @@ public class PlayerAttack : MonoBehaviour
             animator.SetBool("Attack", false);
             attacking = true;
             currentlyAttacking = true;
+            FindObjectOfType<AudioManager>().Play("Slash");
         }
 
         if (attacking)
