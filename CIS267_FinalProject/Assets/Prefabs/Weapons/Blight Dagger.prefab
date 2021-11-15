@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 173328679503328880}
   - component: {fileID: 6546616347640021852}
   - component: {fileID: 8024526387096507946}
+  - component: {fileID: 7635738831121562509}
   m_Layer: 0
   m_Name: Blight Dagger
   m_TagString: Item
@@ -124,8 +125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 929bfba69a95ce74883c5b64e03dacc4, type: 2}
-  amplitude: 0.06
-  frequncy: 2.5
 --- !u!50 &8024526387096507946
 Rigidbody2D:
   serializedVersion: 4
@@ -147,3 +146,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7635738831121562509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396676863308232784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4858288381e6feb4ead800d6f671b1de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.06
+  frequncy: 2.5
+  shouldFloat: 1

@@ -16,7 +16,14 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             if (item != null)
             {
                 int i = int.Parse(this.name.Split('_')[1]) - 1;
-                FindObjectOfType<Player>().DropItem(i);
+                if (this.transform.parent.gameObject.name.Contains("Hotbar"))
+                {
+                    FindObjectOfType<Hotbar>().DropItem(i);
+                }
+                else
+                {
+                    FindObjectOfType<Inventory>().DropItem(i);
+                }
             }
         }
     }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 512954101025026341}
   - component: {fileID: 6891607407430632457}
   - component: {fileID: -8090365773824379895}
+  - component: {fileID: 57625239821669168}
   m_Layer: 0
   m_Name: Bandit's Knife
   m_TagString: Item
@@ -124,8 +125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 01bc2820357b21b438859b515f201111, type: 2}
-  amplitude: 0.075
-  frequncy: 3
 --- !u!50 &-8090365773824379895
 Rigidbody2D:
   serializedVersion: 4
@@ -147,3 +146,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &57625239821669168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70068632978833157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4858288381e6feb4ead800d6f671b1de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.075
+  frequncy: 3
+  shouldFloat: 1

@@ -65,40 +65,16 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void DropItem(int i)
+    //public void UseItem(Item item)
+    //{
+
+    //}
+
+    public void UseItem(ScriptableWeapon scriptableWeapon)
     {
-        float drag = 4.5f;
-        float force = 100f;
-        float itemDropOffset = 1.5f;
-        float horizontal = animator.GetFloat("lastMoveHorizontal");
-        float vertical = animator.GetFloat("lastMoveVertical");
-        if (horizontal == 0f && vertical == 1f) // up
-        {
-            GameObject instance = Instantiate(Inventory.instance.items[i].prefab, transform.position + new Vector3(0f, itemDropOffset, 0f), transform.rotation);
-            instance.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, force));
-            instance.GetComponent<Rigidbody2D>().drag = drag;
-            Inventory.instance.Remove(Inventory.instance.items[i]);
-        }
-        else if (horizontal == 1f && vertical == 0f) // right
-        {
-            GameObject instance = Instantiate(Inventory.instance.items[i].prefab, transform.position + new Vector3(itemDropOffset, 0f, 0f), transform.rotation);
-            instance.GetComponent<Rigidbody2D>().AddForce(new Vector2(force, 0f));
-            instance.GetComponent<Rigidbody2D>().drag = drag;
-            Inventory.instance.Remove(Inventory.instance.items[i]);
-        }
-        else if (horizontal == 0f && vertical == -1f) // down
-        {
-            GameObject instance = Instantiate(Inventory.instance.items[i].prefab, transform.position + new Vector3(0f, -itemDropOffset, 0f), transform.rotation);
-            instance.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, -force));
-            instance.GetComponent<Rigidbody2D>().drag = drag;
-            Inventory.instance.Remove(Inventory.instance.items[i]);
-        }
-        else // left
-        {
-            GameObject instance = Instantiate(Inventory.instance.items[i].prefab, transform.position + new Vector3(-itemDropOffset, 0f, 0f), transform.rotation);
-            instance.GetComponent<Rigidbody2D>().AddForce(new Vector2(-force, 0f));
-            instance.GetComponent<Rigidbody2D>().drag = drag;
-            Inventory.instance.Remove(Inventory.instance.items[i]);
-        }
+        WeaponHolster weaponHolster = FindObjectOfType<WeaponHolster>();
+        Debug.Log(weaponHolster);
+        weaponHolster.scriptableWeapon = scriptableWeapon;
+        weaponHolster.hasWeapon = true;
     }
 }

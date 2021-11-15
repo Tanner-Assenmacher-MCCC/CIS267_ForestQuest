@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5408374245997494167}
   - component: {fileID: 1419740941244861115}
   - component: {fileID: 4085889779448548995}
+  - component: {fileID: -4623448798517343356}
   m_Layer: 0
   m_Name: Heroic
   m_TagString: Item
@@ -124,9 +125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 22cb25548526f644c9dea38889d2c354, type: 2}
-  amplitude: 0.03
-  frequncy: 2
-  shouldFloat: 1
 --- !u!50 &4085889779448548995
 Rigidbody2D:
   serializedVersion: 4
@@ -148,3 +146,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-4623448798517343356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5541936342561829303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4858288381e6feb4ead800d6f671b1de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.03
+  frequncy: 2
+  shouldFloat: 1

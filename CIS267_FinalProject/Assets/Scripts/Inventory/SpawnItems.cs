@@ -35,18 +35,18 @@ public class SpawnItems : MonoBehaviour
             Instantiate(knife.prefab, transform.position + new Vector3(0, 4, 0), transform.rotation);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            FindObjectOfType<Player>().DropItem(0);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            FindObjectOfType<Player>().DropItem(1);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            FindObjectOfType<Player>().DropItem(3);
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha1))
+        //{
+        //    FindObjectOfType<Player>().DropItem(0);
+        //}
+        //if (Input.GetKeyDown(KeyCode.Alpha2))
+        //{
+        //    FindObjectOfType<Player>().DropItem(1);
+        //}
+        //if (Input.GetKeyDown(KeyCode.Alpha3))
+        //{
+        //    FindObjectOfType<Player>().DropItem(3);
+        //}
 
         
     }

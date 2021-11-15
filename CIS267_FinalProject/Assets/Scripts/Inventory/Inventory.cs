@@ -47,4 +47,24 @@ public class Inventory : MonoBehaviour
         if (onChangeCallback != null) onChangeCallback();
     }
 
-}
+    public void DropItem(int i)
+    {
+        float drag = 4.5f;
+        float force = 100f;
+        float itemDropOffset = 1.5f;
+        Player player = FindObjectOfType<Player>();
+        float horizontal = player.animator.GetFloat("lastMoveHorizontal");
+        float vertical = player.animator.GetFloat("lastMoveVertical");
+
+        Vector3 offset = new Vector3(horizontal, vertical, 0) * itemDropOffset;
+        offset.z = player.transform.position.z;
+        Vector2 push = new Vector2(horizontal, vertical) * force;
+
+        GameObject instance = Instantiate(this.items[i].prefab, player.transform.position + offset, transform.rotation);
+        instance.GetComponent<Rigidbody2D>().AddForce(push);
+
+        instance.GetComponent<Rigidbody2D>().drag = drag;
+        this.RemoveIndex(i);
+    }
+
+    }
