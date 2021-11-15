@@ -58771,30 +58771,6 @@ PrefabInstance:
       propertyPath: slash
       value: 
       objectReference: {fileID: 2022037516}
-    - target: {fileID: 1603826309, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1732229956974865285, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1732229956974865285, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3580456226963291408, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
-      propertyPath: stepLeft
-      value: 
-      objectReference: {fileID: 1774566090}
-    - target: {fileID: 3580456226963291408, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
-      propertyPath: stepTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3580456226963291408, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
-      propertyPath: stepRight
-      value: 
-      objectReference: {fileID: 917737942}
     - target: {fileID: 3580456226963291421, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
       propertyPath: m_Name
       value: MainCharacter
@@ -58843,10 +58819,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4217887115061735404, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
-      propertyPath: scriptableWeapon
-      value: 
-      objectReference: {fileID: 11400000, guid: 929bfba69a95ce74883c5b64e03dacc4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
 --- !u!4 &1280417544 stripped
@@ -99759,7 +99731,7 @@ Tilemap:
       - {fileID: -1655761581076612383, guid: 989acf00c3791754fb33c7e4c31f2d75, type: 3}
       - {fileID: -5657005582927067749, guid: 989acf00c3791754fb33c7e4c31f2d75, type: 3}
       - {fileID: 2896179404482671487, guid: 989acf00c3791754fb33c7e4c31f2d75, type: 3}
-      m_AnimationSpeed: 2.25741
+      m_AnimationSpeed: 2.3334708
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
@@ -99964,23 +99936,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1686885043 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3580456226963291421, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
-  m_PrefabInstance: {fileID: 1280417543}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1686885044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1686885043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14c2c8ebbb846e64781f589b530ff6fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1687073839
 GameObject:
   m_ObjectHideFlags: 0
