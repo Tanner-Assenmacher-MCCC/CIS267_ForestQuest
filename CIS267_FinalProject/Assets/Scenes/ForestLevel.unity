@@ -58925,33 +58925,9 @@ PrefabInstance:
       propertyPath: slash
       value: 
       objectReference: {fileID: 2022037516}
-    - target: {fileID: 1603826310, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
-      propertyPath: m_Simulated
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1758148714261851334, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1758148714261851334, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
-      propertyPath: m_SortingOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2477308979493395832, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3580456226963291421, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
       propertyPath: m_Name
       value: MainCharacter
-      objectReference: {fileID: 0}
-    - target: {fileID: 3580456226963291422, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -3136334138623500517, guid: 2631d35c7acf3dc4e9541892c06af76d, type: 3}
-    - target: {fileID: 3580456226963291422, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3580456226963291423, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
       propertyPath: m_RootOrder
@@ -58997,12 +58973,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4436952773886334135, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
-      propertyPath: scriptableWeapon
-      value: 
-      objectReference: {fileID: 11400000, guid: 929bfba69a95ce74883c5b64e03dacc4, type: 2}
-    m_RemovedComponents:
-    - {fileID: 4217887115061735404, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
 --- !u!4 &1280417544 stripped
 Transform:
@@ -99914,7 +99885,7 @@ Tilemap:
       - {fileID: -1655761581076612383, guid: 989acf00c3791754fb33c7e4c31f2d75, type: 3}
       - {fileID: -5657005582927067749, guid: 989acf00c3791754fb33c7e4c31f2d75, type: 3}
       - {fileID: 2896179404482671487, guid: 989acf00c3791754fb33c7e4c31f2d75, type: 3}
-      m_AnimationSpeed: 9.262843
+      m_AnimationSpeed: 3.7724562
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
