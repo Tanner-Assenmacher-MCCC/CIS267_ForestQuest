@@ -1196,7 +1196,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotsContainer: {fileID: 2089406852}
-  slots: []
+  slots:
+  - {fileID: 0}
 --- !u!114 &281174505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1211,6 +1212,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items: []
   hotbarUI: {fileID: 281174504}
+  slotButtons:
+  - {fileID: 1287717214}
+  - {fileID: 1983872301}
+  - {fileID: 1969981282}
 --- !u!1 &285061997
 GameObject:
   m_ObjectHideFlags: 0
@@ -1608,6 +1613,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1758148714261851334, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3580456226963291421, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
       propertyPath: m_Name
       value: MainCharacter
@@ -1672,7 +1681,16 @@ PrefabInstance:
       propertyPath: scriptableWeapon
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4436952773886334135, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
+      propertyPath: hasWeapon
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436952773886334135, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
+      propertyPath: scriptableWeapon
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4217887115061735404, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 60b7b9260884b324989346d78a0f613d, type: 3}
 --- !u!1 &365672050
 GameObject:

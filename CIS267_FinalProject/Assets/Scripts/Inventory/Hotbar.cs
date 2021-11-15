@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Hotbar : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Hotbar : MonoBehaviour
     public static int maxItems = 3;
     public List<Item> items = new List<Item>(maxItems);
     [SerializeField] private HotbarUI hotbarUI;
+    [SerializeField] private List<Button> slotButtons;
 
     public delegate void OnChange();
     public OnChange onChangeCallback;
@@ -21,27 +23,58 @@ public class Hotbar : MonoBehaviour
 
     private void Update()
     {
-        Player player = FindObjectOfType<Player>();
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            Debug.Log("asdasd");
+            Player player = FindObjectOfType<Player>();
             int i = 0;
             if (InBounds(i))
             {
-                player.UseItem(this.items[i] as ScriptableWeapon);
+                player.UseItem(this.items[i]);
+                ResetButtons();
+                HighlightButton(i);
             }
-
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
+            Player player = FindObjectOfType<Player>();
             int i = 1;
-            if (InBounds(i)) this.DropItem(i);
+            if (InBounds(i))
+            {
+                player.UseItem(this.items[i]);
+                ResetButtons();
+                HighlightButton(i);
+            }
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
+            Player player = FindObjectOfType<Player>();
             int i = 2;
-            if (InBounds(i)) this.DropItem(i);
+            if (InBounds(i))
+            {
+                player.UseItem(this.items[i]);
+                ResetButtons();
+                HighlightButton(i);
+            }
         }
+    }
+
+    public void ResetButtons()
+    {
+        foreach (Button button in slotButtons)
+        {
+            ColorBlock colors = button.colors;
+            colors.normalColor = new Color32(255, 255, 255, 0);
+            colors.highlightedColor = new Color32(255, 255, 255, 0);
+            button.colors = colors;
+        }
+    }
+
+    public void HighlightButton(int i)
+    {
+        ColorBlock colors = slotButtons[i].colors;
+        colors.normalColor = new Color32(255, 255, 255, 40);
+        colors.highlightedColor = new Color32(255, 255, 255, 40);
+        slotButtons[i].colors = colors;
     }
 
     public bool InBounds(int i)
@@ -115,5 +148,7 @@ public class Hotbar : MonoBehaviour
         //}
         instance.GetComponent<Rigidbody2D>().drag = drag;
         this.RemoveIndex(i);
+        FindObjectOfType<WeaponHolster>().ResetWeapon();
+        ResetButtons();
     }
 }

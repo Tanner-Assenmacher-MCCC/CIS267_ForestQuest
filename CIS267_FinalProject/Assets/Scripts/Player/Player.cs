@@ -65,16 +65,20 @@ public class Player : MonoBehaviour
         }
     }
 
-    //public void UseItem(Item item)
-    //{
-
-    //}
-
-    public void UseItem(ScriptableWeapon scriptableWeapon)
+    public void UseItem(Item item)
     {
-        WeaponHolster weaponHolster = FindObjectOfType<WeaponHolster>();
-        Debug.Log(weaponHolster);
-        weaponHolster.scriptableWeapon = scriptableWeapon;
-        weaponHolster.hasWeapon = true;
+        Debug.Log(item.GetType() == typeof(ScriptableWeapon));
+        if (item.GetType() == typeof(ScriptableWeapon))
+        {
+            WeaponHolster weaponHolster = FindObjectOfType<WeaponHolster>();
+            Debug.Log(weaponHolster);
+            weaponHolster.scriptableWeapon = item as ScriptableWeapon;
+            weaponHolster.GetComponent<SpriteRenderer>().sprite = item.sprite;
+            weaponHolster.hasWeapon = true;
+        }
+        else
+        {
+
+        }
     }
 }

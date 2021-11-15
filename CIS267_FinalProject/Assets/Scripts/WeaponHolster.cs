@@ -5,7 +5,7 @@ using UnityEngine;
 public class WeaponHolster : MonoBehaviour
 {
     public ScriptableWeapon scriptableWeapon = null;
-    public bool hasWeapon = true;
+    public bool hasWeapon = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,9 +24,10 @@ public class WeaponHolster : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ResetWeapon()
     {
-
+        GetComponent<SpriteRenderer>().sprite = null;
+        this.scriptableWeapon = null;
+        this.hasWeapon = false;
     }
 }
