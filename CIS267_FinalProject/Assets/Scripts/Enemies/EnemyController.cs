@@ -6,15 +6,25 @@ public class EnemyController : MonoBehaviour
 {
     private Animator animator;
     private Transform target;
+    [Header("Speed")]
+    [Range(1f, 6f)]
     [SerializeField] private float speed;
+    [Header("Follow Range")]
     [SerializeField] private float minRange;
     [SerializeField] private float maxRange;
+    [Header("Attacking")]
+    [Range(0f, 5f)]
+    [SerializeField] private float attackRate;
+    private float time;
     private bool hasFollowed;
+    private bool attackedOnce;
 
     // Start is called before the first frame update
     void Start()
     {
+        time = attackRate;
         hasFollowed = false;
+        attackedOnce = false;
         animator = GetComponent<Animator>();
         target = FindObjectOfType<Player>().transform;
     }
@@ -31,6 +41,7 @@ public class EnemyController : MonoBehaviour
             }
             else
             {
+                attackedOnce = false;
                 hasFollowed = true;
                 FollowPlayer();
             }
@@ -53,7 +64,15 @@ public class EnemyController : MonoBehaviour
 
     public void AttackPlayer()
     {
-        animator.SetBool("Attack", true);
+        time += Time.deltaTime;
+        animator.SetBool("Attack", false);
+
+        if (time >= attackRate || !attackedOnce)
+        {
+            animator.SetBool("Attack", true);
+            time = 0;
+            attackedOnce = true;
+        }
     }
 
     public void GoHome()

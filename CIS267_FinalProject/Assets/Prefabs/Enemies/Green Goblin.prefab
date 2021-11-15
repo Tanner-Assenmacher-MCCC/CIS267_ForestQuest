@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 949571bacf9e8c541b3efd9bbbcbe4f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  homePos: {fileID: 4619841665491205971, guid: 3239239820e6043479bc2263be15e1e8, type: 3}
   speed: 2
   minRange: 0.75
   maxRange: 5
+  attackRate: 1.01
