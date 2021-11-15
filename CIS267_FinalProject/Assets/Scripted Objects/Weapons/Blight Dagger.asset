@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Blight Dagger
   sprite: {fileID: 21300000, guid: 68dd40766f3f9db49b4ddefae8b18972, type: 3}
+  prefab: {fileID: 7039168236025441989, guid: 36783169d701cea4db2bae7ca16f1a7a, type: 3}
   damage: 16
-  prefab: {fileID: 396676863308232784, guid: 1dab02d749181c742a66ce886bfd3867, type: 3}

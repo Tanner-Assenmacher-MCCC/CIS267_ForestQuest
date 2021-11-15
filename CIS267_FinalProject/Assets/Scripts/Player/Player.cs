@@ -44,25 +44,6 @@ public class Player : MonoBehaviour
         animator.SetFloat("Horizontal", moveDelta.x);
     }
 
-
-    IEnumerator SteppingSounds()
-    {
-        done = false;
-        if (!FindObjectOfType<AudioManager>().isPlaying("StepRight") && waited)
-        {
-            FindObjectOfType<AudioManager>().PlayOneShot("StepRight");
-        }
-
-        yield return new WaitForSeconds(5f);
-
-        if (!FindObjectOfType<AudioManager>().isPlaying("StepLeft"))
-        {
-            FindObjectOfType<AudioManager>().PlayOneShot("StepLeft");
-        }
-
-        done = true;
-    }
-
     void Move()
     {
         float x = Input.GetAxisRaw("Horizontal");
@@ -81,17 +62,6 @@ public class Player : MonoBehaviour
         {
             animator.SetFloat("lastMoveHorizontal", moveDelta.x);
             animator.SetFloat("lastMoveVertical", moveDelta.y);
-
-
-            if (!FindObjectOfType<AudioManager>().isPlaying("StepRight") && !FindObjectOfType<AudioManager>().isPlaying("StepLeft"))
-            {
-                FindObjectOfType<AudioManager>().PlayOneShot("StepLeft");
-            }
-
-            else if (!FindObjectOfType<AudioManager>().isPlaying("StepRight"))
-            {
-                FindObjectOfType<AudioManager>().PlayOneShot("StepRight");
-            }
         }
     }
 
