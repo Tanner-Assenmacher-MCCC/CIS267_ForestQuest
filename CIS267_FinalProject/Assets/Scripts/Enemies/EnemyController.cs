@@ -32,6 +32,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        RaycastHit2D circle = Physics2D.CircleCast(transform.parent.position, 5f, Vector2.down);
         if (Vector3.Distance(target.position, transform.position) <= maxRange)
         {
             if (Vector3.Distance(target.position, transform.position) <= minRange)
@@ -43,7 +44,14 @@ public class EnemyController : MonoBehaviour
             {
                 attackedOnce = false;
                 hasFollowed = true;
-                FollowPlayer();
+                if (circle.collider == gameObject.GetComponent<BoxCollider2D>())
+                {
+                    GoHome();
+                }
+                else
+                {
+                    FollowPlayer();
+                }
             }
         }
 
