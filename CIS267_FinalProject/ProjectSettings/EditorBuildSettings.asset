@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/ForestLevel.unity
+    guid: 900afe5ab6f2d63459cef243d6f256b6
+  - enabled: 1
+    path: Assets/Scenes/MountainLevel.unity
+    guid: 086cdcffd16059a47870a013b60c4439
   m_configObjects: {}

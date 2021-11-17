@@ -7,8 +7,7 @@ public class PlayerAttack : MonoBehaviour
     Rigidbody2D rb2d;
     public Animator animator;
     public AudioSource slash;
-    private bool attacking = false;
-    public bool currentlyAttacking = false;
+    public bool attacking = false;
     private float attackTime;
     private float animationLength;
     public float attackCooldown;
@@ -24,7 +23,7 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !attacking && !inventory.activeInHierarchy)
+        if (Input.GetMouseButtonDown(0) && !attacking && !inventory.activeInHierarchy && FindObjectOfType<WeaponHolster>().hasWeapon)
         {
             animator.SetTrigger("Attacking");
             animator.SetBool("Attack", false);

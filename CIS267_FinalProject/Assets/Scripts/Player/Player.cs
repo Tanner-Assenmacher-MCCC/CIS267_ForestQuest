@@ -6,13 +6,11 @@ using UnityEngine.EventSystems;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Player : MonoBehaviour
 {
+    public GameObject inventory;
     Rigidbody2D rb2d;
     public Animator animator;
     Vector3 moveDelta;
-    RaycastHit2D hit;
     public int speed;
-    bool waited = true;
-    bool done = false;
     void Start()
     {
         rb2d = gameObject.GetComponent<Rigidbody2D>();
@@ -28,7 +26,7 @@ public class Player : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (!gameObject.GetComponent<PlayerAttack>().currentlyAttacking)
+        if (!gameObject.GetComponent<PlayerAttack>().attacking && !inventory.activeInHierarchy)
         {
             // // Press shift to Sprint
             // if (Input.GetKey("left shift"))
@@ -38,10 +36,17 @@ public class Player : MonoBehaviour
             // }
 
             Move();
+
+            animator.SetFloat("Vertical", moveDelta.y);
+            animator.SetFloat("Horizontal", moveDelta.x);
         }
 
-        animator.SetFloat("Vertical", moveDelta.y);
-        animator.SetFloat("Horizontal", moveDelta.x);
+        else
+        {
+            rb2d.velocity = new Vector2(0f, 0f);
+            animator.SetFloat("Vertical", 0f);
+            animator.SetFloat("Horizontal", 0f);
+        }
     }
 
     void Move()
@@ -75,10 +80,6 @@ public class Player : MonoBehaviour
             weaponHolster.scriptableWeapon = item as ScriptableWeapon;
             weaponHolster.GetComponent<SpriteRenderer>().sprite = item.sprite;
             weaponHolster.hasWeapon = true;
-        }
-        else
-        {
-
         }
     }
 }
