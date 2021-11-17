@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ItemSwitch : MonoBehaviour
 {
@@ -9,13 +10,8 @@ public class ItemSwitch : MonoBehaviour
     public Inventory inventory;
     public InventoryUI inventoryUI;
 
-    //private Item hotbarItem;
-    //private Item inventoryItem;
     private int hotbarIndex = -1;
     private int inventoryIndex = -1;
-
-    // 1
-    // 0
 
     // Start is called before the first frame update
     void Start()
@@ -44,19 +40,38 @@ public class ItemSwitch : MonoBehaviour
                 SwitchItems();
             }
         }
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (EventSystem.current.IsPointerOverGameObject())
+            {//mouse was clicked over inventory or hotbar element
+                Debug.Log("Clicked on the UI");
+            }
+            else
+            {//mouse was not clicked on any buttons, therefore clear selections
+                ResetItems();
+                Debug.Log("Reset items from out mouse click");
+            }
+        }
+    }
+
+    public int getInventoryIndex()
+    {
+        return inventoryIndex;
+    }
+
+    public int getHotbarIndex()
+    {
+        return hotbarIndex;
     }
 
     public void ResetItems()
     {
-        //hotbarItem = null;
-        //inventoryItem = null;
         hotbarIndex = -1;
         inventoryIndex = -1;
     }
 
     public void ResetHotbarItem()
     {
-        //hotbarItem = null;
         hotbarIndex = -1;
     }
 
@@ -64,10 +79,7 @@ public class ItemSwitch : MonoBehaviour
     {
         if (Hotbar.instance.InBounds(i))
         {
-            //hotbarItem = Hotbar.instance.items[i];
             hotbarIndex = i;
-            
-            //Debug.Log("hotbar item: " + hotbarItem + "  inventory item: " + inventoryItem);
         }
 
     }
@@ -76,18 +88,16 @@ public class ItemSwitch : MonoBehaviour
     {
         if (Inventory.instance.InBounds(i))
         {
-            //inventoryItem = Inventory.instance.items[i];
             inventoryIndex = i;
-          
-            //Debug.Log("hotbar item: " + hotbarItem + "  inventory item: " + inventoryItem);
         }
     }
 
      public void SwitchItems()
     {
+        Debug.Log(inventoryIndex);
         if (Hotbar.instance.InBounds(hotbarIndex) && Inventory.instance.InBounds(inventoryIndex))
         {
-            //Debug.Log("passed");
+            Debug.Log("passed");
             Item tempHotBarItem = Hotbar.instance.items[hotbarIndex];
             Item tempInventoryItem = Inventory.instance.items[inventoryIndex];
             //copy inventory item and hotbar item

@@ -13,8 +13,6 @@ public class Hotbar : MonoBehaviour
 
     public delegate void OnChange();
     public OnChange onChangeCallback;
-    // If we need a function called after an item is added or removed you can add it like this:
-    // Inventory.instance.onChangeCallback += function;
 
     private void Awake()
     {
@@ -127,26 +125,6 @@ public class Hotbar : MonoBehaviour
         GameObject instance = Instantiate(this.items[i].prefab, player.transform.position + offset, transform.rotation);
         instance.GetComponent<Rigidbody2D>().AddForce(push);
 
-        //if (horizontal == 0f && vertical == 1f) // up
-        //{
-        //    instance = Instantiate(this.items[i].prefab, player.transform.position + new Vector3(0f, itemDropOffset, 0f), transform.rotation);
-        //    instance.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, force));
-        //}
-        //else if (horizontal == 1f && vertical == 0f) // right
-        //{
-        //    instance = Instantiate(this.items[i].prefab, player.transform.position + new Vector3(itemDropOffset, 0f, 0f), transform.rotation);
-        //    instance.GetComponent<Rigidbody2D>().AddForce(new Vector2(force, 0f));
-        //}
-        //else if (horizontal == 0f && vertical == -1f) // down
-        //{
-        //    instance = Instantiate(this.items[i].prefab, player.transform.position + new Vector3(0f, -itemDropOffset, 0f), transform.rotation);
-        //    instance.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, -force));
-        //}
-        //else // left
-        //{
-        //    instance = Instantiate(this.items[i].prefab, player.transform.position + new Vector3(-itemDropOffset, 0f, 0f), transform.rotation);
-        //    instance.GetComponent<Rigidbody2D>().AddForce(new Vector2(-force, 0f));
-        //}
         instance.GetComponent<Rigidbody2D>().drag = drag;
         this.RemoveIndex(i);
         FindObjectOfType<WeaponHolster>().ResetWeapon();

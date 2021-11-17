@@ -29,11 +29,31 @@ public class InventoryUI : MonoBehaviour
 
     public void OnItemClick(int i)
     {
-        Debug.Log("asdasd");
+        Debug.Log("inventory button clicked");
+        //if (Inventory.instance.InBounds(i) && itemSwitch.getHotbarIndex() != -1)
+        //{
+        //    itemSwitch.setInventoryItem(i);
+        //    itemSwitch.SwitchItems();
+        //}
+        //else
+        //{
+        //    itemSwitch.ResetItems();
+        //    itemSwitch.setInventoryItem(i);
+        //}
         if (Inventory.instance.InBounds(i))
         {
-            itemSwitch.ResetItems();
-            itemSwitch.setInventoryItem(i);
+            if (itemSwitch.getHotbarIndex() != -1)
+            {//click on inventory item and hotbar item selected, then switch both
+                Debug.Log("inventory item clicked");
+                itemSwitch.setInventoryItem(i);
+                itemSwitch.SwitchItems();
+                //itemSwitch.ResetItems();
+            }
+            else
+            {//there is no hotbar item selected, so only set inventory item to switch
+                itemSwitch.setInventoryItem(i);
+            }
+
         }
     }
 

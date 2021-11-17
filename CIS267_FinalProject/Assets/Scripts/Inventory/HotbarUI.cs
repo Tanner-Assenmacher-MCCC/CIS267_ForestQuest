@@ -23,7 +23,18 @@ public class HotbarUI : MonoBehaviour
     {
         if (Hotbar.instance.InBounds(i))
         {
-            itemSwitch.setHotBarItem(i);
+            if(itemSwitch.getInventoryIndex() != -1)
+            {//click on hotbar item and inventory item selected, then switch both
+                Debug.Log("hotbar item clicked");
+                itemSwitch.setHotBarItem(i);
+                itemSwitch.SwitchItems();
+                //itemSwitch.ResetItems();
+            }
+            else
+            {//there is no inventory item selected, so only set hotbar item to switch
+                itemSwitch.setHotBarItem(i);
+            }
+            
         }
     }
 
