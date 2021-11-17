@@ -107485,7 +107485,7 @@ Tilemap:
       - {fileID: -1655761581076612383, guid: 989acf00c3791754fb33c7e4c31f2d75, type: 3}
       - {fileID: -5657005582927067749, guid: 989acf00c3791754fb33c7e4c31f2d75, type: 3}
       - {fileID: 2896179404482671487, guid: 989acf00c3791754fb33c7e4c31f2d75, type: 3}
-      m_AnimationSpeed: 8.72054
+      m_AnimationSpeed: 8.896732
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
