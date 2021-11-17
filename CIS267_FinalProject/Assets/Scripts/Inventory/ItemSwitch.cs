@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class ItemSwitch : MonoBehaviour
 {
-    public Hotbar hb;
-    public HotbarUI hbUI;
+    public Hotbar hotbar;
+    public HotbarUI hotbarUI;
     public Inventory inventory;
     public InventoryUI inventoryUI;
 
-    public Item hotbarItem;
-    public Item inventoryItem;
-    public int hotbarIndex;
-    public int inventoryIndex;
+    //private Item hotbarItem;
+    //private Item inventoryItem;
+    private int hotbarIndex = -1;
+    private int inventoryIndex = -1;
+
+    // 1
+    // 0
 
     // Start is called before the first frame update
     void Start()
@@ -23,39 +26,77 @@ public class ItemSwitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (GameObject.Find("Inventory"))
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                setHotBarItem(0);
+                SwitchItems();
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                setHotBarItem(1);
+                SwitchItems();
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                setHotBarItem(2);
+                SwitchItems();
+            }
+        }
+    }
+
+    public void ResetItems()
+    {
+        //hotbarItem = null;
+        //inventoryItem = null;
+        hotbarIndex = -1;
+        inventoryIndex = -1;
+    }
+
+    public void ResetHotbarItem()
+    {
+        //hotbarItem = null;
+        hotbarIndex = -1;
     }
 
     public void setHotBarItem(int i)
     {
-        hotbarItem = Hotbar.instance.items[i];
-        hotbarIndex = i;
-        SwitchItems();
-        Debug.Log("hotbar item: " + hotbarItem + "  inventory item: " + inventoryItem);
+        if (Hotbar.instance.InBounds(i))
+        {
+            //hotbarItem = Hotbar.instance.items[i];
+            hotbarIndex = i;
+            
+            //Debug.Log("hotbar item: " + hotbarItem + "  inventory item: " + inventoryItem);
+        }
+
     }
 
     public void setInventoryItem(int i)
     {
-        inventoryItem = Inventory.instance.items[i];
-        inventoryIndex = i;
-        SwitchItems();
-        Debug.Log("hotbar item: " + hotbarItem + "  inventory item: " + inventoryItem);
+        if (Inventory.instance.InBounds(i))
+        {
+            //inventoryItem = Inventory.instance.items[i];
+            inventoryIndex = i;
+          
+            //Debug.Log("hotbar item: " + hotbarItem + "  inventory item: " + inventoryItem);
+        }
     }
 
      public void SwitchItems()
     {
-        if (hotbarItem != null && inventoryItem != null)
+        if (Hotbar.instance.InBounds(hotbarIndex) && Inventory.instance.InBounds(inventoryIndex))
         {
-            Item tempHotbarItem = Hotbar.instance.items[hotbarIndex];
+            //Debug.Log("passed");
+            Item tempHotBarItem = Hotbar.instance.items[hotbarIndex];
             Item tempInventoryItem = Inventory.instance.items[inventoryIndex];
             //copy inventory item and hotbar item
-            Inventory.instance.items[inventoryIndex] = tempHotbarItem;
+            Inventory.instance.items[inventoryIndex] = tempHotBarItem;
             Hotbar.instance.items[hotbarIndex] = tempInventoryItem;
+
             // replace inventory and hotbar item in lists
             inventoryUI.updateUI();
-            hbUI.updateUI();
-            inventoryItem = null;
-            hotbarItem = null;
+            hotbarUI.updateUI();
         }
     }
 }

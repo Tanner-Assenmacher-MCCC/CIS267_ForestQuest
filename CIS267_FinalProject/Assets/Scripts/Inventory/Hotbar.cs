@@ -23,6 +23,7 @@ public class Hotbar : MonoBehaviour
 
     private void Update()
     {
+        if (GameObject.Find("Inventory")) return;
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             Player player = FindObjectOfType<Player>();

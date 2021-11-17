@@ -24,22 +24,16 @@ public class InventoryUI : MonoBehaviour
         {
             inventoryUI.SetActive(!inventoryUI.activeInHierarchy);
             hb.ResetButtons();
-            itemSwitch.inventoryItem = null;
-            itemSwitch.hotbarItem = null;
         }
     }
 
     public void OnItemClick(int i)
     {
-        if (i <= Inventory.instance.items.Count)
+        Debug.Log("asdasd");
+        if (Inventory.instance.InBounds(i))
         {
-            itemSwitch.inventoryIndex = i;
+            itemSwitch.ResetItems();
             itemSwitch.setInventoryItem(i);
-        }
-        else
-        {
-            itemSwitch.inventoryItem = null;
-            itemSwitch.hotbarItem = null;
         }
     }
 

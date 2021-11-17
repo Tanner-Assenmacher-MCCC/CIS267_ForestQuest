@@ -24,6 +24,11 @@ public class Inventory : MonoBehaviour
         return items.Count >= items.Capacity;
     }
 
+    public bool InBounds(int i)
+    {
+        return i >= 0 && i < items.Count;
+    }
+
     public bool Add(Item item)
     {
         if (IsFull()) return false;

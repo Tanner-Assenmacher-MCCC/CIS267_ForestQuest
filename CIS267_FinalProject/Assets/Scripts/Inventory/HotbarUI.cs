@@ -7,6 +7,7 @@ public class HotbarUI : MonoBehaviour
 {
     public Transform slotsContainer;
     public InventorySlot[] slots;
+    public ItemSwitch itemSwitch;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,9 +19,12 @@ public class HotbarUI : MonoBehaviour
     {
     }
 
-    public void OnItemClick()
+    public void OnItemClick(int i)
     {
-        Debug.Log(EventSystem.current.currentSelectedGameObject.name);
+        if (Hotbar.instance.InBounds(i))
+        {
+            itemSwitch.setHotBarItem(i);
+        }
     }
 
     public void updateUI()
