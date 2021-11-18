@@ -30,31 +30,38 @@ public class InventoryUI : MonoBehaviour
     public void OnItemClick(int i)
     {
         Debug.Log("inventory button clicked");
-        //if (Inventory.instance.InBounds(i) && itemSwitch.getHotbarIndex() != -1)
-        //{
-        //    itemSwitch.setInventoryItem(i);
-        //    itemSwitch.SwitchItems();
-        //}
-        //else
-        //{
-        //    itemSwitch.ResetItems();
-        //    itemSwitch.setInventoryItem(i);
-        //}
         if (Inventory.instance.InBounds(i))
         {
-            if (itemSwitch.getHotbarIndex() != -1)
-            {//click on inventory item and hotbar item selected, then switch both
-                Debug.Log("inventory item clicked");
-                itemSwitch.setInventoryItem(i);
-                itemSwitch.SwitchItems();
-                //itemSwitch.ResetItems();
-            }
-            else
-            {//there is no hotbar item selected, so only set inventory item to switch
-                itemSwitch.setInventoryItem(i);
-            }
-
+            itemSwitch.setInventoryItem(i);
+            //=============================================================================================================================
+            //itemSwitch.SwitchItems();
+            //=============================================================================================================================
         }
+        else
+        {
+            itemSwitch.ResetItems();
+            //=============================================================================================================================
+            //itemSwitch.setInventoryItem(i);
+            //=============================================================================================================================
+        }
+        //=============================================================================================================================
+        //                                INVENTORY CODE TO CLICK TO SWITCH ITEMS IN HOTBAR
+        //=============================================================================================================================
+        //if (Inventory.instance.InBounds(i))
+        //{
+        //    if (itemSwitch.getHotbarIndex() != -1)
+        //    {//click on inventory item and hotbar item selected, then switch both
+        //        Debug.Log("inventory item clicked");
+        //        itemSwitch.setInventoryItem(i);
+        //        itemSwitch.SwitchItems();
+        //        //itemSwitch.ResetItems();
+        //    }
+        //    else
+        //    {//there is no hotbar item selected, so only set inventory item to switch
+        //        itemSwitch.setInventoryItem(i);
+        //    }
+        //}
+        //=============================================================================================================================
     }
 
     public void updateUI()

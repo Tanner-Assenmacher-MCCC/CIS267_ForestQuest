@@ -11,8 +11,6 @@ public class Inventory : MonoBehaviour
 
     public delegate void OnChange();
     public OnChange onChangeCallback;
-    // If we need a function called after an item is added or removed you can add it like this:
-    // Inventory.instance.onChangeCallback += function;
     
     private void Awake()
     {
