@@ -13,51 +13,65 @@ public class Hotbar : MonoBehaviour
 
     public delegate void OnChange();
     public OnChange onChangeCallback;
+    public ItemSwitch itemSwitch;
+    public int i;
 
     private void Awake()
     {
         instance = this;
     }
 
+    void Start()
+    {
+        itemSwitch = GameObject.Find("GameManager").GetComponent<ItemSwitch>();
+    }
+
     private void Update()
     {
         if (GameObject.Find("Inventory")) return;
+        WeaponHolster weaponHolster = FindObjectOfType<WeaponHolster>();
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             Player player = FindObjectOfType<Player>();
-            int i = 0;
+            i = 0;
             if (InBounds(i))
             {
+                player.itemInHolster = 0;
                 player.UseItem(this.items[i]);
-                ResetButtons();
+                weaponHolster.SelectedItemIcon.transform.position = new Vector3(-1.05f, -3.75f, 0f);
+                ResetButtons(true);
                 HighlightButton(i);
             }
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             Player player = FindObjectOfType<Player>();
-            int i = 1;
+            i = 1;
             if (InBounds(i))
             {
+                player.itemInHolster = 1;
                 player.UseItem(this.items[i]);
-                ResetButtons();
+                weaponHolster.SelectedItemIcon.transform.position = new Vector3(0f, -3.75f, 0f);
+                ResetButtons(true);
                 HighlightButton(i);
             }
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             Player player = FindObjectOfType<Player>();
-            int i = 2;
+            i = 2;
             if (InBounds(i))
             {
+                player.itemInHolster = 2;
                 player.UseItem(this.items[i]);
-                ResetButtons();
+                weaponHolster.SelectedItemIcon.transform.position = new Vector3(1.075f, -3.75f, 0f);
+                ResetButtons(true);
                 HighlightButton(i);
             }
         }
     }
 
-    public void ResetButtons()
+    public void ResetButtons(bool setActive)
     {
         foreach (Button button in slotButtons)
         {
@@ -65,6 +79,9 @@ public class Hotbar : MonoBehaviour
             colors.normalColor = new Color32(255, 255, 255, 0);
             colors.highlightedColor = new Color32(255, 255, 255, 0);
             button.colors = colors;
+            itemSwitch.setHotbarNumbers(false);
+            WeaponHolster weaponHolster = FindObjectOfType<WeaponHolster>();
+            weaponHolster.SelectedItemIcon.SetActive(setActive);
         }
     }
 
@@ -74,11 +91,13 @@ public class Hotbar : MonoBehaviour
         colors.normalColor = new Color32(255, 255, 255, 40);
         colors.highlightedColor = new Color32(255, 255, 255, 40);
         slotButtons[i].colors = colors;
+        WeaponHolster weaponHolster = FindObjectOfType<WeaponHolster>();
+        weaponHolster.SelectedItemIcon.SetActive(true);
     }
 
     public bool InBounds(int i)
     {
-        return i >= 0 && i < items.Count;
+        return i >= 0 && i < items.Capacity;//FIX THIS
     }
 
     public bool IsFull()
@@ -128,6 +147,6 @@ public class Hotbar : MonoBehaviour
         instance.GetComponent<Rigidbody2D>().drag = drag;
         this.RemoveIndex(i);
         FindObjectOfType<WeaponHolster>().ResetWeapon();
-        ResetButtons();
+        ResetButtons(false);
     }
 }

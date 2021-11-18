@@ -7,8 +7,14 @@ using UnityEngine.EventSystems;
 public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public GameObject slotObject;
+    public Button slotButton;
     public Item item = null;
     private bool isHovered = false;
+
+    void Start()
+    {
+        slotButton = this.GetComponentInChildren<Button>();
+    }
     private void Update()
     {
         if (isHovered && Input.GetKeyDown(KeyCode.Mouse1))
@@ -26,6 +32,11 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
                 }
             }
         }
+    }
+
+    public Button GetButton()
+    {
+        return slotButton;
     }
 
     public void addItem(Item newItem)

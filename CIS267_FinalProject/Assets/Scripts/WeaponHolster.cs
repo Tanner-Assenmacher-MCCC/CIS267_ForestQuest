@@ -6,6 +6,7 @@ public class WeaponHolster : MonoBehaviour
 {
     public ScriptableWeapon scriptableWeapon = null;
     public bool hasWeapon = false;
+    public GameObject SelectedItemIcon;
 
     // Start is called before the first frame update
     void Start()
@@ -14,12 +15,14 @@ public class WeaponHolster : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().sprite = scriptableWeapon.sprite;
             this.name = scriptableWeapon.name;
+            SelectedItemIcon.SetActive(true);
 
             Debug.Log("Weapon Equipped: " + scriptableWeapon.name);
             Debug.Log("Damage: " + scriptableWeapon.damage);
         }
         else
         {
+            SelectedItemIcon.SetActive(false);
             Debug.Log("No Scriptable Weapon");
         }
     }
@@ -29,5 +32,6 @@ public class WeaponHolster : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = null;
         this.scriptableWeapon = null;
         this.hasWeapon = false;
+        SelectedItemIcon.SetActive(false);
     }
 }

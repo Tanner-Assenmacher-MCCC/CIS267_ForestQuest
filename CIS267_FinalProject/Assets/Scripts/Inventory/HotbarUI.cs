@@ -17,10 +17,14 @@ public class HotbarUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
     }
 
     public void OnItemClick(int i)
     {
+        //keep inventory button selected
+        //itemSwitch.SetButtonToSelectedColor();
+
         //=============================================================================================================================
         //                                INVENTORY CODE TO CLICK TO SWITCH ITEMS IN HOTBAR
         //=============================================================================================================================
@@ -39,6 +43,11 @@ public class HotbarUI : MonoBehaviour
         //    }
         //}
         //=============================================================================================================================
+    }
+
+    public InventorySlot[] getSlots()
+    {
+        return slots;
     }
 
     public void updateUI()

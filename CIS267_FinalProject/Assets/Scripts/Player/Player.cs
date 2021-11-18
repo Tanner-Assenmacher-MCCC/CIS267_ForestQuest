@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 public class Player : MonoBehaviour
 {
     public GameObject inventory;
+    public int itemInHolster;
     Rigidbody2D rb2d;
     public Animator animator;
     Vector3 moveDelta;
@@ -76,10 +77,13 @@ public class Player : MonoBehaviour
         if (item.GetType() == typeof(ScriptableWeapon))
         {
             WeaponHolster weaponHolster = FindObjectOfType<WeaponHolster>();
-            Debug.Log(weaponHolster);
             weaponHolster.scriptableWeapon = item as ScriptableWeapon;
             weaponHolster.GetComponent<SpriteRenderer>().sprite = item.sprite;
             weaponHolster.hasWeapon = true;
+            if (!GameObject.Find("Inventory"))
+            {
+                weaponHolster.SelectedItemIcon.SetActive(true);
+            }
         }
     }
 }
