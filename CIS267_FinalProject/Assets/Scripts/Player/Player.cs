@@ -32,11 +32,13 @@ public class Player : MonoBehaviour
             // Press shift to Sprint
             if (Input.GetKey("left shift"))
             {
-                rb2d.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed * 1.5f * Time.fixedDeltaTime;
-                animator.speed = 1.5f;
+                Run();
             }
 
-            Move();
+            else
+            {
+                Move();
+            }
 
             animator.SetFloat("Vertical", moveDelta.y);
             animator.SetFloat("Horizontal", moveDelta.x);
@@ -58,6 +60,27 @@ public class Player : MonoBehaviour
         // Move player at normal speed
         rb2d.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed * Time.fixedDeltaTime;
         animator.speed = 1f;
+
+        // Reset MoveDelta
+        moveDelta = new Vector3(x, y, 0);
+
+        // /* ANIMATION STUFF
+
+        if (Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1 || Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1)
+        {
+            animator.SetFloat("lastMoveHorizontal", moveDelta.x);
+            animator.SetFloat("lastMoveVertical", moveDelta.y);
+        }
+    }
+
+    void Run()
+    {
+        float x = Input.GetAxisRaw("Horizontal");
+        float y = Input.GetAxisRaw("Vertical");
+
+        // Move player at normal speed
+        rb2d.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed * Time.fixedDeltaTime * 1.75f;
+        animator.speed = 1.75f;
 
         // Reset MoveDelta
         moveDelta = new Vector3(x, y, 0);
