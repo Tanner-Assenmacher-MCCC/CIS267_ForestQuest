@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
             // Press shift to Sprint
             if (Input.GetKey("left shift"))
             {
-                rb2d.velocity = new Vector2(x, y) * speed * 1.5f * Time.fixedDeltaTime;
+                rb2d.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed * 1.5f * Time.fixedDeltaTime;
                 animator.speed = 1.5f;
             }
 
