@@ -29,12 +29,12 @@ public class Player : MonoBehaviour
     {
         if (!gameObject.GetComponent<PlayerAttack>().attacking && !inventory.activeInHierarchy)
         {
-            // // Press shift to Sprint
-            // if (Input.GetKey("left shift"))
-            // {
-            //     rb2d.velocity = new Vector2(x, y) * speed * 1.5f * Time.fixedDeltaTime;
-            //     animator.speed = 1.5f;
-            // }
+            // Press shift to Sprint
+            if (Input.GetKey("left shift"))
+            {
+                rb2d.velocity = new Vector2(x, y) * speed * 1.5f * Time.fixedDeltaTime;
+                animator.speed = 1.5f;
+            }
 
             Move();
 
