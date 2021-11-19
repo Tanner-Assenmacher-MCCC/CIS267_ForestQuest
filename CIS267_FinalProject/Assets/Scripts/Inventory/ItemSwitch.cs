@@ -35,17 +35,39 @@ public class ItemSwitch : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 setHotBarItem(0);
-                SwitchItems();
+                if (hotbar.InBounds(0))
+                {
+                    SwitchItems();
+                }
+                else if (!hotbar.InBounds(0) && !hotbar.IsFull())
+                {
+                    MoveItem();
+                }
+                
             }
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
                 setHotBarItem(1);
-                SwitchItems();
+                if (hotbar.InBounds(1))
+                {
+                    SwitchItems();
+                }
+                else if (!hotbar.InBounds(1) && !hotbar.IsFull())
+                {
+                    MoveItem();
+                }
             }
             if (Input.GetKeyDown(KeyCode.Alpha3))
             {
                 setHotBarItem(2);
-                SwitchItems();
+                if (hotbar.InBounds(2))
+                {
+                    SwitchItems();
+                }
+                else if (!hotbar.InBounds(2) && !hotbar.IsFull())
+                {
+                    MoveItem();
+                }
             }
         }
         if (Input.GetMouseButtonDown(0))
@@ -143,8 +165,26 @@ public class ItemSwitch : MonoBehaviour
             //change item in holster if you swapped that item
             if (hotbarIndex == p.itemInHolster)
             {
-                p.UseItem(hotbar.items[hotbar.i]);
+                p.UseItem(hotbar.items[hotbar.iw]);
             }
         }
     }
+
+    public void MoveItem()
+    {
+        
+        Hotbar.instance.items.Add(Inventory.instance.items[inventoryIndex]);
+        Inventory.instance.RemoveIndex(inventoryIndex);
+
+        // replace inventory and hotbar item in lists
+        inventoryUI.updateUI();
+        hotbarUI.updateUI();
+
+        //change item in holster if you swapped that item
+        if (hotbarIndex == p.itemInHolster)
+        {
+            p.UseItem(hotbar.items[hotbar.iw]);
+        }
+    }
+    
 }

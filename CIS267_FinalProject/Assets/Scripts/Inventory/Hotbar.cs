@@ -14,7 +14,8 @@ public class Hotbar : MonoBehaviour
     public delegate void OnChange();
     public OnChange onChangeCallback;
     public ItemSwitch itemSwitch;
-    public int i;
+    public int iw;
+    public WeaponHolster weaponHolster;
 
     private void Awake()
     {
@@ -23,6 +24,7 @@ public class Hotbar : MonoBehaviour
 
     void Start()
     {
+        weaponHolster = FindObjectOfType<WeaponHolster>();
         itemSwitch = GameObject.Find("GameManager").GetComponent<ItemSwitch>();
     }
 
@@ -33,40 +35,40 @@ public class Hotbar : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             Player player = FindObjectOfType<Player>();
-            i = 0;
-            if (InBounds(i))
+            iw = 0;
+            if (InBounds(iw))
             {
                 player.itemInHolster = 0;
-                player.UseItem(this.items[i]);
+                player.UseItem(this.items[iw]);
                 weaponHolster.SelectedItemIcon.transform.position = new Vector3(-1.05f, -3.75f, 0f);
                 ResetButtons(true);
-                HighlightButton(i);
+                HighlightButton(iw);
             }
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             Player player = FindObjectOfType<Player>();
-            i = 1;
-            if (InBounds(i))
+            iw = 1;
+            if (InBounds(iw))
             {
                 player.itemInHolster = 1;
-                player.UseItem(this.items[i]);
+                player.UseItem(this.items[iw]);
                 weaponHolster.SelectedItemIcon.transform.position = new Vector3(0f, -3.75f, 0f);
                 ResetButtons(true);
-                HighlightButton(i);
+                HighlightButton(iw);
             }
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             Player player = FindObjectOfType<Player>();
-            i = 2;
-            if (InBounds(i))
+            iw = 2;
+            if (InBounds(iw))
             {
                 player.itemInHolster = 2;
-                player.UseItem(this.items[i]);
+                player.UseItem(this.items[iw]);
                 weaponHolster.SelectedItemIcon.transform.position = new Vector3(1.075f, -3.75f, 0f);
                 ResetButtons(true);
-                HighlightButton(i);
+                HighlightButton(iw);
             }
         }
     }
@@ -78,6 +80,7 @@ public class Hotbar : MonoBehaviour
             ColorBlock colors = button.colors;
             colors.normalColor = new Color32(255, 255, 255, 0);
             colors.highlightedColor = new Color32(255, 255, 255, 0);
+            colors.selectedColor = new Color32(255, 255, 255, 0);
             button.colors = colors;
             itemSwitch.setHotbarNumbers(false);
             WeaponHolster weaponHolster = FindObjectOfType<WeaponHolster>();
@@ -94,10 +97,21 @@ public class Hotbar : MonoBehaviour
         WeaponHolster weaponHolster = FindObjectOfType<WeaponHolster>();
         weaponHolster.SelectedItemIcon.SetActive(true);
     }
+    
+    public void HighlightClickButton(int i)
+    {
+        ColorBlock colors = slotButtons[i].colors;
+        colors.normalColor = new Color32(255, 255, 255, 40);
+        colors.highlightedColor = new Color32(255, 255, 255, 40);
+        colors.selectedColor = new Color32(255, 255, 255, 40);
+        slotButtons[i].colors = colors;
+        WeaponHolster weaponHolster = FindObjectOfType<WeaponHolster>();
+        weaponHolster.SelectedItemIcon.SetActive(true);
+    }
 
     public bool InBounds(int i)
     {
-        return i >= 0 && i < items.Capacity;//FIX THIS
+        return i >= 0 && i < items.Count;
     }
 
     public bool IsFull()
@@ -130,6 +144,7 @@ public class Hotbar : MonoBehaviour
 
     public void DropItem(int i)
     {
+        Item item = this.items[i];
         float drag = 4.5f;
         float force = 100f;
         float itemDropOffset = 1.5f;
@@ -145,8 +160,14 @@ public class Hotbar : MonoBehaviour
         instance.GetComponent<Rigidbody2D>().AddForce(push);
 
         instance.GetComponent<Rigidbody2D>().drag = drag;
+        if ((weaponHolster.scriptableWeapon != null ? weaponHolster.scriptableWeapon.name == item.name : false))
+        {//item.GetType() != typeof(ScriptableWeapon) || 
+            FindObjectOfType<WeaponHolster>().ResetWeapon();
+        }
         this.RemoveIndex(i);
-        FindObjectOfType<WeaponHolster>().ResetWeapon();
+        itemSwitch.ResetHotbarItem();
         ResetButtons(false);
+        HighlightButton(iw);
+
     }
 }

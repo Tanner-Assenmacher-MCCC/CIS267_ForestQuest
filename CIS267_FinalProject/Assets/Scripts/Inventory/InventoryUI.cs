@@ -31,10 +31,10 @@ public class InventoryUI : MonoBehaviour
         {
             inventoryUI.SetActive(!inventoryUI.activeInHierarchy);
             hb.ResetButtons(!inventoryUI.activeInHierarchy);
-            //hb.HighlightButton(p.itemInHolster);
+            hb.HighlightButton(p.itemInHolster);
             itemSwitch.ResetItems();
             ResetButtonColor();
-            if (!inventoryUI.activeInHierarchy && hb.InBounds(hb.i) && wh.hasWeapon)
+            if (!inventoryUI.activeInHierarchy && hb.InBounds(hb.iw) && wh.hasWeapon)
             {
                 wh.SelectedItemIcon.SetActive(true);
                 hb.HighlightButton(p.itemInHolster);

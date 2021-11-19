@@ -7,10 +7,12 @@ public class ItemCollision : MonoBehaviour
     bool firstItem = true;
     public WeaponHolster wp;
     public Player p;
+    public Hotbar hb;
 
     private void Start()
     {
         wp = FindObjectOfType<WeaponHolster>();
+        hb = FindObjectOfType<Hotbar>();
         p = FindObjectOfType<Player>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -32,7 +34,10 @@ public class ItemCollision : MonoBehaviour
                 if (firstItem)
                 {
                     Hotbar.instance.HighlightButton(0);
+                    hb.iw = 0;
                     p.UseItem(item);
+                    p.itemInHolster = 0;
+                    wp.SelectedItemIcon.transform.position = new Vector3(-1.05f, -3.75f, 0f);
                 }
             }
             else if (Inventory.instance.Add(item))
