@@ -33,6 +33,7 @@ Transform:
   - {fileID: 8543372338398704979}
   - {fileID: 5488502024633772112}
   - {fileID: 7308926147721542835}
+  - {fileID: 7849469525043626163}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -81,6 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29801d8279cf7b842b60a14caa486af5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openingDirection: 4
 --- !u!61 &2201091572196949750
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -173,6 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29801d8279cf7b842b60a14caa486af5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openingDirection: 2
 --- !u!61 &1115213009874540842
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -265,6 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29801d8279cf7b842b60a14caa486af5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openingDirection: 1
 --- !u!61 &7168188232308655867
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -357,6 +361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29801d8279cf7b842b60a14caa486af5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openingDirection: 3
 --- !u!61 &1667472483706875769
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1491,7 +1496,7 @@ GameObject:
   - component: {fileID: 4007123021698167609}
   m_Layer: 0
   m_Name: Tilemap_Ground
-  m_TagString: Untagged
+  m_TagString: Rooms
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5824,3 +5829,64 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!1 &8877887225491584855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7849469525043626163}
+  - component: {fileID: 4970235853767510988}
+  m_Layer: 0
+  m_Name: Room Templates
+  m_TagString: Rooms
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7849469525043626163
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8877887225491584855}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8629905874158448452}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4970235853767510988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8877887225491584855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7a64008ac05ad7428e6b12dc606464b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bottomRooms:
+  - {fileID: 3719778655042822710, guid: 9c177793163d2d843a99d3879acf78ab, type: 3}
+  - {fileID: 154356831608232131, guid: b61275b8a2924444c88154c9ca22830c, type: 3}
+  - {fileID: 138373590813944870, guid: 4882eb180a37a214791815039ce0d38b, type: 3}
+  topRooms:
+  - {fileID: 1470988243120176358, guid: 88e39e8431a503a4b96be7738b2e5953, type: 3}
+  - {fileID: 7362297950221825097, guid: 521a87697cda31a4f8867b9e01996c8c, type: 3}
+  - {fileID: 8667471557271652427, guid: 51e86d58b4a81914c80afba56f802e9b, type: 3}
+  - {fileID: 138373590813944870, guid: 4882eb180a37a214791815039ce0d38b, type: 3}
+  leftRooms:
+  - {fileID: 7668454445063385826, guid: 1f7250d112fa3384fb19db6d69ef8b2c, type: 3}
+  - {fileID: 154356831608232131, guid: b61275b8a2924444c88154c9ca22830c, type: 3}
+  - {fileID: 697637926396250841, guid: 34d0d834c1b899747a55d5d0b17d3e81, type: 3}
+  - {fileID: 1470988243120176358, guid: 88e39e8431a503a4b96be7738b2e5953, type: 3}
+  rightRooms:
+  - {fileID: 697637926396250841, guid: 34d0d834c1b899747a55d5d0b17d3e81, type: 3}
+  - {fileID: 5709715613455124956, guid: 22c318e1414dbc044ab545b218f4c832, type: 3}
+  - {fileID: 7362297950221825097, guid: 521a87697cda31a4f8867b9e01996c8c, type: 3}
