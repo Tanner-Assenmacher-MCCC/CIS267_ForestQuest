@@ -22,9 +22,9 @@ public class ConfinerController : MonoBehaviour
 
         colliderPoints = polygonCollider2D.points;
 
-        colliderPoints[0] = new Vector2(mapBounds.center.x - mapBounds.extents.x + Mathf.Abs(t.position.x) + 1, mapBounds.center.y + mapBounds.extents.y - 1 + Mathf.Abs(t.position.y));
+        colliderPoints[0] = new Vector2(mapBounds.center.x - mapBounds.extents.x + Mathf.Abs(t.position.x) + 1, mapBounds.center.y + mapBounds.extents.y - 1 - t.position.y);
         colliderPoints[1] = new Vector2(mapBounds.center.x + mapBounds.extents.x - 1 - t.position.x, mapBounds.center.y + mapBounds.extents.y - 1 - t.position.y);
-        colliderPoints[2] = new Vector2(mapBounds.center.x + mapBounds.extents.x - 1 + Mathf.Abs(t.position.x), mapBounds.center.y - mapBounds.extents.y + 1 + Mathf.Abs(t.position.y));
+        colliderPoints[2] = new Vector2(mapBounds.center.x + mapBounds.extents.x - 1 + Mathf.Abs(t.position.x), mapBounds.center.y - mapBounds.extents.y + 1 - t.position.y);
         colliderPoints[3] = new Vector2(mapBounds.center.x - mapBounds.extents.x + 1 - t.position.x, mapBounds.center.y - mapBounds.extents.y + 1 - t.position.y);
         polygonCollider2D.points = colliderPoints;
     }
