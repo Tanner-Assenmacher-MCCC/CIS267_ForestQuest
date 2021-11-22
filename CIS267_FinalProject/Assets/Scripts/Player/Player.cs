@@ -109,4 +109,14 @@ public class Player : MonoBehaviour
             }
         }
     }
+
+    public void SetHorziontalDirection(int x)
+    {
+        animator.SetFloat("lastMoveHorizontal", x);
+    }
+
+    public void SetVerticalDirection(int y)
+    {
+        animator.SetFloat("lastMoveVertical", y);
+    }
 }

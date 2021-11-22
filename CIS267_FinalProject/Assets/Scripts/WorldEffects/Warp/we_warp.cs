@@ -14,11 +14,14 @@ public class we_warp : MonoBehaviour
 
     private static float exitAmount = 1.5f;
 
+    private Player playerScript;
+
     // Start is called before the first frame update
     void Start()
     {
         myCollider = GetComponent<CircleCollider2D>();
         fade.GetComponent<SpriteRenderer>().enabled = false;
+        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     // Update is called once per frame
@@ -47,10 +50,12 @@ public class we_warp : MonoBehaviour
         if(target.GetComponent<we_warp>().exitDown())
         {
             player.transform.position = new Vector3(target.transform.position.x, target.transform.position.y - exitAmount, player.transform.position.z);
+            playerScript.SetVerticalDirection(-1);
         }
         else
         {
             player.transform.position = new Vector3(target.transform.position.x, target.transform.position.y + exitAmount, player.transform.position.z);
+            playerScript.SetVerticalDirection(1);
         }
 
 

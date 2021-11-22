@@ -14,7 +14,10 @@ public class Inventory : MonoBehaviour
     
     private void Awake()
     {
-        instance = this;
+        if (!instance)
+        {
+            instance = this;
+        }
     }
 
     public bool IsFull()
