@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -15,9 +16,14 @@ public class EnemyAI : MonoBehaviour
     [Header("Attacking")]
     [Range(0f, 5f)]
     [SerializeField] private float attackRate;
+    float nextWaypointDistance = 3f;
     private float time;
     private bool hasFollowed;
     private bool attackedOnce;
+    Path path;
+    Seeker seeker;
+    int currentWaypoint = 0;
+    bool reachedEndOfPath = false;
 
     // Start is called before the first frame update
     void Start()
@@ -27,30 +33,76 @@ public class EnemyAI : MonoBehaviour
         attackedOnce = false;
         animator = GetComponent<Animator>();
         target = FindObjectOfType<Player>().transform;
+        seeker.GetComponent<Seeker>();
+
+        InvokeRepeating("UpdatePath", 0f, .5f);
+    }
+
+    void UpdatePath()
+    {
+        if (seeker.IsDone())
+            seeker.StartPath(gameObject.transform.position, target.position, OnPathComplete);
+    }
+
+    void OnPathComplete(Path p)
+    {
+        if (!p.error)
+        {
+            path = p;
+            currentWaypoint = 0;
+        }
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (Vector3.Distance(target.position, transform.position) <= maxRange)
+        if (path == null)
         {
-            if (Vector3.Distance(target.position, transform.position) <= minRange)
-            {
-                animator.SetBool("isMoving", false);
-                AttackPlayer();
-            }
-            else
-            {
-                attackedOnce = false;
-                hasFollowed = true;
-                FollowPlayer();
-            }
+            return;
         }
 
-        else if (Vector3.Distance(target.position, transform.position) > maxRange && hasFollowed)
+        if (currentWaypoint >= path.vectorPath.Count)
         {
-            GoHome();
+            reachedEndOfPath = true;
+            return;
         }
+
+        else
+        {
+            reachedEndOfPath = false;
+        }
+
+        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - (Vector2)gameObject.transform.position).normalized;
+
+        Vector2 force = direction * speed * Time.deltaTime;
+
+
+        float distance = Vector2.Distance(gameObject.transform.position, path.vectorPath[currentWaypoint]);
+
+        if (distance < nextWaypointDistance)
+        {
+            currentWaypoint++;
+        }
+
+        // if (Vector3.Distance(target.position, transform.position) <= maxRange)
+        // {
+        //     if (Vector3.Distance(target.position, transform.position) <= minRange)
+        //     {
+        //         animator.SetBool("isMoving", false);
+        //         AttackPlayer();
+        //     }
+        //     else
+        //     {
+        //         attackedOnce = false;
+        //         hasFollowed = true;
+        //         FollowPlayer();
+        //     }
+        // }
+
+        // else if (Vector3.Distance(target.position, transform.position) > maxRange && hasFollowed)
+        // {
+        //     GoHome();
+        // }
     }
 
     public void FollowPlayer()

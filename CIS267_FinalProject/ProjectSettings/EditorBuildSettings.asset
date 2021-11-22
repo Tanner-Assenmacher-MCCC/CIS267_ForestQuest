@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
+    path: Assets/Scenes/Town.unity
+    guid: fc2e5f6a6ad5b344187bae311eec2b6f
+  - enabled: 1
     path: Assets/Scenes/ForestLevel.unity
     guid: 900afe5ab6f2d63459cef243d6f256b6
   - enabled: 1

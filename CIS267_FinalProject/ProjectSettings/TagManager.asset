@@ -8,6 +8,9 @@ TagManager:
   - MountainLevel
   - Scene
   - hotbarNumbers
+  - CinemachineCamera
+  - GameManager
+  - Inventory
   layers:
   - Default
   - TransparentFX
