@@ -50,7 +50,7 @@ public class we_warp : MonoBehaviour
         }
         else
         {
-
+            player.transform.position = new Vector3(target.transform.position.x, target.transform.position.y + exitAmount, player.transform.position.z);
         }
 
 
