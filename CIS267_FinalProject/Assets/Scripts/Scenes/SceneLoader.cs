@@ -27,7 +27,8 @@ public class SceneLoader : MonoBehaviour
         musicTransition.SetTrigger("Start");
 
         yield return new WaitForSeconds(transitionTime);
-
+        //DontDestroyOnLoad(GameObject.FindGameObjectWithTag("GameManager"));
+        //DontDestroyOnLoad(GameObject.FindGameObjectWithTag("Inventory"));
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     {
         rb2d = gameObject.GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        //inventory = GameObject.Find("Inventory");
     }
 
     private void Update()

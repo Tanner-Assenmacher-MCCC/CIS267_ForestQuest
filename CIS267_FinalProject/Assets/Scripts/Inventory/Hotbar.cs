@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Hotbar : MonoBehaviour
 {
-    public static Hotbar instance;
+    public static Hotbar instance = null;
     public static int maxItems = 3;
     public List<Item> items = new List<Item>(maxItems);
     [SerializeField] private HotbarUI hotbarUI;
@@ -19,7 +19,10 @@ public class Hotbar : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+        }
     }
 
     void Start()
@@ -39,7 +42,7 @@ public class Hotbar : MonoBehaviour
             if (InBounds(iw))
             {
                 player.itemInHolster = 0;
-                player.UseItem(this.items[iw]);
+                player.UseItem(items[iw]);
                 weaponHolster.SelectedItemIcon.transform.position = new Vector3(-1.05f, -3.75f, 0f);
                 ResetButtons(true);
                 HighlightButton(iw);
@@ -52,7 +55,7 @@ public class Hotbar : MonoBehaviour
             if (InBounds(iw))
             {
                 player.itemInHolster = 1;
-                player.UseItem(this.items[iw]);
+                player.UseItem(items[iw]);
                 weaponHolster.SelectedItemIcon.transform.position = new Vector3(0f, -3.75f, 0f);
                 ResetButtons(true);
                 HighlightButton(iw);
@@ -65,7 +68,7 @@ public class Hotbar : MonoBehaviour
             if (InBounds(iw))
             {
                 player.itemInHolster = 2;
-                player.UseItem(this.items[iw]);
+                player.UseItem(items[iw]);
                 weaponHolster.SelectedItemIcon.transform.position = new Vector3(1.075f, -3.75f, 0f);
                 ResetButtons(true);
                 HighlightButton(iw);
@@ -84,7 +87,8 @@ public class Hotbar : MonoBehaviour
             button.colors = colors;
             itemSwitch.setHotbarNumbers(false);
             WeaponHolster weaponHolster = FindObjectOfType<WeaponHolster>();
-            weaponHolster.SelectedItemIcon.SetActive(setActive);
+            if (weaponHolster.SelectedItemIcon) weaponHolster.SelectedItemIcon.SetActive(setActive);
+
         }
     }
 
@@ -95,7 +99,7 @@ public class Hotbar : MonoBehaviour
         colors.highlightedColor = new Color32(255, 255, 255, 40);
         slotButtons[i].colors = colors;
         WeaponHolster weaponHolster = FindObjectOfType<WeaponHolster>();
-        weaponHolster.SelectedItemIcon.SetActive(true);
+        if (weaponHolster.SelectedItemIcon) weaponHolster.SelectedItemIcon.SetActive(true);
     }
     
     public void HighlightClickButton(int i)
@@ -106,7 +110,7 @@ public class Hotbar : MonoBehaviour
         colors.selectedColor = new Color32(255, 255, 255, 40);
         slotButtons[i].colors = colors;
         WeaponHolster weaponHolster = FindObjectOfType<WeaponHolster>();
-        weaponHolster.SelectedItemIcon.SetActive(true);
+        if (weaponHolster.SelectedItemIcon) weaponHolster.SelectedItemIcon.SetActive(true);
     }
 
     public bool InBounds(int i)
@@ -144,7 +148,7 @@ public class Hotbar : MonoBehaviour
 
     public void DropItem(int i)
     {
-        Item item = this.items[i];
+        Item item = items[i];
         float drag = 4.5f;
         float force = 100f;
         float itemDropOffset = 1.5f;
@@ -156,7 +160,7 @@ public class Hotbar : MonoBehaviour
         offset.z = player.transform.position.z;
         Vector2 push = new Vector2(horizontal, vertical) * force;
 
-        GameObject instance = Instantiate(this.items[i].prefab, player.transform.position + offset, transform.rotation);
+        GameObject instance = Instantiate(items[i].prefab, player.transform.position + offset, transform.rotation);
         instance.GetComponent<Rigidbody2D>().AddForce(push);
 
         instance.GetComponent<Rigidbody2D>().drag = drag;

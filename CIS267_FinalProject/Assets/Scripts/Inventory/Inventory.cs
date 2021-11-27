@@ -66,7 +66,7 @@ public class Inventory : MonoBehaviour
         offset.z = player.transform.position.z;
         Vector2 push = new Vector2(horizontal, vertical) * force;
 
-        GameObject instance = Instantiate(this.items[i].prefab, player.transform.position + offset, transform.rotation);
+        GameObject instance = Instantiate(items[i].prefab, player.transform.position + offset, transform.rotation);
         instance.GetComponent<Rigidbody2D>().AddForce(push);
 
         instance.GetComponent<Rigidbody2D>().drag = drag;

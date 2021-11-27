@@ -36,12 +36,12 @@ public class InventoryUI : MonoBehaviour
             ResetButtonColor();
             if (!inventoryUI.activeInHierarchy && hb.InBounds(hb.iw) && wh.hasWeapon)
             {
-                wh.SelectedItemIcon.SetActive(true);
+                if (wh.SelectedItemIcon) wh.SelectedItemIcon.SetActive(true);
                 hb.HighlightButton(p.itemInHolster);
             }
             else
             {
-                wh.SelectedItemIcon.SetActive(false);
+                if (wh.SelectedItemIcon) wh.SelectedItemIcon.SetActive(false);
                 hb.ResetButtons(false);
             }
         }
