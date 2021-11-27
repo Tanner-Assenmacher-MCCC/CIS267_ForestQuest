@@ -9,7 +9,7 @@ public class InstantiateEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(enemy, this.transform);
+        Instantiate(enemy, gameObject.transform);
     }
 
     // Update is called once per frame

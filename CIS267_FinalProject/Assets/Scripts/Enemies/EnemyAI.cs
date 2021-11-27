@@ -5,10 +5,15 @@ using Pathfinding;
 
 public class EnemyAI : MonoBehaviour
 {
+    Vector2[] colliderPoints;
+    Transform t;
+    PolygonCollider2D polygonCollider2D;
+    private Rigidbody2D rb2d;
     private Animator animator;
     private Transform target;
+    private Transform homePosition;
     [Header("Speed")]
-    [Range(1f, 6f)]
+    [Range(1f, 20f)]
     [SerializeField] private float speed;
     [Header("Follow Range")]
     [SerializeField] private float minRange;
@@ -16,32 +21,63 @@ public class EnemyAI : MonoBehaviour
     [Header("Attacking")]
     [Range(0f, 5f)]
     [SerializeField] private float attackRate;
-    float nextWaypointDistance = 3f;
+    float nextWaypointDistance = 1f;
     private float time;
-    private bool hasFollowed;
+    private bool hasFollowed = false;
     private bool attackedOnce;
     Path path;
     Seeker seeker;
     int currentWaypoint = 0;
     bool reachedEndOfPath = false;
+    float randNumTime = 0;
+    public int offset;
 
     // Start is called before the first frame update
     void Start()
     {
+        t = gameObject.GetComponent<Transform>();
         time = attackRate;
         hasFollowed = false;
         attackedOnce = false;
-        animator = GetComponent<Animator>();
         target = FindObjectOfType<Player>().transform;
-        seeker.GetComponent<Seeker>();
+        animator = GetComponent<Animator>();
+        seeker = GetComponent<Seeker>();
+        rb2d = GetComponent<Rigidbody2D>();
+        polygonCollider2D = gameObject.GetComponent<PolygonCollider2D>();
+
+        colliderPoints = polygonCollider2D.points;
+        polygonCollider2D.offset = new Vector2(-t.parent.position.x, -t.parent.position.y);
+
+        colliderPoints[0] = new Vector2(t.position.x + offset, t.position.y - offset);
+        colliderPoints[1] = new Vector2(t.position.x + offset, t.position.y);
+        colliderPoints[2] = new Vector2(t.position.x + offset, t.position.y + offset);
+        colliderPoints[3] = new Vector2(t.position.x, t.position.y + offset);
+        colliderPoints[4] = new Vector2(t.position.x - offset, t.position.y + offset);
+        colliderPoints[5] = new Vector2(t.position.x - offset, t.position.y);
+        colliderPoints[6] = new Vector2(t.position.x - offset, t.position.y - offset);
+        colliderPoints[7] = new Vector2(t.position.x, t.position.y - offset);
+
+        polygonCollider2D.points = colliderPoints;
 
         InvokeRepeating("UpdatePath", 0f, .5f);
     }
 
     void UpdatePath()
     {
-        if (seeker.IsDone())
-            seeker.StartPath(gameObject.transform.position, target.position, OnPathComplete);
+        if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) <= maxRange && hasFollowed)
+        {
+            seeker.StartPath(rb2d.position, target.position, OnPathComplete);
+        }
+
+        else if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) > maxRange && hasFollowed)
+        {
+            seeker.StartPath(rb2d.position, transform.parent.position, OnPathComplete);
+        }
+
+        else if (Vector3.Distance(target.position, transform.position) > maxRange && !hasFollowed)
+        {
+            StartCoroutine("Roaming");
+        }
     }
 
     void OnPathComplete(Path p)
@@ -72,46 +108,39 @@ public class EnemyAI : MonoBehaviour
             reachedEndOfPath = false;
         }
 
-        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - (Vector2)gameObject.transform.position).normalized;
-
-        Vector2 force = direction * speed * Time.deltaTime;
-
-
-        float distance = Vector2.Distance(gameObject.transform.position, path.vectorPath[currentWaypoint]);
-
-        if (distance < nextWaypointDistance)
+        if (Vector3.Distance(target.position, transform.position) <= maxRange)
         {
-            currentWaypoint++;
+            Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb2d.position).normalized;
+
+            Vector2 force = direction * speed * Time.deltaTime * 100;
+
+            float distance = Vector2.Distance(rb2d.position, path.vectorPath[currentWaypoint]);
+
+            if (Vector3.Distance(target.position, transform.position) <= minRange)
+            {
+                animator.SetBool("isMoving", false);
+                AttackPlayer();
+            }
+            else
+            {
+                if (distance < nextWaypointDistance)
+                {
+                    currentWaypoint++;
+                }
+                attackedOnce = false;
+                hasFollowed = true;
+                animator.SetBool("Attack", false);
+                animator.SetBool("isMoving", true);
+                animator.SetFloat("moveX", (target.position.x - transform.position.x));
+                animator.SetFloat("moveY", (target.position.y - transform.position.y));
+                rb2d.AddForce(force);
+            }
         }
 
-        // if (Vector3.Distance(target.position, transform.position) <= maxRange)
-        // {
-        //     if (Vector3.Distance(target.position, transform.position) <= minRange)
-        //     {
-        //         animator.SetBool("isMoving", false);
-        //         AttackPlayer();
-        //     }
-        //     else
-        //     {
-        //         attackedOnce = false;
-        //         hasFollowed = true;
-        //         FollowPlayer();
-        //     }
-        // }
-
-        // else if (Vector3.Distance(target.position, transform.position) > maxRange && hasFollowed)
-        // {
-        //     GoHome();
-        // }
-    }
-
-    public void FollowPlayer()
-    {
-        animator.SetBool("Attack", false);
-        animator.SetBool("isMoving", true);
-        animator.SetFloat("moveX", (target.position.x - transform.position.x));
-        animator.SetFloat("moveY", (target.position.y - transform.position.y));
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+        else if (Vector3.Distance(target.position, transform.position) > maxRange && hasFollowed)
+        {
+            GoHome();
+        }
     }
 
     public void AttackPlayer()
@@ -127,15 +156,44 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    IEnumerator Roaming()
+    {
+        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb2d.position).normalized;
+        Vector2 force = direction * speed * Time.deltaTime * 100;
+        float distance = Vector2.Distance(rb2d.position, path.vectorPath[currentWaypoint]);
+        if (distance < nextWaypointDistance)
+        {
+            currentWaypoint++;
+        }
+        rb2d.AddForce(force);
+        int rand;
+        rand = Random.Range(1, 9);
+
+        seeker.StartPath(rb2d.position, colliderPoints[rand], OnPathComplete);
+
+        yield return new WaitForSeconds(10f);
+    }
     public void GoHome()
     {
-        transform.position = Vector3.MoveTowards(transform.position, transform.parent.position, speed * Time.deltaTime);
+        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb2d.position).normalized;
+
+        Vector2 force = direction * speed * Time.deltaTime * 100;
+
+        float distance = Vector2.Distance(rb2d.position, path.vectorPath[currentWaypoint]);
+
+        if (distance < nextWaypointDistance)
+        {
+            currentWaypoint++;
+        }
+
+        rb2d.AddForce(force);
+
         animator.SetBool("Attack", false);
         animator.SetBool("isMoving", true);
         animator.SetFloat("moveX", (transform.parent.position.x - transform.position.x));
         animator.SetFloat("moveY", (transform.parent.position.y - transform.position.y));
 
-        if (transform.position == transform.parent.position)
+        if (Vector3.Distance(transform.position, transform.parent.position) < 1f)
         {
             animator.SetBool("isMoving", false);
             hasFollowed = false;

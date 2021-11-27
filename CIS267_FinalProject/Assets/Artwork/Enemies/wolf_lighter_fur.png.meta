@@ -1,7 +1,304 @@
 fileFormatVersion: 2
 guid: 7ee7420ead0e18c4b816f223d963a102
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 2762481256143476756
+    second: wolf_lighter_fur_0
+  - first:
+      213: 96231818483990765
+    second: wolf_lighter_fur_1
+  - first:
+      213: 6601860191382184811
+    second: wolf_lighter_fur_2
+  - first:
+      213: -7815840081826099211
+    second: wolf_lighter_fur_3
+  - first:
+      213: -4869300094417406764
+    second: wolf_lighter_fur_4
+  - first:
+      213: 838916463366021225
+    second: wolf_lighter_fur_5
+  - first:
+      213: -126142814478047592
+    second: wolf_lighter_fur_6
+  - first:
+      213: 1921302054266638248
+    second: wolf_lighter_fur_7
+  - first:
+      213: -5976870495965625625
+    second: wolf_lighter_fur_8
+  - first:
+      213: 2238615099822334308
+    second: wolf_lighter_fur_9
+  - first:
+      213: -6110029309044442919
+    second: wolf_lighter_fur_10
+  - first:
+      213: 4897583489931389701
+    second: wolf_lighter_fur_11
+  - first:
+      213: 8741010780205863474
+    second: wolf_lighter_fur_12
+  - first:
+      213: 2517113130009587562
+    second: wolf_lighter_fur_13
+  - first:
+      213: -5610627555997427721
+    second: wolf_lighter_fur_14
+  - first:
+      213: 5802110684201616262
+    second: wolf_lighter_fur_15
+  - first:
+      213: 1980600334124614756
+    second: wolf_lighter_fur_16
+  - first:
+      213: -4932863194532765696
+    second: wolf_lighter_fur_17
+  - first:
+      213: 1202650480727784538
+    second: wolf_lighter_fur_18
+  - first:
+      213: -577967753336192298
+    second: wolf_lighter_fur_19
+  - first:
+      213: -1355020646648358121
+    second: wolf_lighter_fur_20
+  - first:
+      213: -980161316468408296
+    second: wolf_lighter_fur_21
+  - first:
+      213: -4766030809297123373
+    second: wolf_lighter_fur_22
+  - first:
+      213: -713268838414113585
+    second: wolf_lighter_fur_23
+  - first:
+      213: 8649827552247547984
+    second: wolf_lighter_fur_24
+  - first:
+      213: 8394302798726202696
+    second: wolf_lighter_fur_25
+  - first:
+      213: 6599308475126842056
+    second: wolf_lighter_fur_26
+  - first:
+      213: 4252710384164677716
+    second: wolf_lighter_fur_27
+  - first:
+      213: -4025393734322288993
+    second: wolf_lighter_fur_28
+  - first:
+      213: -3935678435445564250
+    second: wolf_lighter_fur_29
+  - first:
+      213: -5217002739837645818
+    second: wolf_lighter_fur_30
+  - first:
+      213: 464263543253865575
+    second: wolf_lighter_fur_31
+  - first:
+      213: -537032117951506499
+    second: wolf_lighter_fur_32
+  - first:
+      213: -4955396944410626620
+    second: wolf_lighter_fur_33
+  - first:
+      213: -8859884224810589093
+    second: wolf_lighter_fur_34
+  - first:
+      213: 5427801879181163317
+    second: wolf_lighter_fur_35
+  - first:
+      213: 511908053199628356
+    second: wolf_lighter_fur_36
+  - first:
+      213: 5649531860094407309
+    second: wolf_lighter_fur_37
+  - first:
+      213: -6575587375507497026
+    second: wolf_lighter_fur_38
+  - first:
+      213: 650084285199994530
+    second: wolf_lighter_fur_39
+  - first:
+      213: -2356190901931263175
+    second: wolf_lighter_fur_40
+  - first:
+      213: -1294734143674499758
+    second: wolf_lighter_fur_41
+  - first:
+      213: 7295499112141517219
+    second: wolf_lighter_fur_42
+  - first:
+      213: 5982416112381871269
+    second: wolf_lighter_fur_43
+  - first:
+      213: -4252160601927151746
+    second: wolf_lighter_fur_44
+  - first:
+      213: 4674061559444971546
+    second: wolf_lighter_fur_45
+  - first:
+      213: -7173337076628873875
+    second: wolf_lighter_fur_46
+  - first:
+      213: -8750762211466662210
+    second: wolf_lighter_fur_47
+  - first:
+      213: 2744032018775850631
+    second: wolf_lighter_fur_48
+  - first:
+      213: 7205800791068918976
+    second: wolf_lighter_fur_49
+  - first:
+      213: 1636710865418490548
+    second: wolf_lighter_fur_50
+  - first:
+      213: 8373605330575773168
+    second: wolf_lighter_fur_51
+  - first:
+      213: -1550542632071568996
+    second: wolf_lighter_fur_52
+  - first:
+      213: -4838734412436031801
+    second: wolf_lighter_fur_53
+  - first:
+      213: 5554148496432202237
+    second: wolf_lighter_fur_54
+  - first:
+      213: -1340163305321485728
+    second: wolf_lighter_fur_55
+  - first:
+      213: 7623568521471623924
+    second: wolf_lighter_fur_56
+  - first:
+      213: -4743218803230075796
+    second: wolf_lighter_fur_57
+  - first:
+      213: 7892893736708629704
+    second: wolf_lighter_fur_58
+  - first:
+      213: -4869544135064710588
+    second: wolf_lighter_fur_59
+  - first:
+      213: -6991970983916171722
+    second: wolf_lighter_fur_60
+  - first:
+      213: -1626357164138235137
+    second: wolf_lighter_fur_61
+  - first:
+      213: 8862983760501863746
+    second: wolf_lighter_fur_62
+  - first:
+      213: 7311070269206922193
+    second: wolf_lighter_fur_63
+  - first:
+      213: -6001818552943746893
+    second: wolf_lighter_fur_64
+  - first:
+      213: 1546280694667894316
+    second: wolf_lighter_fur_65
+  - first:
+      213: -1295486515745764336
+    second: wolf_lighter_fur_66
+  - first:
+      213: 7865822401131118629
+    second: wolf_lighter_fur_67
+  - first:
+      213: 3410526217385020100
+    second: wolf_lighter_fur_68
+  - first:
+      213: 305650510249902356
+    second: wolf_lighter_fur_69
+  - first:
+      213: -6113790570402441598
+    second: wolf_lighter_fur_70
+  - first:
+      213: -6594722400073270834
+    second: wolf_lighter_fur_71
+  - first:
+      213: -2719090437350532584
+    second: wolf_lighter_fur_72
+  - first:
+      213: -8122335463408025494
+    second: wolf_lighter_fur_73
+  - first:
+      213: 1841354321391647244
+    second: wolf_lighter_fur_74
+  - first:
+      213: -1469371654823227157
+    second: wolf_lighter_fur_75
+  - first:
+      213: -2399521962839989268
+    second: wolf_lighter_fur_76
+  - first:
+      213: 8321407758383098826
+    second: wolf_lighter_fur_77
+  - first:
+      213: -8272478890646728952
+    second: wolf_lighter_fur_78
+  - first:
+      213: 8367081431076500074
+    second: wolf_lighter_fur_79
+  - first:
+      213: -7903661773560298638
+    second: wolf_lighter_fur_80
+  - first:
+      213: 1849340446154602461
+    second: wolf_lighter_fur_81
+  - first:
+      213: 4430051178522837504
+    second: wolf_lighter_fur_82
+  - first:
+      213: 3198833717505724731
+    second: wolf_lighter_fur_83
+  - first:
+      213: -7016463749760386365
+    second: wolf_lighter_fur_84
+  - first:
+      213: 3997524706320295507
+    second: wolf_lighter_fur_85
+  - first:
+      213: -8689859161704821070
+    second: wolf_lighter_fur_86
+  - first:
+      213: 8858286926062351966
+    second: wolf_lighter_fur_87
+  - first:
+      213: 6150369599107764889
+    second: wolf_lighter_fur_88
+  - first:
+      213: 400333517803103354
+    second: wolf_lighter_fur_89
+  - first:
+      213: -7696942356049907169
+    second: wolf_lighter_fur_90
+  - first:
+      213: -8110347954440115560
+    second: wolf_lighter_fur_91
+  - first:
+      213: 2922026155589549344
+    second: wolf_lighter_fur_92
+  - first:
+      213: 4602571192204629423
+    second: wolf_lighter_fur_93
+  - first:
+      213: -6921794483808816285
+    second: wolf_lighter_fur_94
+  - first:
+      213: 6081191854446858604
+    second: wolf_lighter_fur_95
+  - first:
+      213: -670491676535692340
+    second: wolf_lighter_fur_96
+  - first:
+      213: 7763484321787314966
+    second: wolf_lighter_fur_97
+  - first:
+      213: -4893997807384494116
+    second: wolf_lighter_fur_98
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +329,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -41,12 +338,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -68,7 +365,19 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -77,7 +386,889 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: wolf_lighter_fur_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4185b13f01e465620800000000000000
+      internalID: 2762481256143476756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 320
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de004dc3452e55100800000000000000
+      internalID: 96231818483990765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 320
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b63a02cadd48e9b50800000000000000
+      internalID: 6601860191382184811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 320
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ffce7d0bde888390800000000000000
+      internalID: -7815840081826099211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 320
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d4797fdc55cc6cb0800000000000000
+      internalID: -4869300094417406764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 320
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 960a823241e64ab00800000000000000
+      internalID: 838916463366021225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f751c5d6fb0322b0800000000000000
+      internalID: -5610627555997427721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_15
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 256
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68306572dec358050800000000000000
+      internalID: 5802110684201616262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_16
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 464848d92818c7b10800000000000000
+      internalID: 1980600334124614756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_17
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 256
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 000a64c5f03fa8bb0800000000000000
+      internalID: -4932863194532765696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_18
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 256
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5c7bb48d3ca0b010800000000000000
+      internalID: 1202650480727784538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_19
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 256
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d204caf365aaf7f0800000000000000
+      internalID: -577967753336192298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_20
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 256
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71b543da6eff13de0800000000000000
+      internalID: -1355020646648358121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_21
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 810425dc974c562f0800000000000000
+      internalID: -980161316468408296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db7568052241c88f0800000000000000
+      internalID: -537032117951506499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_33
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 192
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c5395fdbb4ea3bb0800000000000000
+      internalID: -4955396944410626620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_34
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b54e31d3d3e5b0580800000000000000
+      internalID: -8859884224810589093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_35
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53b7ac72d0d635b40800000000000000
+      internalID: 5427801879181163317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_36
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 192
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44820a489a9aa1700800000000000000
+      internalID: 511908053199628356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_37
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d82dd245b4b276e40800000000000000
+      internalID: 5649531860094407309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_38
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 192
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebf1555fe12deb4a0800000000000000
+      internalID: -6575587375507497026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_39
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 192
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aec86d8630950900800000000000000
+      internalID: 650084285199994530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b29a454cd3c6b610800000000000000
+      internalID: 1636710865418490548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_51
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fd4942dea5053470800000000000000
+      internalID: 8373605330575773168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_52
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c916646f0bd5b7ae0800000000000000
+      internalID: -1550542632071568996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_53
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c6ba4840bc59dcb0800000000000000
+      internalID: -4838734412436031801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_54
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df18c9f51ac441d40800000000000000
+      internalID: 5554148496432202237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_55
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 128
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06aac450398c66de0800000000000000
+      internalID: -1340163305321485728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_56
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f28a2bcd2b5cc960800000000000000
+      internalID: 7623568521471623924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_57
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 128
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c64948d01a3bc2eb0800000000000000
+      internalID: -4743218803230075796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_58
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c46c620901398d60800000000000000
+      internalID: 7892893736708629704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_59
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 128
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 442916bb867eb6cb0800000000000000
+      internalID: -4869544135064710588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_68
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ca0464668f945f20800000000000000
+      internalID: 3410526217385020100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_69
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 411ccd80583ed3400800000000000000
+      internalID: 305650510249902356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_70
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28697045ed3772ba0800000000000000
+      internalID: -6113790570402441598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_71
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec9325fdae6da74a0800000000000000
+      internalID: -6594722400073270834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_72
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81a5f8157a9d34ad0800000000000000
+      internalID: -2719090437350532584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_73
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a60c1051eeaa74f80800000000000000
+      internalID: -8122335463408025494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_74
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0afd28dffdcd8910800000000000000
+      internalID: 1841354321391647244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_75
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 64
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be0db37d34ebb9be0800000000000000
+      internalID: -1469371654823227157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_76
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce3ac2eec7f23bed0800000000000000
+      internalID: -2399521962839989268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wolf_lighter_fur_77
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 64
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acbaa9d74449b7370800000000000000
+      internalID: 8321407758383098826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
