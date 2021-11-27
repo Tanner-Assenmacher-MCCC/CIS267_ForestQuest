@@ -29,7 +29,7 @@ public class EnemyAI : MonoBehaviour
     Seeker seeker;
     int currentWaypoint = 0;
     bool reachedEndOfPath = false;
-    float randNumTime = 0;
+    float randNumTime;
     public int offset;
 
     // Start is called before the first frame update
@@ -60,6 +60,7 @@ public class EnemyAI : MonoBehaviour
         polygonCollider2D.points = colliderPoints;
 
         InvokeRepeating("UpdatePath", 0f, .5f);
+        InvokeRepeating("UpdateRoamingPath", 0f, 5f);
     }
 
     void UpdatePath()
@@ -73,10 +74,16 @@ public class EnemyAI : MonoBehaviour
         {
             seeker.StartPath(rb2d.position, transform.parent.position, OnPathComplete);
         }
+    }
 
-        else if (Vector3.Distance(target.position, transform.position) > maxRange && !hasFollowed)
+    void UpdateRoamingPath()
+    {
+        if (Vector3.Distance(target.position, transform.position) > maxRange && !hasFollowed)
         {
-            StartCoroutine("Roaming");
+            int rand;
+            rand = Random.Range(1, 9);
+
+            seeker.StartPath(rb2d.position, colliderPoints[rand], OnPathComplete);
         }
     }
 
@@ -141,6 +148,27 @@ public class EnemyAI : MonoBehaviour
         {
             GoHome();
         }
+
+        else if (Vector3.Distance(target.position, transform.position) > maxRange && !hasFollowed)
+        {
+            Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb2d.position).normalized;
+
+            Vector2 force = direction * speed * Time.deltaTime * 100;
+
+            float distance = Vector2.Distance(rb2d.position, path.vectorPath[currentWaypoint]);
+
+            if (distance < nextWaypointDistance)
+            {
+                currentWaypoint++;
+            }
+
+            animator.SetBool("Attack", false);
+            animator.SetBool("isMoving", true);
+            animator.SetFloat("moveX", (target.position.x - transform.position.x));
+            animator.SetFloat("moveY", (target.position.y - transform.position.y));
+
+            rb2d.AddForce(force);
+        }
     }
 
     public void AttackPlayer()
@@ -156,23 +184,6 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    IEnumerator Roaming()
-    {
-        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb2d.position).normalized;
-        Vector2 force = direction * speed * Time.deltaTime * 100;
-        float distance = Vector2.Distance(rb2d.position, path.vectorPath[currentWaypoint]);
-        if (distance < nextWaypointDistance)
-        {
-            currentWaypoint++;
-        }
-        rb2d.AddForce(force);
-        int rand;
-        rand = Random.Range(1, 9);
-
-        seeker.StartPath(rb2d.position, colliderPoints[rand], OnPathComplete);
-
-        yield return new WaitForSeconds(10f);
-    }
     public void GoHome()
     {
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb2d.position).normalized;
