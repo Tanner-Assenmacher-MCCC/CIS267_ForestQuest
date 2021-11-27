@@ -6,22 +6,26 @@ using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
+    public static bool isActive = false;
     public Transform slotsContainer;
     public InventorySlot[] slots;
     public Button[] inventoryButtons;
     public GameObject inventoryUI;
-    public Hotbar hb;
-    ItemSwitch itemSwitch;
-    public WeaponHolster wh;
-    public Player p;
+    private  Hotbar hotbar;
+    private ItemSwitch itemSwitch;
+    private WeaponHolster weaponHolster;
+    private Player player;
     // Start is called before the first frame update
     void Start()
     {
-        p = FindObjectOfType<Player>();
-        wh = FindObjectOfType<WeaponHolster>();
+        hotbar = GetComponent<Hotbar>();
+        player = FindObjectOfType<Player>();
+        weaponHolster = FindObjectOfType<WeaponHolster>();
         slots = slotsContainer.GetComponentsInChildren<InventorySlot>();
         inventoryButtons = slotsContainer.GetComponentsInChildren<Button>();
         itemSwitch = FindObjectOfType<ItemSwitch>();
+
+        updateUI();
     }
 
     // Update is called once per frame
@@ -30,19 +34,20 @@ public class InventoryUI : MonoBehaviour
         if (Input.GetButtonDown("Inventory"))
         {
             inventoryUI.SetActive(!inventoryUI.activeInHierarchy);
-            hb.ResetButtons(!inventoryUI.activeInHierarchy);
-            hb.HighlightButton(p.itemInHolster);
+            isActive = inventoryUI.activeInHierarchy;
+            hotbar.ResetButtons(!inventoryUI.activeInHierarchy);
+            hotbar.HighlightButton(player.itemInHolster);
             itemSwitch.ResetItems();
             ResetButtonColor();
-            if (!inventoryUI.activeInHierarchy && hb.InBounds(hb.iw) && wh.hasWeapon)
+            if (!inventoryUI.activeInHierarchy && hotbar.InBounds(hotbar.iw) && weaponHolster.hasWeapon)
             {
-                if (wh.SelectedItemIcon) wh.SelectedItemIcon.SetActive(true);
-                hb.HighlightButton(p.itemInHolster);
+                if (weaponHolster.SelectedItemIcon) weaponHolster.SelectedItemIcon.SetActive(true);
+                hotbar.HighlightButton(player.itemInHolster);
             }
             else
             {
-                if (wh.SelectedItemIcon) wh.SelectedItemIcon.SetActive(false);
-                hb.ResetButtons(false);
+                if (weaponHolster.SelectedItemIcon) weaponHolster.SelectedItemIcon.SetActive(false);
+                hotbar.ResetButtons(false);
             }
         }
     }

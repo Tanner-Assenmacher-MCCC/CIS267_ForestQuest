@@ -8,14 +8,15 @@ public class Hotbar : MonoBehaviour
     public static Hotbar instance = null;
     public static int maxItems = 3;
     public static List<Item> items = new List<Item>(maxItems);
-    [SerializeField] private HotbarUI hotbarUI;
     [SerializeField] private List<Button> slotButtons;
+    private HotbarUI hotbarUI;
+    private ItemSwitch itemSwitch;
 
     public delegate void OnChange();
     public OnChange onChangeCallback;
-    public ItemSwitch itemSwitch;
+    
     public int iw;
-    public WeaponHolster weaponHolster;
+    [System.NonSerialized] public WeaponHolster weaponHolster;
 
     private void Awake()
     {
@@ -27,8 +28,9 @@ public class Hotbar : MonoBehaviour
 
     void Start()
     {
+        hotbarUI = GetComponent<HotbarUI>();
         weaponHolster = FindObjectOfType<WeaponHolster>();
-        itemSwitch = GameObject.Find("GameManager").GetComponent<ItemSwitch>();
+        itemSwitch = GetComponent<ItemSwitch>();
     }
 
     private void Update()

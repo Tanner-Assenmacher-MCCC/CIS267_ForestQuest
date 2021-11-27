@@ -6,19 +6,18 @@ using UnityEngine.UI;
 
 public class HotbarUI : MonoBehaviour
 {
-    public Transform slotsContainer;
+    [SerializeField] private Transform slotsContainer;
     public InventorySlot[] slots;
-    public ItemSwitch itemSwitch;
-    public Player p;
-    public Hotbar hb;
-    public WeaponHolster wh;
+    private ItemSwitch itemSwitch;
+    private Hotbar hotbar;
     // Start is called before the first frame update
     void Start()
     {
-        p = FindObjectOfType<Player>();
-        hb = FindObjectOfType<Hotbar>();
-        wh = FindObjectOfType<WeaponHolster>();
+        itemSwitch = GetComponent<ItemSwitch>();
+        hotbar = GetComponent<Hotbar>();
         slots = slotsContainer.GetComponentsInChildren<InventorySlot>();
+
+        updateUI();
     }
 
     // Update is called once per frame
@@ -30,24 +29,24 @@ public class HotbarUI : MonoBehaviour
     public void OnItemClick(int i)
     {
         Player player = FindObjectOfType<Player>();
-        hb.iw = i;
-        if (hb.InBounds(hb.iw))
+        hotbar.iw = i;
+        if (hotbar.InBounds(hotbar.iw))
         {
             player.itemInHolster = i;
-            player.UseItem(Hotbar.items[hb.iw]);
-            hb.ResetButtons(true);
-            hb.HighlightClickButton(i);
+            player.UseItem(Hotbar.items[hotbar.iw]);
+            hotbar.ResetButtons(true);
+            hotbar.HighlightClickButton(i);
             if (i == 0)
             {
-                hb.weaponHolster.SelectedItemIcon.transform.position = new Vector3(-1.05f, -3.75f, 0f);
+                hotbar.weaponHolster.SelectedItemIcon.transform.position = new Vector3(-1.05f, -3.75f, 0f);
             }
             if (i == 1)
             {
-                hb.weaponHolster.SelectedItemIcon.transform.position = new Vector3(0f, -3.75f, 0f);
+                hotbar.weaponHolster.SelectedItemIcon.transform.position = new Vector3(0f, -3.75f, 0f);
             }
             if (i == 2)
             {
-                hb.weaponHolster.SelectedItemIcon.transform.position = new Vector3(1.075f, -3.75f, 0f);
+                hotbar.weaponHolster.SelectedItemIcon.transform.position = new Vector3(1.075f, -3.75f, 0f);
             }
         }
         //keep inventory button selected
@@ -71,11 +70,6 @@ public class HotbarUI : MonoBehaviour
         //    }
         //}
         //=============================================================================================================================
-    }
-
-    public InventorySlot[] getSlots()
-    {
-        return slots;
     }
 
     public void updateUI()

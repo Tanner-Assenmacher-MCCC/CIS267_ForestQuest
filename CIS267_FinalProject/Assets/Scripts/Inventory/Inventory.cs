@@ -7,7 +7,7 @@ public class Inventory : MonoBehaviour
     public static Inventory instance = null;
     public static int maxItems = 16;
     public static List<Item> items = new List<Item>(maxItems);
-    [SerializeField] private InventoryUI inventoryUI;
+    private InventoryUI inventoryUI;
 
     public delegate void OnChange();
     public OnChange onChangeCallback;
@@ -18,6 +18,11 @@ public class Inventory : MonoBehaviour
         {
             instance = this;
         }
+    }
+
+    private void Start()
+    {
+        inventoryUI = GetComponent<InventoryUI>();
     }
 
     public bool IsFull()
