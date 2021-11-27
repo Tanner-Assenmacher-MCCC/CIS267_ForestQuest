@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public static Inventory instance;
+    public static Inventory instance = null;
     public static int maxItems = 16;
     public List<Item> items = new List<Item>(maxItems);
     [SerializeField] private InventoryUI inventoryUI;
@@ -14,7 +14,7 @@ public class Inventory : MonoBehaviour
     
     private void Awake()
     {
-        if (!instance)
+        if (instance == null)
         {
             instance = this;
         }

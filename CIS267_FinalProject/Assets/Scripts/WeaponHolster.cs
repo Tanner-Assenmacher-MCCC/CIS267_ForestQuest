@@ -22,7 +22,7 @@ public class WeaponHolster : MonoBehaviour
         }
         else
         {
-            SelectedItemIcon.SetActive(false);
+            if (SelectedItemIcon) SelectedItemIcon.SetActive(false);
             Debug.Log("No Scriptable Weapon");
         }
     }
