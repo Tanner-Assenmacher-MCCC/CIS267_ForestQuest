@@ -20,7 +20,7 @@ public class ItemCollision : MonoBehaviour
         if (collision.CompareTag("Item"))
         {
             Item item = collision.gameObject.GetComponent<ItemObject>().item;
-            if (Hotbar.instance.items.Count == 0)
+            if (Hotbar.items.Count == 0)
             {
                 firstItem = true;
             }

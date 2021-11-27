@@ -6,7 +6,7 @@ public class Inventory : MonoBehaviour
 {
     public static Inventory instance = null;
     public static int maxItems = 16;
-    public List<Item> items = new List<Item>(maxItems);
+    public static List<Item> items = new List<Item>(maxItems);
     [SerializeField] private InventoryUI inventoryUI;
 
     public delegate void OnChange();

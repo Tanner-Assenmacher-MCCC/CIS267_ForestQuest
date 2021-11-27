@@ -7,7 +7,7 @@ public class Hotbar : MonoBehaviour
 {
     public static Hotbar instance = null;
     public static int maxItems = 3;
-    public List<Item> items = new List<Item>(maxItems);
+    public static List<Item> items = new List<Item>(maxItems);
     [SerializeField] private HotbarUI hotbarUI;
     [SerializeField] private List<Button> slotButtons;
 

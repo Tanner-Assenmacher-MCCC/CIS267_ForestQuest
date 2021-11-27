@@ -34,7 +34,7 @@ public class HotbarUI : MonoBehaviour
         if (hb.InBounds(hb.iw))
         {
             player.itemInHolster = i;
-            player.UseItem(this.hb.items[hb.iw]);
+            player.UseItem(Hotbar.items[hb.iw]);
             hb.ResetButtons(true);
             hb.HighlightClickButton(i);
             if (i == 0)
@@ -82,9 +82,9 @@ public class HotbarUI : MonoBehaviour
     {
         for (int i = 0; i < Hotbar.maxItems; i++)
         {
-            if (i < Hotbar.instance.items.Count)
+            if (i < Hotbar.items.Count)
             {
-                slots[i].addItem(Hotbar.instance.items[i]);
+                slots[i].addItem(Hotbar.items[i]);
             }
             else
             {

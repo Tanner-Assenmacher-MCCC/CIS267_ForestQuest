@@ -112,9 +112,9 @@ public class InventoryUI : MonoBehaviour
     {
         for (int i = 0; i < Inventory.maxItems; i++)
         {
-            if (i < Inventory.instance.items.Count)
+            if (i < Inventory.items.Count)
             {
-                slots[i].addItem(Inventory.instance.items[i]);
+                slots[i].addItem(Inventory.items[i]);
             }
             else
             {

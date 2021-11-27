@@ -152,11 +152,11 @@ public class ItemSwitch : MonoBehaviour
     {
         if (Hotbar.instance.InBounds(hotbarIndex) && Inventory.instance.InBounds(inventoryIndex))
         {
-            Item tempHotBarItem = Hotbar.instance.items[hotbarIndex];
-            Item tempInventoryItem = Inventory.instance.items[inventoryIndex];
+            Item tempHotBarItem = Hotbar.items[hotbarIndex];
+            Item tempInventoryItem = Inventory.items[inventoryIndex];
             //copy inventory item and hotbar item
-            Inventory.instance.items[inventoryIndex] = tempHotBarItem;
-            Hotbar.instance.items[hotbarIndex] = tempInventoryItem;
+            Inventory.items[inventoryIndex] = tempHotBarItem;
+            Hotbar.items[hotbarIndex] = tempInventoryItem;
 
             // replace inventory and hotbar item in lists
             inventoryUI.updateUI();
@@ -165,7 +165,7 @@ public class ItemSwitch : MonoBehaviour
             //change item in holster if you swapped that item
             if (hotbarIndex == p.itemInHolster)
             {
-                p.UseItem(hotbar.items[hotbar.iw]);
+                p.UseItem(Hotbar.items[hotbar.iw]);
             }
         }
     }
@@ -173,7 +173,7 @@ public class ItemSwitch : MonoBehaviour
     public void MoveItem()
     {
         
-        Hotbar.instance.items.Add(Inventory.instance.items[inventoryIndex]);
+        Hotbar.items.Add(Inventory.items[inventoryIndex]);
         Inventory.instance.RemoveIndex(inventoryIndex);
 
         // replace inventory and hotbar item in lists
@@ -183,7 +183,7 @@ public class ItemSwitch : MonoBehaviour
         //change item in holster if you swapped that item
         if (hotbarIndex == p.itemInHolster)
         {
-            p.UseItem(hotbar.items[hotbar.iw]);
+            p.UseItem(Hotbar.items[hotbar.iw]);
         }
     }
     

@@ -984,6 +984,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wp: {fileID: 0}
   p: {fileID: 0}
+  hb: {fileID: 0}
 --- !u!114 &241806126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1290,6 +1291,9 @@ MonoBehaviour:
   slots:
   - {fileID: 0}
   itemSwitch: {fileID: 281174506}
+  p: {fileID: 0}
+  hb: {fileID: 0}
+  wh: {fileID: 0}
 --- !u!114 &281174505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1309,7 +1313,8 @@ MonoBehaviour:
   - {fileID: 1983872301}
   - {fileID: 1969981282}
   itemSwitch: {fileID: 281174506}
-  i: 0
+  iw: 0
+  weaponHolster: {fileID: 0}
 --- !u!114 &281174506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8438,7 +8443,7 @@ Canvas:
   m_RenderMode: 1
   m_Camera: {fileID: 1110733038}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
