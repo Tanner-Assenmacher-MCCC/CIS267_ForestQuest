@@ -28,6 +28,7 @@ public class EnemyAI : MonoBehaviour
     Path path;
     Seeker seeker;
     int currentWaypoint = 0;
+    bool hitEndOfRoamingPath = false;
     bool reachedEndOfPath = false;
     float randNumTime;
     public int offset;
@@ -65,7 +66,7 @@ public class EnemyAI : MonoBehaviour
 
     void UpdatePath()
     {
-        if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) <= maxRange && hasFollowed)
+        if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) <= maxRange && (hasFollowed || hitEndOfRoamingPath))
         {
             seeker.StartPath(rb2d.position, target.position, OnPathComplete);
         }
@@ -81,9 +82,9 @@ public class EnemyAI : MonoBehaviour
         if (Vector3.Distance(target.position, transform.position) > maxRange && !hasFollowed)
         {
             int rand;
-            rand = Random.Range(1, 9);
+            rand = Random.Range(0, 8);
 
-            seeker.StartPath(rb2d.position, colliderPoints[rand], OnPathComplete);
+            seeker.StartPath(rb2d.position, polygonCollider2D.points[rand], OnPathComplete);
         }
     }
 
@@ -162,12 +163,20 @@ public class EnemyAI : MonoBehaviour
                 currentWaypoint++;
             }
 
-            animator.SetBool("Attack", false);
-            animator.SetBool("isMoving", true);
-            animator.SetFloat("moveX", (target.position.x - transform.position.x));
-            animator.SetFloat("moveY", (target.position.y - transform.position.y));
-
             rb2d.AddForce(force);
+
+            if (distance <= 1f)
+            {
+                animator.SetBool("isMoving", false);
+                hitEndOfRoamingPath = true;
+            }
+            else
+            {
+                animator.SetBool("Attack", false);
+                animator.SetBool("isMoving", true);
+                animator.SetFloat("moveX", (path.vectorPath[currentWaypoint].x - transform.position.x));
+                animator.SetFloat("moveY", (path.vectorPath[currentWaypoint].y - transform.position.y));
+            }
         }
     }
 
