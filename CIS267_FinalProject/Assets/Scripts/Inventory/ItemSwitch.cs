@@ -6,25 +6,25 @@ using UnityEngine.UI;
 
 public class ItemSwitch : MonoBehaviour
 {
-    public Hotbar hotbar;
-    public HotbarUI hotbarUI;
-    public Inventory inventory;
-    public InventoryUI inventoryUI;
+    private Player player;
+    private Hotbar hotbar;
+    private HotbarUI hotbarUI;
+    private InventoryUI inventoryUI;
     public GameObject HotbarNumbers;
     public Button SelectedInventoryButton;
-    InventorySlot[] slots;
-    InventorySlot slot;
-    Button slotButton;
+    private Button slotButton;
     public ColorBlock colors;
-    public Player p;
-
+    
     private int hotbarIndex = -1;
     private int inventoryIndex = -1;
 
     // Start is called before the first frame update
     void Start()
     {
-        p = FindObjectOfType<Player>();
+        hotbar = GetComponent<Hotbar>();
+        hotbarUI = GetComponent<HotbarUI>();
+        inventoryUI = GetComponent<InventoryUI>();
+        player = FindObjectOfType<Player>();
     }
 
     // Update is called once per frame
@@ -134,8 +134,8 @@ public class ItemSwitch : MonoBehaviour
         if (Inventory.instance.InBounds(inventoryIndex))
         {
             inventoryUI.ResetButtonColor();
-            slots = inventoryUI.getSlots();
-            slot = slots[inventoryIndex];
+            InventorySlot[] slots = inventoryUI.getSlots();
+            InventorySlot slot = slots[inventoryIndex];
             slotButton = slot.GetButton();
             colors.normalColor = new Color32(0, 255, 83, 40);
             colors.highlightedColor = new Color32(0, 255, 83, 40);
@@ -163,9 +163,9 @@ public class ItemSwitch : MonoBehaviour
             hotbarUI.updateUI();
 
             //change item in holster if you swapped that item
-            if (hotbarIndex == p.itemInHolster)
+            if (hotbarIndex == player.itemInHolster)
             {
-                p.UseItem(Hotbar.items[hotbar.iw]);
+                player.UseItem(Hotbar.items[hotbar.iw]);
             }
         }
     }
@@ -181,9 +181,9 @@ public class ItemSwitch : MonoBehaviour
         hotbarUI.updateUI();
 
         //change item in holster if you swapped that item
-        if (hotbarIndex == p.itemInHolster)
+        if (hotbarIndex == player.itemInHolster)
         {
-            p.UseItem(Hotbar.items[hotbar.iw]);
+            player.UseItem(Hotbar.items[hotbar.iw]);
         }
     }
     

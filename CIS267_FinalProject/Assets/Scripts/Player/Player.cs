@@ -6,7 +6,6 @@ using UnityEngine.EventSystems;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Player : MonoBehaviour
 {
-    public GameObject inventory;
     public int itemInHolster;
     Rigidbody2D rb2d;
     public Animator animator;
@@ -28,7 +27,7 @@ public class Player : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (!gameObject.GetComponent<PlayerAttack>().attacking && !inventory.activeInHierarchy)
+        if (!gameObject.GetComponent<PlayerAttack>().attacking && !InventoryUI.isActive)
         {
             // Press shift to Sprint
             if (Input.GetKey("left shift"))

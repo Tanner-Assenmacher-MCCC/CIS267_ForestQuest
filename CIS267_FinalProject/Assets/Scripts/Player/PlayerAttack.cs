@@ -11,7 +11,6 @@ public class PlayerAttack : MonoBehaviour
     private float attackTime;
     private float animationLength;
     public float attackCooldown;
-    public GameObject inventory;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +22,7 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !attacking && !inventory.activeInHierarchy && FindObjectOfType<WeaponHolster>().hasWeapon)
+        if (Input.GetMouseButtonDown(0) && !attacking && !InventoryUI.isActive && FindObjectOfType<WeaponHolster>().hasWeapon)
         {
             animator.SetTrigger("Attacking");
             animator.SetBool("Attack", false);
