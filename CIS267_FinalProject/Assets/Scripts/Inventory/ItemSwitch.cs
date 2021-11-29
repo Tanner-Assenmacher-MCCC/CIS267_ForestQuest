@@ -13,7 +13,7 @@ public class ItemSwitch : MonoBehaviour
     public GameObject HotbarNumbers;
     public Button SelectedInventoryButton;
     private Button slotButton;
-    public ColorBlock colors;
+    private ColorBlock colors;
     
     private int hotbarIndex = -1;
     private int inventoryIndex = -1;

@@ -5,9 +5,9 @@ using UnityEngine;
 public class ItemCollision : MonoBehaviour
 {
     bool firstItem = true;
-    public WeaponHolster wp;
-    public Player p;
-    public Hotbar hb;
+    private WeaponHolster wp;
+    private Player p;
+    private Hotbar hb;
 
     private void Start()
     {

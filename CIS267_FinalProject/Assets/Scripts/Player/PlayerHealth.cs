@@ -5,13 +5,16 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public int playerHealth;
-    private int maxHealth = 100000000;
+    private int maxHealth = 1000;
     private float timer;
+    private HealthBar healthBar;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerHealth = 80;
+        healthBar = FindObjectOfType<HealthBar>();
+        playerHealth = 1000;
+        healthBar.SetHealth(playerHealth);
     }
 
     // Update is called once per frame
@@ -20,7 +23,7 @@ public class PlayerHealth : MonoBehaviour
         timer += Time.deltaTime;
         if (timer > 1f)
         {//after second, subtracts one from health
-            setScore(-1);
+            setHealth(-1);
             timer = 0;
         }
         if (timer > 30f)
@@ -34,11 +37,12 @@ public class PlayerHealth : MonoBehaviour
         return playerHealth;
     }
 
-    public void setScore(int val)
+    public void setHealth(int val)
     {
         if ((playerHealth + val) >= maxHealth)
         {
             playerHealth = maxHealth;
+            healthBar.SetHealth(playerHealth);
         }
         else if ((playerHealth + val) <= 0)
         { 
@@ -48,7 +52,9 @@ public class PlayerHealth : MonoBehaviour
         else
         {
             playerHealth += val;
+            healthBar.SetHealth(playerHealth);
         }
+        
     }
 
     public void GameOver(bool winGame)

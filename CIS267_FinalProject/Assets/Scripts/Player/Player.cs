@@ -96,7 +96,6 @@ public class Player : MonoBehaviour
 
     public void UseItem(Item item)
     {
-        Debug.Log(item.GetType() == typeof(ScriptableWeapon));
         if (item.GetType() == typeof(ScriptableWeapon))
         {
             WeaponHolster weaponHolster = FindObjectOfType<WeaponHolster>();
