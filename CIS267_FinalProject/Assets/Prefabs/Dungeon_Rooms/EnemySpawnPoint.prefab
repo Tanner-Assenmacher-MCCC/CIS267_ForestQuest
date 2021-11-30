@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3677227825024249180}
+  - component: {fileID: 5520832773179347102}
   m_Layer: 0
   m_Name: EnemySpawnPoint
-  m_TagString: Untagged
+  m_TagString: EnemySpawn
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,3 +31,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5520832773179347102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249603140936536070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a80f2902005ef2540b02df13e76cd785, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnList:
+  - {fileID: 6352280687279162386, guid: f093ee177698f63459ded85d204853c1, type: 3}

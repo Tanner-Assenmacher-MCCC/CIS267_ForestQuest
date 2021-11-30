@@ -11,6 +11,8 @@ TagManager:
   - CinemachineCamera
   - GameManager
   - Inventory
+  - Rooms
+  - EnemySpawn
   layers:
   - Default
   - TransparentFX
