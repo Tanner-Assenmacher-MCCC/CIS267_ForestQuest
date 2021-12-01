@@ -104,7 +104,7 @@ public class Player : MonoBehaviour
             weaponHolster.hasWeapon = true;
             if (!GameObject.Find("Inventory"))
             {
-                if (weaponHolster.SelectedItemIcon) weaponHolster.SelectedItemIcon.SetActive(true);
+                //if (weaponHolster.SelectedItemIcon) weaponHolster.SelectedItemIcon.enabled = true;
 
             }
         }

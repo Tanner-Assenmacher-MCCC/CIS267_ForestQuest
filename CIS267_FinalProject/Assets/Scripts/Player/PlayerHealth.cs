@@ -30,6 +30,11 @@ public class PlayerHealth : MonoBehaviour
         {
             timer = 0;
         }
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            playerHealth -= 100;
+            healthBar.SetHealth(playerHealth);
+        }
     }
 
     public int getHealth()

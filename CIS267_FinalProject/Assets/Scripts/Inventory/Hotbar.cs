@@ -45,7 +45,7 @@ public class Hotbar : MonoBehaviour
             {
                 player.itemInHolster = 0;
                 player.UseItem(items[iw]);
-                weaponHolster.SelectedItemIcon.transform.position = new Vector3(-1.05f, -3.75f, 0f);
+                //weaponHolster.SelectedItemIcon.transform.position = new Vector3(-1.05f, -3.75f, 0f);
                 ResetButtons(true);
                 HighlightButton(iw);
             }
@@ -58,7 +58,7 @@ public class Hotbar : MonoBehaviour
             {
                 player.itemInHolster = 1;
                 player.UseItem(items[iw]);
-                weaponHolster.SelectedItemIcon.transform.position = new Vector3(0f, -3.75f, 0f);
+                //weaponHolster.SelectedItemIcon.transform.position = new Vector3(0f, -3.75f, 0f);
                 ResetButtons(true);
                 HighlightButton(iw);
             }
@@ -71,7 +71,7 @@ public class Hotbar : MonoBehaviour
             {
                 player.itemInHolster = 2;
                 player.UseItem(items[iw]);
-                weaponHolster.SelectedItemIcon.transform.position = new Vector3(1.075f, -3.75f, 0f);
+                //weaponHolster.SelectedItemIcon.transform.position = new Vector3(1.075f, -3.75f, 0f);
                 ResetButtons(true);
                 HighlightButton(iw);
             }
@@ -89,7 +89,7 @@ public class Hotbar : MonoBehaviour
             button.colors = colors;
             itemSwitch.setHotbarNumbers(false);
             WeaponHolster weaponHolster = FindObjectOfType<WeaponHolster>();
-            if (weaponHolster.SelectedItemIcon) weaponHolster.SelectedItemIcon.SetActive(setActive);
+            //if (weaponHolster.SelectedItemIcon) weaponHolster.SelectedItemIcon.enabled = setActive;
 
         }
     }
@@ -101,7 +101,7 @@ public class Hotbar : MonoBehaviour
         colors.highlightedColor = new Color32(255, 255, 255, 40);
         slotButtons[i].colors = colors;
         WeaponHolster weaponHolster = FindObjectOfType<WeaponHolster>();
-        if (weaponHolster.SelectedItemIcon) weaponHolster.SelectedItemIcon.SetActive(true);
+        //if (weaponHolster.SelectedItemIcon) weaponHolster.SelectedItemIcon.enabled = true;
     }
     
     public void HighlightClickButton(int i)
@@ -112,7 +112,7 @@ public class Hotbar : MonoBehaviour
         colors.selectedColor = new Color32(255, 255, 255, 40);
         slotButtons[i].colors = colors;
         WeaponHolster weaponHolster = FindObjectOfType<WeaponHolster>();
-        if (weaponHolster.SelectedItemIcon) weaponHolster.SelectedItemIcon.SetActive(true);
+        //if (weaponHolster.SelectedItemIcon) weaponHolster.SelectedItemIcon.enabled = true;
     }
 
     public bool InBounds(int i)

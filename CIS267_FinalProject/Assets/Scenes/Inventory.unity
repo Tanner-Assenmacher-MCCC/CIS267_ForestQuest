@@ -982,9 +982,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 394ea2c2696f3074da4f117f0679a43b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wp: {fileID: 0}
-  p: {fileID: 0}
-  hb: {fileID: 0}
 --- !u!114 &241806126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1315,14 +1312,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HotbarNumbers: {fileID: 4835258719892626849}
   SelectedInventoryButton: {fileID: 0}
-  colors:
-    m_NormalColor: {r: 0, g: 0, b: 0, a: 0}
-    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0}
-    m_PressedColor: {r: 0, g: 0, b: 0, a: 0}
-    m_SelectedColor: {r: 0, g: 0, b: 0, a: 0}
-    m_DisabledColor: {r: 0, g: 0, b: 0, a: 0}
-    m_ColorMultiplier: 0
-    m_FadeDuration: 0
 --- !u!1 &285061997
 GameObject:
   m_ObjectHideFlags: 0
@@ -2878,7 +2867,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &477329632
 Transform:
   m_ObjectHideFlags: 0
