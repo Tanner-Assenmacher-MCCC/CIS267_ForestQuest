@@ -28,6 +28,7 @@ public class PlayerScore : MonoBehaviour
             int tmpScore = playerScore - 100;
             levelNumber++;
             playerScore = tmpScore;
+            xpBar.UpdateLevelNumber();
         }
         xpBar.SetXP(playerScore);
     }
@@ -40,6 +41,7 @@ public class PlayerScore : MonoBehaviour
     public void addLevel()
     {
         levelNumber++;
+        xpBar.UpdateLevelNumber();
     }
 
     public int getLevel()
