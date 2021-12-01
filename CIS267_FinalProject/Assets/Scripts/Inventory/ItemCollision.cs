@@ -31,7 +31,7 @@ public class ItemCollision : MonoBehaviour
             if (Hotbar.instance.Add(item))
             {
                 Destroy(collision.gameObject);
-                if (firstItem)
+                if (firstItem && item.GetType() == typeof(ScriptableWeapon))
                 {  
                     //Debug.Log(wp);
                     //Debug.Log(wp.SelectedItemIcon);

@@ -7,10 +7,11 @@ public class PlayerScore : MonoBehaviour
     public int playerScore = 0;
     public int levelNumber = 1;
     public int maxScore = 100;
+    private XPbar xpBar;
     // Start is called before the first frame update
     void Start()
     {
-        
+        xpBar = FindObjectOfType<XPbar>();
     }
 
     // Update is called once per frame
@@ -19,7 +20,7 @@ public class PlayerScore : MonoBehaviour
         
     }
 
-    public void setScore(int val)
+    public void addScore(int val)
     {
         playerScore += val;
         if (playerScore >= maxScore)
@@ -28,6 +29,7 @@ public class PlayerScore : MonoBehaviour
             levelNumber++;
             playerScore = tmpScore;
         }
+        xpBar.SetXP(playerScore);
     }
 
     public int getScore()

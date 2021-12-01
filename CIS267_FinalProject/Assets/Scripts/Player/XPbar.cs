@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class XPbar : MonoBehaviour
 {
-    public Slider slider;
+    private Slider slider;
     //public Gradient gradient;
     public Image fill;
 
     private void Start()
     {
-        slider = FindObjectOfType<Slider>();
+        slider = GetComponent<Slider>();
     }
 
     private void Update()
@@ -19,12 +19,12 @@ public class XPbar : MonoBehaviour
 
     }
 
-    public void SetHealthToMax()
+    public void SetXPToMax()
     {
         slider.value = slider.maxValue;
         //fill.color = gradient.Evaluate(1f);
     }
-    public void SetHealth(int xp)
+    public void SetXP(int xp)
     {
         slider.value = xp;
         //fill.color = gradient.Evaluate(slider.normalizedValue);
