@@ -23,12 +23,17 @@ public class PlayerHealth : MonoBehaviour
         timer += Time.deltaTime;
         if (timer > 1f)
         {//after second, subtracts one from health
-            setHealth(-1);
+            addHealth(-1);
             timer = 0;
         }
         if (timer > 30f)
         {
             timer = 0;
+        }
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            playerHealth -= 100;
+            healthBar.SetHealth(playerHealth);
         }
     }
 
@@ -37,7 +42,7 @@ public class PlayerHealth : MonoBehaviour
         return playerHealth;
     }
 
-    public void setHealth(int val)
+    public void addHealth(int val)
     {
         if ((playerHealth + val) >= maxHealth)
         {

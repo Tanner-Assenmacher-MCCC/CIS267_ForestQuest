@@ -45,6 +45,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         item = newItem;
         slotObject.GetComponent<SpriteRenderer>().sprite = item.sprite;
         slotObject.gameObject.SetActive(true);
+        slotObject.transform.rotation = newItem.GetType() == typeof(ScriptableWeapon) ? Quaternion.Euler(0, 0, 40) : Quaternion.Euler(0, 0, 0);
     }
 
     public void clearSlot()

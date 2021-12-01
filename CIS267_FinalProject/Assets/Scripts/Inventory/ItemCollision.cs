@@ -31,13 +31,16 @@ public class ItemCollision : MonoBehaviour
             if (Hotbar.instance.Add(item))
             {
                 Destroy(collision.gameObject);
-                if (firstItem)
-                {
+                if (firstItem && item.GetType() == typeof(ScriptableWeapon))
+                {  
+                    //Debug.Log(wp);
+                    //Debug.Log(wp.SelectedItemIcon);
+                    //Debug.Log(wp.SelectedItemIcon.GetComponent<RectTransform>());
                     Hotbar.instance.HighlightButton(0);
                     hb.iw = 0;
                     p.UseItem(item);
                     p.itemInHolster = 0;
-                    wp.SelectedItemIcon.transform.position = new Vector3(-1.05f, -3.75f, 0f);
+                    //wp.SelectedItemIcon.GetComponent<RectTransform>().anchoredPosition = new Vector3(-1.05f, -3.75f, 0f);
                 }
             }
             else if (Inventory.instance.Add(item))

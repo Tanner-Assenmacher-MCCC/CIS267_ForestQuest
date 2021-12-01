@@ -41,12 +41,12 @@ public class InventoryUI : MonoBehaviour
             ResetButtonColor();
             if (!inventoryUI.activeInHierarchy && hotbar.InBounds(hotbar.iw) && weaponHolster.hasWeapon)
             {
-                if (weaponHolster.SelectedItemIcon) weaponHolster.SelectedItemIcon.SetActive(true);
+                //if (weaponHolster.SelectedItemIcon) weaponHolster.SelectedItemIcon.enabled = true;
                 hotbar.HighlightButton(player.itemInHolster);
             }
             else
             {
-                if (weaponHolster.SelectedItemIcon) weaponHolster.SelectedItemIcon.SetActive(false);
+                //if (weaponHolster.SelectedItemIcon) weaponHolster.SelectedItemIcon.enabled = false;
                 hotbar.ResetButtons(false);
             }
         }

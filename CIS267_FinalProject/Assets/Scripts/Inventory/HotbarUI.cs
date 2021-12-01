@@ -38,15 +38,15 @@ public class HotbarUI : MonoBehaviour
             hotbar.HighlightClickButton(i);
             if (i == 0)
             {
-                hotbar.weaponHolster.SelectedItemIcon.transform.position = new Vector3(-1.05f, -3.75f, 0f);
+                //hotbar.weaponHolster.SelectedItemIcon.transform.position = new Vector3(-1.05f, -3.75f, 0f);
             }
             if (i == 1)
             {
-                hotbar.weaponHolster.SelectedItemIcon.transform.position = new Vector3(0f, -3.75f, 0f);
+                //hotbar.weaponHolster.SelectedItemIcon.transform.position = new Vector3(0f, -3.75f, 0f);
             }
             if (i == 2)
             {
-                hotbar.weaponHolster.SelectedItemIcon.transform.position = new Vector3(1.075f, -3.75f, 0f);
+                //hotbar.weaponHolster.SelectedItemIcon.transform.position = new Vector3(1.075f, -3.75f, 0f);
             }
         }
         //keep inventory button selected

@@ -96,17 +96,31 @@ public class Player : MonoBehaviour
 
     public void UseItem(Item item)
     {
+        WeaponHolster weaponHolster = FindObjectOfType<WeaponHolster>();
         if (item.GetType() == typeof(ScriptableWeapon))
         {
-            WeaponHolster weaponHolster = FindObjectOfType<WeaponHolster>();
             weaponHolster.scriptableWeapon = item as ScriptableWeapon;
             weaponHolster.GetComponent<SpriteRenderer>().sprite = item.sprite;
             weaponHolster.hasWeapon = true;
             if (!GameObject.Find("Inventory"))
             {
-                if (weaponHolster.SelectedItemIcon) weaponHolster.SelectedItemIcon.SetActive(true);
+                //if (weaponHolster.SelectedItemIcon) weaponHolster.SelectedItemIcon.enabled = true;
 
             }
+        }
+        else if (item.GetType() == typeof(Food))
+        {
+            weaponHolster.ResetWeapon();
+            Food food = item as Food;
+            PlayerHealth playerHealth = GetComponent<PlayerHealth>();
+            playerHealth.addHealth(food.healthValue);
+            PlayerScore playerScore = GetComponent<PlayerScore>();
+            playerScore.addScore(food.xpValue);
+            Hotbar.instance.Remove(item);
+        }
+        else
+        {
+            weaponHolster.ResetWeapon();
         }
     }
 
