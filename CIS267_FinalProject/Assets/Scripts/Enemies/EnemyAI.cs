@@ -145,7 +145,7 @@ public class EnemyAI : MonoBehaviour
             }
         }
 
-        else if (Vector3.Distance(target.position, transform.position) > maxRange && hasFollowed)
+        if (Vector3.Distance(target.position, transform.position) > maxRange && hasFollowed)
         {
             GoHome();
         }
@@ -165,7 +165,7 @@ public class EnemyAI : MonoBehaviour
 
             rb2d.AddForce(force);
 
-            if (distance <= 1f)
+            if (currentWaypoint >= path.vectorPath.Count)
             {
                 animator.SetBool("isMoving", false);
                 hitEndOfRoamingPath = true;
@@ -184,6 +184,9 @@ public class EnemyAI : MonoBehaviour
     {
         time += Time.deltaTime;
         animator.SetBool("Attack", false);
+
+        animator.SetFloat("moveX", (target.position.x - transform.position.x));
+        animator.SetFloat("moveY", (target.position.y - transform.position.y));
 
         if (time >= attackRate || !attackedOnce)
         {
