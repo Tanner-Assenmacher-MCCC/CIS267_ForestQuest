@@ -11,7 +11,6 @@ public class EnemyAI : MonoBehaviour
     private Rigidbody2D rb2d;
     private Animator animator;
     private Transform target;
-    private Transform homePosition;
     [Header("Speed")]
     [Range(1f, 20f)]
     [SerializeField] private float speed;
@@ -30,7 +29,6 @@ public class EnemyAI : MonoBehaviour
     int currentWaypoint = 0;
     bool hitEndOfRoamingPath = false;
     bool reachedEndOfPath = false;
-    float randNumTime;
     public int offset;
 
     // Start is called before the first frame update
