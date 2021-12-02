@@ -45,3 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnList:
   - {fileID: 6352280687279162386, guid: f093ee177698f63459ded85d204853c1, type: 3}
+  - {fileID: 514623826291002933, guid: 6bfed087279f49f41ba90b3712942a88, type: 3}
+  - {fileID: 4966596502948052153, guid: 2e17378df5d17c34ca58e8996af1c077, type: 3}
+  - {fileID: 3644149990106258087, guid: 564a3c0ef6c837b4f92ca1e35d3a19fd, type: 3}

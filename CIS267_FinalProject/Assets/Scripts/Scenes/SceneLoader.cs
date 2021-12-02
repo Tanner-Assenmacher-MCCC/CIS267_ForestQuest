@@ -5,14 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    public Animator musicTransition;
+    public int sceneIndex;
+    // public Animator musicTransition;
     public Animator transition;
     public float transitionTime = 1f;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        PlayerPrefs.SetInt("lastLevel", SceneManager.GetActiveScene().buildIndex);
     }
 
     // Update is called once per frame
@@ -24,12 +25,12 @@ public class SceneLoader : MonoBehaviour
     IEnumerator TimeToTransition()
     {
         transition.SetTrigger("Start");
-        musicTransition.SetTrigger("Start");
+        // musicTransition.SetTrigger("Start");
 
         yield return new WaitForSeconds(transitionTime);
         //DontDestroyOnLoad(GameObject.FindGameObjectWithTag("GameManager"));
         //DontDestroyOnLoad(GameObject.FindGameObjectWithTag("Inventory"));
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(sceneIndex);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

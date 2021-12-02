@@ -8,54 +8,66 @@ public class we_warp : MonoBehaviour
 
     public GameObject target;
 
-    public GameObject fade;
+    public Animator fade;
+
+    // public Animator musicFade;
 
     private CircleCollider2D myCollider;
 
     private static float exitAmount = 1.5f;
 
-    private Player playerScript;
+    private Animator animator;
+    GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
         myCollider = GetComponent<CircleCollider2D>();
-        fade.GetComponent<SpriteRenderer>().enabled = false;
-        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        animator = FindObjectOfType<Player>().GetComponent<Animator>();
+        player = FindObjectOfType<Player>().gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
-            fadeScreen(collision.gameObject);
+            StartCoroutine(fadeScreen(collision.gameObject));
         }
     }
 
-    private void fadeScreen(GameObject player)
+    private IEnumerator fadeScreen(GameObject player)
     {
-        fade.GetComponent<SpriteRenderer>().enabled = true;
+        fade.speed = 3;
+        fade.SetTrigger("Start");
+        // musicFade.SetTrigger("Start");
+        player.GetComponent<Player>().enabled = false;
+        animator.SetFloat("Horizontal", 0);
+        animator.SetFloat("Vertical", 0);
 
+        yield return new WaitForSeconds(0.75f);
+
+        player.GetComponent<Player>().enabled = true;
+        fade.SetTrigger("End");
         warpPlayer(player);
     }
 
     private void warpPlayer(GameObject player)
     {
-        if(target.GetComponent<we_warp>().exitDown())
+        if (target.GetComponent<we_warp>().exitDown())
         {
             player.transform.position = new Vector3(target.transform.position.x, target.transform.position.y - exitAmount, player.transform.position.z);
-            playerScript.SetVerticalDirection(-1);
+            animator.SetFloat("lastMoveVertical", -1f);
         }
         else
         {
             player.transform.position = new Vector3(target.transform.position.x, target.transform.position.y + exitAmount, player.transform.position.z);
-            playerScript.SetVerticalDirection(1);
+            animator.SetFloat("lastMoveVertical", 1f);
         }
 
 

@@ -8,7 +8,7 @@ public class LoadScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        this.GetComponent<Rigidbody2D>().transform.position = new Vector2(-7.3f, -10.4f);
     }
 
     // Update is called once per frame
@@ -29,7 +29,6 @@ public class LoadScene : MonoBehaviour
             //DontDestroyOnLoad(GameObject.FindGameObjectWithTag("Inventory"));
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             //GameObject.FindObjectOfType<Player>().GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
-            //GameObject.FindObjectOfType<Player>().GetComponent<Rigidbody2D>().transform.position = new Vector2(-7.3f, -10.4f);
         }
     }
 }
