@@ -6,7 +6,7 @@ using UnityEngine.Audio;
 
 public class SceneLoader : MonoBehaviour
 {
-    public AudioMixer mixer;
+    // public AudioMixer mixer;
     Player playerScript;
     Animator animator;
     Transform player;
@@ -69,8 +69,8 @@ public class SceneLoader : MonoBehaviour
         }
     }
 
-    public void SetLevel(float sliderValue)
-    {
-        mixer.SetFloat("AudioVol", -80.00f)
-    }
+    // public void SetLevel(float sliderValue)
+    // {
+    //     mixer.SetFloat("AudioVol", -80.00f);
+    // }
 }
