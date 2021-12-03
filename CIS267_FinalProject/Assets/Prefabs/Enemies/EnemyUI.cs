@@ -4,21 +4,32 @@ using UnityEngine;
 
 public class EnemyUI : MonoBehaviour
 {
-    GameObject canvas;
-    public GameObject info;
+    TextMesh textMesh;
+    Transform enemyInfo;
+    public GameObject tempInfo;
+    [Header("Position Offset")]
+    [Range(-5f, 5f)]
     public float xDisp;
+    [Range(-5f, 5f)]
     public float yDisp;
+    [Header("Enemy Atributes")]
+    public string name;
+    [Range(1, 100)]
+    public int level;
+    public int health;
+
     // Start is called before the first frame update
     void Start()
     {
-        canvas = GameObject.Find("EnemyUI");
-
-        Instantiate(info, canvas.transform);
+        Instantiate(tempInfo, this.transform);
+        enemyInfo = this.gameObject.transform.GetChild(0);
+        textMesh = enemyInfo.GetComponent<TextMesh>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        info.transform.position = this.transform.position;
+        enemyInfo.position = new Vector2(this.transform.position.x + xDisp - 0.6f, this.transform.position.y + yDisp);
+
     }
 }

@@ -26,7 +26,7 @@ public class EnemyAI : MonoBehaviour
     private bool attackedOnce;
     Path path;
     Seeker seeker;
-    LayerMask blockingLayer;
+    int blockingLayer;
     int currentWaypoint = 0;
     bool hitEndOfRoamingPath = false;
     bool reachedEndOfPath = false;
@@ -68,18 +68,26 @@ public class EnemyAI : MonoBehaviour
     {
         float distanceX = Mathf.Abs((Mathf.Abs(target.position.x) - Mathf.Abs(rb2d.position.x)));
         float distanceY = Mathf.Abs((Mathf.Abs(target.position.y) - Mathf.Abs(rb2d.position.y)));
-        RaycastHit2D raycastUp = Physics2D.Raycast(rb2d.position, Vector2.up, 5f);
-        RaycastHit2D raycastDown = Physics2D.Raycast(rb2d.position, -Vector2.up, 5f);
-        RaycastHit2D raycastRight = Physics2D.Raycast(rb2d.position, Vector2.right, 5f);
-        RaycastHit2D raycastLeft = Physics2D.Raycast(rb2d.position, -Vector2.right, 5f);
-        if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) <= maxRange && (hasFollowed || hitEndOfRoamingPath) && (raycastUp.transform.gameObject.layer == blockingLayer || raycastDown.transform.gameObject.layer == blockingLayer || raycastRight.transform.gameObject.layer == blockingLayer || raycastLeft.transform.gameObject.layer == blockingLayer))
-        {
-            seeker.StartPath(rb2d.position, transform.parent.position, OnPathComplete);
-        }
 
-        else if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) <= maxRange && (hasFollowed || hitEndOfRoamingPath) && (raycastUp.transform.gameObject.layer != blockingLayer || raycastDown.transform.gameObject.layer != blockingLayer || raycastRight.transform.gameObject.layer != blockingLayer || raycastLeft.transform.gameObject.layer != blockingLayer))
+        Debug.Log("Animation Float Value X: " + animator.GetFloat("moveX"));
+        Debug.Log("Animation Float Value Y: " + animator.GetFloat("moveY"));
+        // RaycastHit2D raycastUp = Physics2D.Raycast(transform.position, Vector2.up, 5f, blockingLayer);
+        // RaycastHit2D raycastDown = Physics2D.Raycast(transform.position, -Vector2.up, 5f, blockingLayer);
+        // RaycastHit2D raycastRight = Physics2D.Raycast(transform.position, Vector2.right, 5f, blockingLayer);
+        // RaycastHit2D raycastLeft = Physics2D.Raycast(transform.position, -Vector2.right, 5f, blockingLayer);
+        // if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) <= maxRange && (hasFollowed || hitEndOfRoamingPath) && raycast.transform.gameObject.layer == blockingLayer)
+        // {
+        //     seeker.StartPath(rb2d.position, transform.parent.position, OnPathComplete);
+        // }
+
+        if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) <= maxRange && (hasFollowed || hitEndOfRoamingPath) && !Physics2D.Raycast(transform.position, new Vector2(0f, -1f), 5f, blockingLayer))
         {
             seeker.StartPath(rb2d.position, target.position, OnPathComplete);
+        }
+
+        if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) <= maxRange && (hasFollowed || hitEndOfRoamingPath) && Physics2D.Raycast(transform.position, new Vector2(0f, -1f), 5f, blockingLayer))
+        {
+            seeker.StartPath(rb2d.position, transform.parent.position, OnPathComplete);
         }
 
         else if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) > maxRange && hasFollowed)
