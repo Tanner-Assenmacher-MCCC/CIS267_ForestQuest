@@ -16,20 +16,25 @@ public class EnemyUI : MonoBehaviour
     public string name;
     [Range(1, 100)]
     public int level;
-    public int health;
+    int health;
+    int initialHealth;
 
     // Start is called before the first frame update
     void Start()
     {
+        health = gameObject.GetComponent<Enemy>().health;
+        initialHealth = health;
         Instantiate(tempInfo, this.transform);
         enemyInfo = this.gameObject.transform.GetChild(0);
         textMesh = enemyInfo.GetComponent<TextMesh>();
+        enemyInfo.GetComponent<MeshRenderer>().sortingOrder = 15;
     }
 
     // Update is called once per frame
     void Update()
     {
-        enemyInfo.position = new Vector2(this.transform.position.x + xDisp - 0.6f, this.transform.position.y + yDisp);
+        enemyInfo.position = new Vector2(this.transform.position.x + xDisp, this.transform.position.y + yDisp);
+        textMesh.text = "Health: " + health + "/" + initialHealth;
 
     }
 }

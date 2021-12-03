@@ -259,9 +259,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5371c761ea4ac74bbd7e4f856a741ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: {fileID: 8585905825015354225, guid: 7d3a9ec34f6b8ee48971cb025851eb1a, type: 3}
+  tempInfo: {fileID: 4588313862593297682, guid: 0848c50e125175f439685a8f185a3ba9, type: 3}
   xDisp: 0
-  yDisp: 0
+  yDisp: 1.6
+  name: 
+  level: 0
 --- !u!114 &2454575397496051209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,6 +276,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88cba2947f1b3b04c9c422141d9ebbc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 120
   damage: 4
   xp: 5
