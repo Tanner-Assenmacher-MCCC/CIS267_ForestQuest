@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyUI : MonoBehaviour
 {
-    TextMesh textMesh;
+    TextMesh healthAmount;
     Transform enemyInfo;
     public GameObject tempInfo;
     [Header("Position Offset")]
@@ -15,18 +15,22 @@ public class EnemyUI : MonoBehaviour
     [Header("Enemy Atributes")]
     public string name;
     [Range(1, 100)]
-    public int level;
+    public int minLevel;
+    [Range(1, 100)]
+    public int maxLevel;
+    private int level;
     int health;
     int initialHealth;
 
     // Start is called before the first frame update
     void Start()
     {
-        health = gameObject.GetComponent<Enemy>().health;
+        level = Random.Range(minLevel, maxLevel + 1);
+        health = gameObject.GetComponent<Enemy>().GetHealth();
         initialHealth = health;
         Instantiate(tempInfo, this.transform);
         enemyInfo = this.gameObject.transform.GetChild(0);
-        textMesh = enemyInfo.GetComponent<TextMesh>();
+        healthAmount = enemyInfo.GetComponent<TextMesh>();
         enemyInfo.GetComponent<MeshRenderer>().sortingOrder = 15;
     }
 
@@ -34,7 +38,7 @@ public class EnemyUI : MonoBehaviour
     void Update()
     {
         enemyInfo.position = new Vector2(this.transform.position.x + xDisp, this.transform.position.y + yDisp);
-        textMesh.text = "Health: " + health + "/" + initialHealth;
+        healthAmount.text = name + "\n" + "Health: " + gameObject.GetComponent<Enemy>().GetHealth();
 
     }
 }

@@ -23,6 +23,18 @@ PrefabInstance:
       propertyPath: maxRange
       value: 22
       objectReference: {fileID: 0}
+    - target: {fileID: 343681133352484316, guid: f093ee177698f63459ded85d204853c1, type: 3}
+      propertyPath: name
+      value: Wolf
+      objectReference: {fileID: 0}
+    - target: {fileID: 343681133352484316, guid: f093ee177698f63459ded85d204853c1, type: 3}
+      propertyPath: minLevel
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 343681133352484316, guid: f093ee177698f63459ded85d204853c1, type: 3}
+      propertyPath: healthAmount
+      value: 
+      objectReference: {fileID: 1709175535928443340, guid: 048bf85e216a546459e5913b41423442, type: 3}
     - target: {fileID: 4138948904554254640, guid: f093ee177698f63459ded85d204853c1, type: 3}
       propertyPath: damage
       value: 4

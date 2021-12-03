@@ -69,8 +69,8 @@ public class EnemyAI : MonoBehaviour
         float distanceX = Mathf.Abs((Mathf.Abs(target.position.x) - Mathf.Abs(rb2d.position.x)));
         float distanceY = Mathf.Abs((Mathf.Abs(target.position.y) - Mathf.Abs(rb2d.position.y)));
 
-        Debug.Log("Animation Float Value X: " + animator.GetFloat("moveX"));
-        Debug.Log("Animation Float Value Y: " + animator.GetFloat("moveY"));
+        // Debug.Log("Animation Float Value X: " + animator.GetFloat("moveX"));
+        // Debug.Log("Animation Float Value Y: " + animator.GetFloat("moveY"));
         // RaycastHit2D raycastUp = Physics2D.Raycast(transform.position, Vector2.up, 5f, blockingLayer);
         // RaycastHit2D raycastDown = Physics2D.Raycast(transform.position, -Vector2.up, 5f, blockingLayer);
         // RaycastHit2D raycastRight = Physics2D.Raycast(transform.position, Vector2.right, 5f, blockingLayer);

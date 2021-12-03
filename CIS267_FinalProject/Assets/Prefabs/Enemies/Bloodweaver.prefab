@@ -259,11 +259,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5371c761ea4ac74bbd7e4f856a741ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tempInfo: {fileID: 4588313862593297682, guid: 0848c50e125175f439685a8f185a3ba9, type: 3}
+  healthAmount: {fileID: 0}
+  tempInfo: {fileID: 3983936995590544039, guid: 238ce46de5def2a4692e251ee5767d1d, type: 3}
   xDisp: 0
   yDisp: 1.6
-  name: 
-  level: 0
+  name: Bloodweaver
+  minLevel: 0
+  maxLevel: 0
 --- !u!114 &2454575397496051209
 MonoBehaviour:
   m_ObjectHideFlags: 0

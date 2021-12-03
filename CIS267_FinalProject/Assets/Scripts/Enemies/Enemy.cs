@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     public int xp = 5;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -24,7 +24,18 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        if (amount > 0) this.health -= amount;
+        if (amount > 0) SetHealth(this.health -= amount);
+        Debug.Log("Enemy Health: " + health);
+    }
+
+    public int GetHealth()
+    {
+        return health;
+    }
+
+    public void SetHealth(int h)
+    {
+        health = h;
     }
 
     public void Die()
