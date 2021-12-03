@@ -20,16 +20,16 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-        if (timer > 1f)
-        {//after second, subtracts one from health
-            addHealth(-1);
-            timer = 0;
-        }
-        if (timer > 30f)
-        {
-            timer = 0;
-        }
+        //timer += Time.deltaTime;
+        //if (timer > 1f)
+        //{//after second, subtracts one from health
+        //    addHealth(-1);
+        //    timer = 0;
+        //}
+        //if (timer > 30f)
+        //{
+        //    timer = 0;
+        //}
         if(Input.GetKeyDown(KeyCode.K))
         {
             playerHealth -= 100;

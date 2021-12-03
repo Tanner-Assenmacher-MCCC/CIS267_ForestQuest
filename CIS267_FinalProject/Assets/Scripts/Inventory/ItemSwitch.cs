@@ -165,26 +165,26 @@ public class ItemSwitch : MonoBehaviour
             //change item in holster if you swapped that item
             if (hotbarIndex == player.itemInHolster)
             {
-                player.UseItem(Hotbar.items[hotbar.iw]);
+                if (Hotbar.items[hotbar.iw].GetType() != typeof(Food))
+                {
+                    player.UseItem(Hotbar.items[hotbar.iw]);
+                }
+                
             }
         }
     }
 
     public void MoveItem()
     {
-        
-        Hotbar.items.Add(Inventory.items[inventoryIndex]);
-        Inventory.instance.RemoveIndex(inventoryIndex);
-
+        if (Inventory.instance.InBounds(inventoryIndex))
+        {
+            Hotbar.items.Add(Inventory.items[inventoryIndex]);
+            Inventory.instance.RemoveIndex(inventoryIndex);
+        }
+      
         // replace inventory and hotbar item in lists
         inventoryUI.updateUI();
         hotbarUI.updateUI();
-
-        //change item in holster if you swapped that item
-        if (hotbarIndex == player.itemInHolster)
-        {
-            player.UseItem(Hotbar.items[hotbar.iw]);
-        }
     }
     
 }

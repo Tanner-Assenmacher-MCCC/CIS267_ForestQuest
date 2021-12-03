@@ -37,12 +37,14 @@ public class Hotbar : MonoBehaviour
     {
         if (GameObject.Find("Inventory")) return;
         WeaponHolster weaponHolster = FindObjectOfType<WeaponHolster>();
+        Player player = FindObjectOfType<Player>();
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            Player player = FindObjectOfType<Player>();
-            iw = 0;
-            if (InBounds(iw))
+            
+            
+            if (InBounds(0))
             {
+                iw = 0;
                 player.itemInHolster = 0;
                 player.UseItem(items[iw]);
                 //weaponHolster.SelectedItemIcon.transform.position = new Vector3(-1.05f, -3.75f, 0f);
@@ -52,10 +54,10 @@ public class Hotbar : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            Player player = FindObjectOfType<Player>();
-            iw = 1;
-            if (InBounds(iw))
+            
+            if (InBounds(1))
             {
+                iw = 1;
                 player.itemInHolster = 1;
                 player.UseItem(items[iw]);
                 //weaponHolster.SelectedItemIcon.transform.position = new Vector3(0f, -3.75f, 0f);
@@ -65,10 +67,10 @@ public class Hotbar : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            Player player = FindObjectOfType<Player>();
-            iw = 2;
-            if (InBounds(iw))
+            
+            if (InBounds(2))
             {
+                iw = 2;
                 player.itemInHolster = 2;
                 player.UseItem(items[iw]);
                 //weaponHolster.SelectedItemIcon.transform.position = new Vector3(1.075f, -3.75f, 0f);
