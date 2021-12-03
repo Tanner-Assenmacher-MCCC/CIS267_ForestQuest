@@ -15,4 +15,4 @@ MonoBehaviour:
   name: Heroic
   sprite: {fileID: 21300000, guid: ba73c428ad7b76545917a628b0903884, type: 3}
   prefab: {fileID: 5541936342561829303, guid: b046e5b95d0d5e04f9c971605a835b65, type: 3}
-  damage: 40
+  damage: 20

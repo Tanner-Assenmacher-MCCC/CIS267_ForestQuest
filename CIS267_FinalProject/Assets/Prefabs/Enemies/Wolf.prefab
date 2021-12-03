@@ -23,6 +23,10 @@ PrefabInstance:
       propertyPath: maxRange
       value: 22
       objectReference: {fileID: 0}
+    - target: {fileID: 4138948904554254640, guid: f093ee177698f63459ded85d204853c1, type: 3}
+      propertyPath: damage
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5405527758383538313, guid: f093ee177698f63459ded85d204853c1, type: 3}
       propertyPath: m_Controller
       value: 

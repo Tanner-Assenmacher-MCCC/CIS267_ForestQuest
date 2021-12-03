@@ -18,9 +18,10 @@ GameObject:
   - component: {fileID: -6294587281817214592}
   - component: {fileID: -3111009638918715967}
   - component: {fileID: 3882079486244205730}
+  - component: {fileID: 4853681084247084794}
   m_Layer: 0
   m_Name: Bluesteel Spider
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -259,4 +260,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info: {fileID: 8585905825015354225, guid: 7d3a9ec34f6b8ee48971cb025851eb1a, type: 3}
-  offset: {x: 0, y: 0}
+  xDisp: 0
+  yDisp: 0
+--- !u!114 &4853681084247084794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8651990690350218479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88cba2947f1b3b04c9c422141d9ebbc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  damage: 4
+  xp: 5

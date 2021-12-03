@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public int playerHealth;
-    private int maxHealth = 1000;
+    private int maxHealth = 100;
     private float timer;
     private HealthBar healthBar;
 
@@ -13,7 +13,6 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         healthBar = FindObjectOfType<HealthBar>();
-        playerHealth = 1000;
         healthBar.SetHealth(playerHealth);
     }
 
@@ -32,7 +31,7 @@ public class PlayerHealth : MonoBehaviour
         //}
         if(Input.GetKeyDown(KeyCode.K))
         {
-            playerHealth -= 100;
+            playerHealth -= 10;
             healthBar.SetHealth(playerHealth);
         }
     }
@@ -60,6 +59,18 @@ public class PlayerHealth : MonoBehaviour
             healthBar.SetHealth(playerHealth);
         }
         
+    }
+
+    public void subtractHealth(int val)
+    {
+        playerHealth -= val;
+        healthBar.SetHealth(playerHealth);
+
+        if ((playerHealth <= 0))
+        {
+            Debug.Log("You Lost");
+            GameOver(false);
+        }
     }
 
     public void GameOver(bool winGame)

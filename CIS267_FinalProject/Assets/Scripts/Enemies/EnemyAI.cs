@@ -138,7 +138,7 @@ public class EnemyAI : MonoBehaviour
             if (Vector3.Distance(target.position, transform.position) <= minRange)
             {
                 animator.SetBool("isMoving", false);
-                AttackPlayer();
+                Attack();
             }
             else
             {
@@ -191,7 +191,22 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    public void AttackPlayer()
+    private IEnumerator WaitForAnimation(Animation animation)
+    {
+        do
+        {
+            yield return null;
+        } while (animation.isPlaying);
+    }
+
+    private void AttackPlayer()
+    {
+        Player player = FindObjectOfType<Player>();
+        Enemy enemy = GetComponent<Enemy>();
+        player.GetComponent<PlayerHealth>().subtractHealth(enemy.damage);
+    }
+
+    public void Attack()
     {
         time += Time.deltaTime;
         animator.SetBool("Attack", false);
@@ -202,6 +217,7 @@ public class EnemyAI : MonoBehaviour
         if (time >= attackRate || !attackedOnce)
         {
             animator.SetBool("Attack", true);
+            AttackPlayer();
             time = 0;
             attackedOnce = true;
         }
