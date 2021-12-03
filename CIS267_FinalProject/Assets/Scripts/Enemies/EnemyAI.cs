@@ -26,6 +26,7 @@ public class EnemyAI : MonoBehaviour
     private bool attackedOnce;
     Path path;
     Seeker seeker;
+    LayerMask blockingLayer;
     int currentWaypoint = 0;
     bool hitEndOfRoamingPath = false;
     bool reachedEndOfPath = false;
@@ -43,6 +44,7 @@ public class EnemyAI : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb2d = GetComponent<Rigidbody2D>();
         polygonCollider2D = gameObject.GetComponent<PolygonCollider2D>();
+        blockingLayer = LayerMask.NameToLayer("Blocking");
 
         colliderPoints = polygonCollider2D.points;
         polygonCollider2D.offset = new Vector2(-t.parent.position.x, -t.parent.position.y);
@@ -64,7 +66,18 @@ public class EnemyAI : MonoBehaviour
 
     void UpdatePath()
     {
-        if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) <= maxRange && (hasFollowed || hitEndOfRoamingPath))
+        float distanceX = Mathf.Abs((Mathf.Abs(target.position.x) - Mathf.Abs(rb2d.position.x)));
+        float distanceY = Mathf.Abs((Mathf.Abs(target.position.y) - Mathf.Abs(rb2d.position.y)));
+        RaycastHit2D raycastUp = Physics2D.Raycast(rb2d.position, Vector2.up, 5f);
+        RaycastHit2D raycastDown = Physics2D.Raycast(rb2d.position, -Vector2.up, 5f);
+        RaycastHit2D raycastRight = Physics2D.Raycast(rb2d.position, Vector2.right, 5f);
+        RaycastHit2D raycastLeft = Physics2D.Raycast(rb2d.position, -Vector2.right, 5f);
+        if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) <= maxRange && (hasFollowed || hitEndOfRoamingPath) && (raycastUp.transform.gameObject.layer == blockingLayer || raycastDown.transform.gameObject.layer == blockingLayer || raycastRight.transform.gameObject.layer == blockingLayer || raycastLeft.transform.gameObject.layer == blockingLayer))
+        {
+            seeker.StartPath(rb2d.position, transform.parent.position, OnPathComplete);
+        }
+
+        else if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) <= maxRange && (hasFollowed || hitEndOfRoamingPath) && (raycastUp.transform.gameObject.layer != blockingLayer || raycastDown.transform.gameObject.layer != blockingLayer || raycastRight.transform.gameObject.layer != blockingLayer || raycastLeft.transform.gameObject.layer != blockingLayer))
         {
             seeker.StartPath(rb2d.position, target.position, OnPathComplete);
         }
