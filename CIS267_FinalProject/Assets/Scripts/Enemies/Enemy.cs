@@ -16,15 +16,19 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (health <= 0)
-        {
-            Die();
-        }
     }
 
     public void TakeDamage(int amount)
     {
-        if (amount > 0) this.health -= amount;
+        if (amount > 0)
+        {
+            this.health -= amount;
+            Flash();
+            if (health <= 0)
+            {
+                Die();
+            }
+        }
         Debug.Log("Enemy Health: " + health);
     }
 
@@ -36,6 +40,19 @@ public class Enemy : MonoBehaviour
     public void SetHealth(int h)
     {
         health = h;
+    }
+
+    private void ResetColor()
+    {
+        var spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.color = new Color32(255, 255, 255, 255);
+    }
+
+    public void Flash()
+    {
+        var spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.color = new Color32(255, 100, 100, 255);
+        Invoke(nameof(ResetColor), 0.2f);
     }
 
     public void Die()

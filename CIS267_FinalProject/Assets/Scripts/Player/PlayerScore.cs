@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerScore : MonoBehaviour
 {
-    public int playerScore = 0;
-    public int levelNumber = 1;
-    public int maxScore = 1000;
+    public static int playerScore = 0;
+    public static int  levelNumber = 1;
+    public static int maxScore = 1000;
     private XPbar xpBar;
     // Start is called before the first frame update
     void Start()

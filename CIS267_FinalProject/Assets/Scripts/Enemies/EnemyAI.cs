@@ -31,6 +31,7 @@ public class EnemyAI : MonoBehaviour
     bool hitEndOfRoamingPath = false;
     bool reachedEndOfPath = false;
     public int offset;
+    public float attackDelay = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -212,6 +213,7 @@ public class EnemyAI : MonoBehaviour
         Player player = FindObjectOfType<Player>();
         Enemy enemy = GetComponent<Enemy>();
         player.GetComponent<PlayerHealth>().subtractHealth(enemy.damage);
+        player.Flash();
     }
 
     public void Attack()
@@ -226,7 +228,7 @@ public class EnemyAI : MonoBehaviour
         {
             Debug.Log("IN ATTACKING!");
             animator.SetBool("Attack", true);
-            AttackPlayer();
+            Invoke(nameof(AttackPlayer), attackDelay);
             time = 0;
             attackedOnce = true;
         }

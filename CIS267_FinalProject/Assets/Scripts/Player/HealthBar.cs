@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    public Slider slider;
+    private Slider slider;
     //public Gradient gradient;
     public Image fill;
 
     private void Start()
     {
-        slider = FindObjectOfType<Slider>();
+        slider = GetComponent<Slider>();
+        SetHealth(PlayerHealth.playerHealth);
     }
 
     private void Update()

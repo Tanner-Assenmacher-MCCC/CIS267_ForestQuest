@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int playerHealth;
+    public static int playerHealth = 1000;
     private int maxHealth = 1000;
     private float timer;
     private HealthBar healthBar;
@@ -12,9 +12,8 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerHealth = 1000;
         healthBar = FindObjectOfType<HealthBar>();
-        healthBar.SetHealth(playerHealth);
+        //healthBar.SetHealth(playerHealth);
     }
 
     // Update is called once per frame

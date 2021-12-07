@@ -188,6 +188,7 @@ MonoBehaviour:
   maxRange: 8
   attackRate: 1.06
   offset: 3
+  attackDelay: 0.4
 --- !u!114 &2014478571037753913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,7 +260,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5371c761ea4ac74bbd7e4f856a741ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthAmount: {fileID: 0}
   tempInfo: {fileID: 3983936995590544039, guid: 238ce46de5def2a4692e251ee5767d1d, type: 3}
   xDisp: 0
   yDisp: 1.3
@@ -279,5 +279,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  damage: 4
-  xp: 5
+  damage: 20
+  xp: 25
