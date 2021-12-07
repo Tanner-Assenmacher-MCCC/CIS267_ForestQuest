@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     float time = 0;
     bool isDashing = false;
     public float dodgeForce;
-    float dashTime = 0.2f;
+    float dashTime = 0.22f;
     void Start()
     {
         rb2d = gameObject.GetComponent<Rigidbody2D>();
@@ -25,15 +25,17 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (cooldown >= 3f)
         {
-            isDashing = false;
-            cooldown += Time.deltaTime;
-
-            if (cooldown >= 3f)
+            if (Input.GetKeyDown(KeyCode.LeftShift))
             {
-                isDashing = true;
-                cooldown = 0;
+                cooldown += Time.deltaTime;
+
+                if (cooldown >= 3f)
+                {
+                    isDashing = true;
+                    cooldown = 0f;
+                }
             }
         }
         if (EventSystem.current.IsPointerOverGameObject())
