@@ -5,13 +5,14 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public int playerHealth;
-    private int maxHealth = 100;
+    private int maxHealth = 1000;
     private float timer;
     private HealthBar healthBar;
 
     // Start is called before the first frame update
     void Start()
     {
+        playerHealth = 1000;
         healthBar = FindObjectOfType<HealthBar>();
         healthBar.SetHealth(playerHealth);
     }

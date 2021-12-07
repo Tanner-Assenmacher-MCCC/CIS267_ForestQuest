@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        if (amount > 0) SetHealth(this.health -= amount);
+        if (amount > 0) this.health -= amount;
         Debug.Log("Enemy Health: " + health);
     }
 

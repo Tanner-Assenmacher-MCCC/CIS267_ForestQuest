@@ -224,6 +224,7 @@ public class EnemyAI : MonoBehaviour
 
         if (time >= attackRate || !attackedOnce)
         {
+            Debug.Log("IN ATTACKING!");
             animator.SetBool("Attack", true);
             AttackPlayer();
             time = 0;
