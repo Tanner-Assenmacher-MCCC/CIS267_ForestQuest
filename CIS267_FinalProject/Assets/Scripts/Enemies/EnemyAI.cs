@@ -5,6 +5,7 @@ using Pathfinding;
 
 public class EnemyAI : MonoBehaviour
 {
+    AudioManager audioManager;
     Vector2[] colliderPoints;
     Transform t;
     PolygonCollider2D polygonCollider2D;
@@ -12,7 +13,7 @@ public class EnemyAI : MonoBehaviour
     private Animator animator;
     private Transform target;
     [Header("Speed")]
-    [Range(1f, 20f)]
+    [Range(1f, 2000f)]
     [SerializeField] private float speed;
     [Header("Follow Range")]
     [SerializeField] private float minRange;
@@ -36,6 +37,7 @@ public class EnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         t = gameObject.GetComponent<Transform>();
         time = attackRate;
         hasFollowed = false;
@@ -210,10 +212,16 @@ public class EnemyAI : MonoBehaviour
 
     private void AttackPlayer()
     {
-        Player player = FindObjectOfType<Player>();
-        Enemy enemy = GetComponent<Enemy>();
-        player.GetComponent<PlayerHealth>().subtractHealth(enemy.damage);
-        player.Flash();
+        if (Vector3.Distance(target.position, transform.position) < minRange + 1f)
+        {
+            Player player = FindObjectOfType<Player>();
+            Enemy enemy = GetComponent<Enemy>();
+            player.GetComponent<PlayerHealth>().subtractHealth(enemy.damage);
+            player.Flash();
+            audioManager.GetComponent<AudioSource>().pitch = Random.Range(1f, 1.75f);
+            audioManager.PlayOneShot("PlayerHit");
+            player.GetComponent<Rigidbody2D>().AddForce(new Vector2((animator.GetFloat("moveX") / Mathf.Abs(animator.GetFloat("moveX"))) * 1000, (animator.GetFloat("moveY") / Mathf.Abs(animator.GetFloat("moveY"))) * 1000));
+        }
     }
 
     public void Attack()

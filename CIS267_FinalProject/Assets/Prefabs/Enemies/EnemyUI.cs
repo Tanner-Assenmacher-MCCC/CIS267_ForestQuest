@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class EnemyUI : MonoBehaviour
 {
-    TextMesh healthAmount;
-    Transform enemyInfo;
-    public GameObject tempInfo;
+    TextMeshProUGUI enemyLevel;
+    TextMeshProUGUI enemyName;
+    TextMeshProUGUI healthAmount;
+    RectTransform enemyRect;
+    public GameObject enemyInfo;
+    GameObject clone;
+    Slider healthBar;
     [Header("Position Offset")]
     [Range(-5f, 5f)]
     public float xDisp;
@@ -14,31 +20,33 @@ public class EnemyUI : MonoBehaviour
     public float yDisp;
     [Header("Enemy Atributes")]
     public string name;
+
     [Range(1, 100)]
-    public int minLevel;
-    [Range(1, 100)]
-    public int maxLevel;
-    private int level;
+    public int level;
     int health;
     int initialHealth;
 
     // Start is called before the first frame update
     void Start()
     {
-        //level = Random.Range(minLevel, maxLevel + 1);
-        //health = gameObject.GetComponent<Enemy>().GetHealth();
-        //initialHealth = health;
-        //Instantiate(tempInfo, this.transform);
-        //enemyInfo = this.gameObject.transform.GetChild(0);
-        //healthAmount = enemyInfo.GetComponent<TextMesh>();
-        //enemyInfo.GetComponent<MeshRenderer>().sortingOrder = 15;
+        health = gameObject.GetComponent<Enemy>().GetHealth();
+        initialHealth = health;
+        clone = Instantiate(enemyInfo, this.transform);
+        enemyRect = clone.GetComponent<RectTransform>();
+        healthBar = clone.transform.GetChild(0).GetComponent<Slider>();
+        healthBar.maxValue = initialHealth;
+        healthAmount = clone.transform.GetChild(0).GetChild(3).GetComponent<TextMeshProUGUI>();
+        enemyName = clone.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+        enemyLevel = clone.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //enemyInfo.position = new Vector2(this.transform.position.x + xDisp, this.transform.position.y + yDisp);
-        //healthAmount.text = name + "\n" + "Health: " + gameObject.GetComponent<Enemy>().GetHealth();
-
+        enemyRect.anchoredPosition = new Vector2(0f + xDisp, 0f + yDisp);
+        healthBar.value = gameObject.GetComponent<Enemy>().GetHealth();
+        healthAmount.text = gameObject.GetComponent<Enemy>().GetHealth().ToString();
+        enemyName.text = name;
+        enemyLevel.text = level.ToString();
     }
 }

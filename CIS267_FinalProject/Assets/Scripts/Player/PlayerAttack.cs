@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlayerAttack : MonoBehaviour
 {
+    AudioManager audioManager;
     Rigidbody2D rb2d;
     public Animator animator;
     public AudioSource slash;
@@ -18,6 +20,7 @@ public class PlayerAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         animationLength = 0.5f;
         rb2d = gameObject.GetComponent<Rigidbody2D>();
     }
@@ -54,20 +57,22 @@ public class PlayerAttack : MonoBehaviour
 
     void Attack()
     {
-       Collider2D[] colliders =  Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
-       foreach (Collider2D collider in colliders)
-       {
+        foreach (Collider2D collider in colliders)
+        {
             if (collider.CompareTag("Enemy"))
             {
                 WeaponHolster weaponHolster = GetComponentInChildren<WeaponHolster>();
-                if (weaponHolster.hasWeapon)
+                if (weaponHolster.hasWeapon && Vector3.Distance(transform.position, collider.transform.position) < attackRange)
                 {
+                    audioManager.PlayOneShot("EnemyHit");
                     collider.gameObject.GetComponent<Enemy>().TakeDamage(weaponHolster.scriptableWeapon.damage);
+                    collider.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(animator.GetFloat("lastMoveHorizontal") * 1000 - (collider.GetComponent<Rigidbody2D>().mass * 100), animator.GetFloat("lastMoveVertical") * 1000 - (collider.GetComponent<Rigidbody2D>().mass * 100)));
                 }
-                
+
             }
-       }
+        }
     }
 
     private void OnDrawGizmosSelected()

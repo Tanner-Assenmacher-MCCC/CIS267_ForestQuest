@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public static int playerHealth = 1000;
-    private int maxHealth = 1000;
+    public static int playerHealth = 100;
+    public int maxHealth = 100;
     private float timer;
     private HealthBar healthBar;
 
@@ -29,7 +29,7 @@ public class PlayerHealth : MonoBehaviour
         //{
         //    timer = 0;
         //}
-        if(Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.K))
         {
             playerHealth -= 10;
             healthBar.SetHealth(playerHealth);
@@ -49,7 +49,7 @@ public class PlayerHealth : MonoBehaviour
             healthBar.SetHealth(playerHealth);
         }
         else if ((playerHealth + val) <= 0)
-        { 
+        {
             Debug.Log("You Lost");
             GameOver(false);
         }
@@ -58,7 +58,7 @@ public class PlayerHealth : MonoBehaviour
             playerHealth += val;
             healthBar.SetHealth(playerHealth);
         }
-        
+
     }
 
     public void subtractHealth(int val)
