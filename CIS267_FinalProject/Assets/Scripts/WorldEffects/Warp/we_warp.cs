@@ -14,6 +14,8 @@ public class we_warp : MonoBehaviour
 
     private CircleCollider2D myCollider;
 
+    private bool warping;
+
     private static float exitAmount = 1.5f;
 
     private Animator animator;
@@ -25,6 +27,7 @@ public class we_warp : MonoBehaviour
         myCollider = GetComponent<CircleCollider2D>();
         animator = FindObjectOfType<Player>().GetComponent<Animator>();
         player = FindObjectOfType<Player>().gameObject;
+        warping = false;
     }
 
     // Update is called once per frame
@@ -35,9 +38,10 @@ public class we_warp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && !warping)
         {
             StartCoroutine(fadeScreen(collision.gameObject));
+            warping = true;
         }
     }
 
@@ -70,7 +74,7 @@ public class we_warp : MonoBehaviour
             animator.SetFloat("lastMoveVertical", 1f);
         }
 
-
+        warping = false;
     }
 
     private void unfadeScreen()
