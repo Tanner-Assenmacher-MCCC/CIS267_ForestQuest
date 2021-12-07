@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     public Animator animator;
     Vector3 moveDelta;
     public int speed;
-    float cooldown = 0;
+    float cooldown = 0f;
     float time = 0;
     bool isDashing = false;
     public float dodgeForce;
@@ -25,17 +25,14 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (cooldown >= 3f)
+        time += Time.deltaTime;
+        if (time >= cooldown)
         {
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
-                cooldown += Time.deltaTime;
-
-                if (cooldown >= 3f)
-                {
-                    isDashing = true;
-                    cooldown = 0f;
-                }
+                isDashing = true;
+                cooldown = 3f;
+                time = 0f;
             }
         }
         if (EventSystem.current.IsPointerOverGameObject())
