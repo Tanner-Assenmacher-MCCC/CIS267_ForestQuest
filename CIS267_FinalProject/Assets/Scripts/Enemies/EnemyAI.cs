@@ -26,10 +26,12 @@ public class EnemyAI : MonoBehaviour
     private bool attackedOnce;
     Path path;
     Seeker seeker;
+    int blockingLayer;
     int currentWaypoint = 0;
     bool hitEndOfRoamingPath = false;
     bool reachedEndOfPath = false;
     public int offset;
+    public float attackDelay = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +45,7 @@ public class EnemyAI : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb2d = GetComponent<Rigidbody2D>();
         polygonCollider2D = gameObject.GetComponent<PolygonCollider2D>();
+        blockingLayer = LayerMask.NameToLayer("Blocking");
 
         colliderPoints = polygonCollider2D.points;
         polygonCollider2D.offset = new Vector2(-t.parent.position.x, -t.parent.position.y);
@@ -64,9 +67,28 @@ public class EnemyAI : MonoBehaviour
 
     void UpdatePath()
     {
-        if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) <= maxRange && (hasFollowed || hitEndOfRoamingPath))
+        float distanceX = Mathf.Abs((Mathf.Abs(target.position.x) - Mathf.Abs(rb2d.position.x)));
+        float distanceY = Mathf.Abs((Mathf.Abs(target.position.y) - Mathf.Abs(rb2d.position.y)));
+
+        // Debug.Log("Animation Float Value X: " + animator.GetFloat("moveX"));
+        // Debug.Log("Animation Float Value Y: " + animator.GetFloat("moveY"));
+        // RaycastHit2D raycastUp = Physics2D.Raycast(transform.position, Vector2.up, 5f, blockingLayer);
+        // RaycastHit2D raycastDown = Physics2D.Raycast(transform.position, -Vector2.up, 5f, blockingLayer);
+        // RaycastHit2D raycastRight = Physics2D.Raycast(transform.position, Vector2.right, 5f, blockingLayer);
+        // RaycastHit2D raycastLeft = Physics2D.Raycast(transform.position, -Vector2.right, 5f, blockingLayer);
+        // if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) <= maxRange && (hasFollowed || hitEndOfRoamingPath) && raycast.transform.gameObject.layer == blockingLayer)
+        // {
+        //     seeker.StartPath(rb2d.position, transform.parent.position, OnPathComplete);
+        // }
+
+        if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) <= maxRange && (hasFollowed || hitEndOfRoamingPath) && !Physics2D.Raycast(transform.position, new Vector2(0f, -1f), 5f, blockingLayer))
         {
             seeker.StartPath(rb2d.position, target.position, OnPathComplete);
+        }
+
+        if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) <= maxRange && (hasFollowed || hitEndOfRoamingPath) && Physics2D.Raycast(transform.position, new Vector2(0f, -1f), 5f, blockingLayer))
+        {
+            seeker.StartPath(rb2d.position, transform.parent.position, OnPathComplete);
         }
 
         else if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) > maxRange && hasFollowed)
@@ -125,7 +147,7 @@ public class EnemyAI : MonoBehaviour
             if (Vector3.Distance(target.position, transform.position) <= minRange)
             {
                 animator.SetBool("isMoving", false);
-                AttackPlayer();
+                Attack();
             }
             else
             {
@@ -178,7 +200,23 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    public void AttackPlayer()
+    private IEnumerator WaitForAnimation(Animation animation)
+    {
+        do
+        {
+            yield return null;
+        } while (animation.isPlaying);
+    }
+
+    private void AttackPlayer()
+    {
+        Player player = FindObjectOfType<Player>();
+        Enemy enemy = GetComponent<Enemy>();
+        player.GetComponent<PlayerHealth>().subtractHealth(enemy.damage);
+        player.Flash();
+    }
+
+    public void Attack()
     {
         time += Time.deltaTime;
         animator.SetBool("Attack", false);
@@ -188,7 +226,9 @@ public class EnemyAI : MonoBehaviour
 
         if (time >= attackRate || !attackedOnce)
         {
+            Debug.Log("IN ATTACKING!");
             animator.SetBool("Attack", true);
+            Invoke(nameof(AttackPlayer), attackDelay);
             time = 0;
             attackedOnce = true;
         }

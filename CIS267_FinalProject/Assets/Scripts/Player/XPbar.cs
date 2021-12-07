@@ -10,14 +10,14 @@ public class XPbar : MonoBehaviour
     //public Gradient gradient;
     public Image fill;
     private TextMeshProUGUI levelNumber;
-    private PlayerScore playerScore;
 
     private void Start()
     {
         levelNumber = GetComponentInChildren<TextMeshProUGUI>();
         slider = GetComponent<Slider>();
-        playerScore = FindObjectOfType<Player>().GetComponent<PlayerScore>();
+        SetXP(PlayerScore.playerScore);
         UpdateLevelNumber();
+
     }
 
     private void Update()
@@ -27,7 +27,7 @@ public class XPbar : MonoBehaviour
 
     public void UpdateLevelNumber()
     {
-        levelNumber.SetText(playerScore.getLevel().ToString());
+        levelNumber.SetText(PlayerScore.levelNumber.ToString());
     }
 
     public void SetXPToMax()

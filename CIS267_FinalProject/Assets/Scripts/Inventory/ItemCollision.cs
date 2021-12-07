@@ -8,28 +8,24 @@ public class ItemCollision : MonoBehaviour
     private WeaponHolster wp;
     private Player p;
     private Hotbar hb;
+    private CapsuleCollider2D capsuleCollider;
 
     private void Start()
     {
         wp = FindObjectOfType<WeaponHolster>();
         hb = FindObjectOfType<Hotbar>();
-        p = FindObjectOfType<Player>();
+        p = GetComponent<Player>();
+        capsuleCollider = GetComponent<CapsuleCollider2D>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Item"))
+        if (collision.CompareTag("Item") && capsuleCollider.IsTouching(collision))
         {
             Item item = collision.gameObject.GetComponent<ItemObject>().item;
-            if (Hotbar.items.Count == 0)
-            {
-                firstItem = true;
-            }
-            else
-            {
-                firstItem = false;
-            }
+            firstItem = Hotbar.items.Count == 0;
             if (Hotbar.instance.Add(item))
             {
+                Debug.Log(Hotbar.items.Count);
                 Destroy(collision.gameObject);
                 if (firstItem && item.GetType() == typeof(ScriptableWeapon))
                 {  
@@ -42,6 +38,7 @@ public class ItemCollision : MonoBehaviour
                     p.itemInHolster = 0;
                     //wp.SelectedItemIcon.GetComponent<RectTransform>().anchoredPosition = new Vector3(-1.05f, -3.75f, 0f);
                 }
+                return;
             }
             else if (Inventory.instance.Add(item))
             {

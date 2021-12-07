@@ -11,6 +11,9 @@ public class PlayerAttack : MonoBehaviour
     private float attackTime;
     private float animationLength;
     public float attackCooldown;
+    [SerializeField] private Transform attackPoint;
+    [SerializeField] private float attackRange = 0.5f;
+    [SerializeField] private LayerMask enemyLayers;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +31,7 @@ public class PlayerAttack : MonoBehaviour
             animator.SetBool("Attack", false);
             attacking = true;
             FindObjectOfType<AudioManager>().Play("Slash");
+            Attack();
         }
 
         if (attacking)
@@ -46,5 +50,28 @@ public class PlayerAttack : MonoBehaviour
                 attacking = false;
             }
         }
+    }
+
+    void Attack()
+    {
+       Collider2D[] colliders =  Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+       foreach (Collider2D collider in colliders)
+       {
+            if (collider.CompareTag("Enemy"))
+            {
+                WeaponHolster weaponHolster = GetComponentInChildren<WeaponHolster>();
+                if (weaponHolster.hasWeapon)
+                {
+                    collider.gameObject.GetComponent<Enemy>().TakeDamage(weaponHolster.scriptableWeapon.damage);
+                }
+                
+            }
+       }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }

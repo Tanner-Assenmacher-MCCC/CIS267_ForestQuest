@@ -18,9 +18,10 @@ GameObject:
   - component: {fileID: -627090059212885054}
   - component: {fileID: 3715723311630115049}
   - component: {fileID: -2669415699466837185}
+  - component: {fileID: 1726794747898638390}
   m_Layer: 0
   m_Name: Golem
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,8 +106,9 @@ MonoBehaviour:
   speed: 6.15
   minRange: 1
   maxRange: 7
-  attackRate: 0.95
+  attackRate: 2.02
   offset: 0
+  attackDelay: 0.8
 --- !u!114 &-3586449175452882637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,5 +270,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5371c761ea4ac74bbd7e4f856a741ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: {fileID: 8585905825015354225, guid: 7d3a9ec34f6b8ee48971cb025851eb1a, type: 3}
-  offset: {x: 0, y: 0}
+  tempInfo: {fileID: 3983936995590544039, guid: 238ce46de5def2a4692e251ee5767d1d, type: 3}
+  xDisp: 0
+  yDisp: 0
+  name: Golem
+  minLevel: 0
+  maxLevel: 0
+--- !u!114 &1726794747898638390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4966596502948052153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88cba2947f1b3b04c9c422141d9ebbc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  damage: 50
+  xp: 100

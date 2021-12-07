@@ -124,6 +124,19 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void ResetColor()
+    {
+        var spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.color = new Color32(255, 255, 255,255);
+    }
+
+    public void Flash()
+    {
+        var spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.color = new Color32(255, 100, 100, 255);
+        Invoke(nameof(ResetColor), 0.2f);
+    }
+
     public void SetHorziontalDirection(int x)
     {
         animator.SetFloat("lastMoveHorizontal", x);
