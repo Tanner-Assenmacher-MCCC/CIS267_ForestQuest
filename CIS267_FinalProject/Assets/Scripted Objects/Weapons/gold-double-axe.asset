@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39f18241f467a5b47979c8ffea269227, type: 3}
+  m_Name: gold-double-axe
+  m_EditorClassIdentifier: 
+  name: Gold Double Axe
+  sprite: {fileID: 21300000, guid: 130193a86450eeb4c9b02ccb15e391c1, type: 3}
+  prefab: {fileID: 4197083845369070280, guid: 944efde31c3a8b04f878f6b2263e0125, type: 3}
+  damage: 20
