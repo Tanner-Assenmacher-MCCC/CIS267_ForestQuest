@@ -183,14 +183,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 949571bacf9e8c541b3efd9bbbcbe4f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 0}
   speed: 8.3
   minRange: 1
   maxRange: 7
   attackRate: 1.02
   offset: 3
   attackDelay: 0.4
-  rangedEnemy: 0
 --- !u!114 &7871795703027115263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,7 +264,7 @@ MonoBehaviour:
   xDisp: 0
   yDisp: 0.89
   name: Bluesteel Spider
-  level: 16
+  level: 0
 --- !u!114 &4853681084247084794
 MonoBehaviour:
   m_ObjectHideFlags: 0
