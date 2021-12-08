@@ -5,6 +5,7 @@ using Pathfinding;
 
 public class EnemyAI : MonoBehaviour
 {
+    public GameObject projectile;
     AudioManager audioManager;
     Vector2[] colliderPoints;
     Transform t;
@@ -33,6 +34,7 @@ public class EnemyAI : MonoBehaviour
     bool reachedEndOfPath = false;
     public int offset;
     public float attackDelay = 0f;
+    public bool rangedEnemy;
 
     // Start is called before the first frame update
     void Start()
@@ -146,10 +148,15 @@ public class EnemyAI : MonoBehaviour
 
             float distance = Vector2.Distance(rb2d.position, path.vectorPath[currentWaypoint]);
 
-            if (Vector3.Distance(target.position, transform.position) <= minRange)
+            if (Vector3.Distance(target.position, transform.position) <= minRange && !rangedEnemy)
             {
                 animator.SetBool("isMoving", false);
                 Attack();
+            }
+            else if (Vector3.Distance(target.position, transform.position) <= minRange && rangedEnemy)
+            {
+                animator.SetBool("isMoving", false);
+                ShootProjectiles();
             }
             else
             {
@@ -224,6 +231,23 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    private void RangedAttackPlayer()
+    {
+        if (Vector3.Distance(target.position, transform.position) < minRange + 1f)
+        {
+            Player player = FindObjectOfType<Player>();
+            Enemy enemy = GetComponent<Enemy>();
+            GameObject clone = Instantiate(projectile, this.transform);
+            Projectiles proj = clone.GetComponent<Projectiles>();
+
+            Vector2 dir = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
+            Quaternion rotation = Quaternion.LookRotation(Vector3.forward, dir);
+            clone.transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, 360f);
+
+            clone.GetComponent<Rigidbody2D>().velocity = dir.normalized * proj.speed;
+        }
+    }
+
     public void Attack()
     {
         time += Time.deltaTime;
@@ -237,6 +261,24 @@ public class EnemyAI : MonoBehaviour
             Debug.Log("IN ATTACKING!");
             animator.SetBool("Attack", true);
             Invoke(nameof(AttackPlayer), attackDelay);
+            time = 0;
+            attackedOnce = true;
+        }
+    }
+
+    public void ShootProjectiles()
+    {
+        time += Time.deltaTime;
+        animator.SetBool("Attack", false);
+
+        animator.SetFloat("moveX", (target.position.x - transform.position.x));
+        animator.SetFloat("moveY", (target.position.y - transform.position.y));
+
+        if (time >= attackRate || !attackedOnce)
+        {
+            Debug.Log("IN ATTACKING!");
+            animator.SetBool("Attack", true);
+            Invoke(nameof(RangedAttackPlayer), attackDelay);
             time = 0;
             attackedOnce = true;
         }

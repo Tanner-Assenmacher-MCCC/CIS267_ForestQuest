@@ -202,12 +202,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 949571bacf9e8c541b3efd9bbbcbe4f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectile: {fileID: 3395932211847864436, guid: f987ebd5c9ba7374aa9447b321c7481a, type: 3}
   speed: 10.06
   minRange: 6
   maxRange: 10
   attackRate: 1.26
   offset: 0
   attackDelay: 0
+  rangedEnemy: 1
 --- !u!114 &-8027744613436849886
 MonoBehaviour:
   m_ObjectHideFlags: 0
