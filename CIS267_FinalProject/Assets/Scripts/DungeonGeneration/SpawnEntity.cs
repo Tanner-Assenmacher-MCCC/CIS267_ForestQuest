@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnEnemies : MonoBehaviour
+public class SpawnEntity : MonoBehaviour
 {
     private int rand;
     public GameObject[] SpawnList;
