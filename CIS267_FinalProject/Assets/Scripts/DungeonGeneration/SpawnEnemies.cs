@@ -10,13 +10,13 @@ public class SpawnEnemies : MonoBehaviour
     void Start()
     {
         rand = Random.Range(0, SpawnList.Length);
-        Instantiate(SpawnList[rand], transform.position, Quaternion.identity);
+        Instantiate(SpawnList[rand], this.transform);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

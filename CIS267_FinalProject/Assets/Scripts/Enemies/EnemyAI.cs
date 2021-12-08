@@ -83,18 +83,19 @@ public class EnemyAI : MonoBehaviour
         // if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) <= maxRange && (hasFollowed || hitEndOfRoamingPath) && raycast.transform.gameObject.layer == blockingLayer)
         // {
         //     seeker.StartPath(rb2d.position, transform.parent.position, OnPathComplete);
-        // }
+        // 
+
         if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) <= maxRange && (!hasFollowed || !hitEndOfRoamingPath))
         {
             seeker.StartPath(rb2d.position, target.position, OnPathComplete);
         }
 
-        if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) <= maxRange && (hasFollowed || hitEndOfRoamingPath) && !Physics2D.Raycast(transform.position, new Vector2(0f, -1f), 5f, blockingLayer))
+        else if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) <= maxRange && (hasFollowed || hitEndOfRoamingPath) && !Physics2D.Raycast(transform.position, new Vector2(0f, -1f), 5f, blockingLayer))
         {
             seeker.StartPath(rb2d.position, target.position, OnPathComplete);
         }
 
-        if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) <= maxRange && (hasFollowed || hitEndOfRoamingPath) && Physics2D.Raycast(transform.position, new Vector2(0f, -1f), 5f, blockingLayer))
+        else if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) <= maxRange && (hasFollowed || hitEndOfRoamingPath) && Physics2D.Raycast(transform.position, new Vector2(0f, -1f), 5f, blockingLayer))
         {
             seeker.StartPath(rb2d.position, transform.parent.position, OnPathComplete);
         }
@@ -107,7 +108,7 @@ public class EnemyAI : MonoBehaviour
 
     void UpdateRoamingPath()
     {
-        if (Vector3.Distance(target.position, transform.position) > maxRange && !hasFollowed)
+        if (Vector3.Distance(target.position, transform.position) <= 18f && !hasFollowed)
         {
             int rand;
             rand = Random.Range(0, 8);

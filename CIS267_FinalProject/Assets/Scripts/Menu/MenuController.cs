@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
@@ -48,15 +49,15 @@ public class MenuController : MonoBehaviour
         bool right = Input.GetKeyDown(KeyCode.D);
         bool enter = Input.GetKeyDown(KeyCode.Return);
 
-        if(state == 0)
+        if (state == 0)
         {
             //Hover Play Game
-            if(enter && !movingToMain)
+            if (enter && !movingToMain)
             {
                 //Play Game
-
+                SceneManager.LoadScene(0);
             }
-            else if(down)
+            else if (down)
             {
                 //Move to load
                 state = 1;
@@ -64,7 +65,7 @@ public class MenuController : MonoBehaviour
             }
 
         }
-        else if(state == 1)
+        else if (state == 1)
         {
             //Hover Load Game
             if (enter && !movingToMain)
@@ -72,13 +73,13 @@ public class MenuController : MonoBehaviour
                 //Load Game
 
             }
-            else if(up)
+            else if (up)
             {
                 //move to play
                 state = 0;
                 updateButtonColors();
             }
-            else if(down)
+            else if (down)
             {
                 //move to settings
                 state = 2;
@@ -146,9 +147,9 @@ public class MenuController : MonoBehaviour
             }
         }
 
-        if(movingToMain)
+        if (movingToMain)
         {
-            if(transform.position.y < CameraPointMain.transform.position.y)
+            if (transform.position.y < CameraPointMain.transform.position.y)
             {
                 rigidBody2D.velocity = new Vector2(0, transitionSpeed);
                 Debug.Log(rigidBody2D.velocity);
@@ -159,9 +160,9 @@ public class MenuController : MonoBehaviour
                 rigidBody2D.velocity = new Vector2(0, 0);
             }
         }
-        else if(movingToSettings)
+        else if (movingToSettings)
         {
-            if(transform.position.y > CameraPointSettings.transform.position.y)
+            if (transform.position.y > CameraPointSettings.transform.position.y)
             {
                 rigidBody2D.velocity = new Vector2(0, -transitionSpeed);
                 Debug.Log(rigidBody2D.velocity);
