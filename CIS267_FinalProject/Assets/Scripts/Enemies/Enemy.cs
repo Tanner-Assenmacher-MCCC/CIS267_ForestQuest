@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     public int health = 100;
     public int damage = 5;
     public int xp = 5;
+    public bool die = false;
     void Start()
     {
 
@@ -19,6 +20,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
     }
 
     public void TakeDamage(int amount)
@@ -75,6 +77,7 @@ public class Enemy : MonoBehaviour
                 dropRateTotal += dropRate[i];
             }
         }
-        Destroy(this.gameObject);
+        die = true;
+        gameObject.SetActive(false);
     }
 }

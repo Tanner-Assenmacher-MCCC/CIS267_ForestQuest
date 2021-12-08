@@ -84,6 +84,10 @@ public class EnemyAI : MonoBehaviour
         // {
         //     seeker.StartPath(rb2d.position, transform.parent.position, OnPathComplete);
         // }
+        if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) <= maxRange && (!hasFollowed || !hitEndOfRoamingPath))
+        {
+            seeker.StartPath(rb2d.position, target.position, OnPathComplete);
+        }
 
         if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) <= maxRange && (hasFollowed || hitEndOfRoamingPath) && !Physics2D.Raycast(transform.position, new Vector2(0f, -1f), 5f, blockingLayer))
         {

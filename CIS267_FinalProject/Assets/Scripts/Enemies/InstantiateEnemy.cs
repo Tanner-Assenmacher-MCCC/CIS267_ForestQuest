@@ -5,26 +5,31 @@ using UnityEngine;
 public class InstantiateEnemy : MonoBehaviour
 {
     public GameObject enemy;
+    bool spawned = true;
+    GameObject clone;
 
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(enemy, gameObject.transform);
+        clone = Instantiate(enemy, gameObject.transform);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (enemy == null)
+        Enemy enemyScript = clone.GetComponent<Enemy>();
+        if (enemyScript.die)
         {
-            StartCoroutine(Respawn());
+            enemyScript.die = false;
+            Invoke("Respawn", 5f);
         }
     }
 
-    public IEnumerator Respawn()
+    public void Respawn()
     {
-        yield return new WaitForSeconds(4f);
+        clone = Instantiate(enemy, gameObject.transform);
+        spawned = true;
 
-        Instantiate(enemy, gameObject.transform);
+        Destroy(clone);
     }
 }
