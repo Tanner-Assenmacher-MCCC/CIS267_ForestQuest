@@ -183,14 +183,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 949571bacf9e8c541b3efd9bbbcbe4f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 0}
   speed: 12.5
   minRange: 1
   maxRange: 7
   attackRate: 0.72
   offset: 3
   attackDelay: 0.4
-  rangedEnemy: 0
 --- !u!114 &119250791578146216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,7 +264,7 @@ MonoBehaviour:
   xDisp: 0
   yDisp: 0.89
   name: Bloodweaver
-  level: 20
+  level: 0
 --- !u!114 &2454575397496051209
 MonoBehaviour:
   m_ObjectHideFlags: 0
