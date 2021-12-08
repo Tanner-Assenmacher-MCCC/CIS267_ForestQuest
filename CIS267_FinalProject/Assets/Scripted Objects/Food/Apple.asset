@@ -15,5 +15,5 @@ MonoBehaviour:
   name: Apple
   sprite: {fileID: 5733415690998657875, guid: 33c7643721d4502478f4924724170821, type: 3}
   prefab: {fileID: 5541936342561829303, guid: 40c0ea8921b904047a03ce650c9a8106, type: 3}
-  healthValue: 30
-  xpValue: 3
+  healthValue: 20
+  xpValue: 31

@@ -1068,9 +1068,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab85151626e91ff459f0c0538137687f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerScore: 0
-  levelNumber: 1
-  maxScore: 100
 --- !u!114 &241806128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1083,7 +1080,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca542722d6af290449b6bafdc821ad40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: 1000
+  maxHealth: 100
+--- !u!70 &241806129
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241806116}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.9375, y: 1.75}
+  m_Direction: 0
 --- !u!1 &244591270
 GameObject:
   m_ObjectHideFlags: 0
@@ -10075,7 +10088,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2270d6e0a5372c48992d4aff464580d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 1751621045}
   fill: {fileID: 260000265}
 --- !u!212 &1751621044
 SpriteRenderer:

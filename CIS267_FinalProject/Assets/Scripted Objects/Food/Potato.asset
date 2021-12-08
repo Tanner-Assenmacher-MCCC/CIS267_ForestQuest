@@ -15,5 +15,5 @@ MonoBehaviour:
   name: Potato
   sprite: {fileID: -2352719701938240400, guid: 33c7643721d4502478f4924724170821, type: 3}
   prefab: {fileID: 5541936342561829303, guid: 0f58f76423ceaa3489dc722f97d0adcd, type: 3}
-  healthValue: 20
-  xpValue: 2
+  healthValue: 14
+  xpValue: 20

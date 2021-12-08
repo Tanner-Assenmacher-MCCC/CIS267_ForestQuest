@@ -25,15 +25,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4655401514665826726, guid: f093ee177698f63459ded85d204853c1, type: 3}
       propertyPath: attackDelay
-      value: 0.5
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 343681133352484316, guid: f093ee177698f63459ded85d204853c1, type: 3}
       propertyPath: name
       value: Wolf
       objectReference: {fileID: 0}
     - target: {fileID: 343681133352484316, guid: f093ee177698f63459ded85d204853c1, type: 3}
+      propertyPath: level
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 343681133352484316, guid: f093ee177698f63459ded85d204853c1, type: 3}
+      propertyPath: maxLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 343681133352484316, guid: f093ee177698f63459ded85d204853c1, type: 3}
       propertyPath: minLevel
-      value: 100
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 343681133352484316, guid: f093ee177698f63459ded85d204853c1, type: 3}
       propertyPath: healthAmount
@@ -41,11 +49,15 @@ PrefabInstance:
       objectReference: {fileID: 1709175535928443340, guid: 048bf85e216a546459e5913b41423442, type: 3}
     - target: {fileID: 4138948904554254640, guid: f093ee177698f63459ded85d204853c1, type: 3}
       propertyPath: xp
-      value: 50
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 4138948904554254640, guid: f093ee177698f63459ded85d204853c1, type: 3}
       propertyPath: damage
-      value: 25
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4138948904554254640, guid: f093ee177698f63459ded85d204853c1, type: 3}
+      propertyPath: health
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5405527758383538313, guid: f093ee177698f63459ded85d204853c1, type: 3}
       propertyPath: m_Controller

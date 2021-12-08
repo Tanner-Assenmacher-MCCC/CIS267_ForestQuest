@@ -11,6 +11,11 @@ public class Player : MonoBehaviour
     public Animator animator;
     Vector3 moveDelta;
     public int speed;
+    float cooldown = 0f;
+    float time = 0;
+    bool isDashing = false;
+    public float dodgeForce;
+    float dashTime = 0.22f;
     void Start()
     {
         rb2d = gameObject.GetComponent<Rigidbody2D>();
@@ -20,6 +25,16 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        time += Time.deltaTime;
+        if (time >= cooldown)
+        {
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                isDashing = true;
+                cooldown = 3f;
+                time = 0f;
+            }
+        }
         if (EventSystem.current.IsPointerOverGameObject())
         {
             return;
@@ -29,10 +44,20 @@ public class Player : MonoBehaviour
     {
         if (!gameObject.GetComponent<PlayerAttack>().attacking && !InventoryUI.isActive)
         {
-            // Press shift to Sprint
-            if (Input.GetKey("left shift"))
+            // Press shift to Dodge
+            if (isDashing)
             {
-                Run();
+                time += Time.deltaTime;
+                if (time <= dashTime)
+                {
+                    rb2d.velocity = new Vector2(animator.GetFloat("lastMoveHorizontal"), animator.GetFloat("lastMoveVertical")) * dodgeForce * Time.deltaTime;
+                }
+
+                else
+                {
+                    isDashing = false;
+                    time = 0;
+                }
             }
 
             else
@@ -60,27 +85,6 @@ public class Player : MonoBehaviour
         // Move player at normal speed
         rb2d.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed * Time.fixedDeltaTime;
         animator.speed = 1f;
-
-        // Reset MoveDelta
-        moveDelta = new Vector3(x, y, 0);
-
-        // /* ANIMATION STUFF
-
-        if (Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1 || Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1)
-        {
-            animator.SetFloat("lastMoveHorizontal", moveDelta.x);
-            animator.SetFloat("lastMoveVertical", moveDelta.y);
-        }
-    }
-
-    void Run()
-    {
-        float x = Input.GetAxisRaw("Horizontal");
-        float y = Input.GetAxisRaw("Vertical");
-
-        // Move player at normal speed
-        rb2d.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * speed * Time.fixedDeltaTime * 1.75f;
-        animator.speed = 1.75f;
 
         // Reset MoveDelta
         moveDelta = new Vector3(x, y, 0);
@@ -127,7 +131,7 @@ public class Player : MonoBehaviour
     private void ResetColor()
     {
         var spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.color = new Color32(255, 255, 255,255);
+        spriteRenderer.color = new Color32(255, 255, 255, 255);
     }
 
     public void Flash()

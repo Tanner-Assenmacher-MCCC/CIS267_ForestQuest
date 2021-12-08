@@ -120,8 +120,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
+  m_IsTrigger: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -0.0024659634, y: -0.688372}
   m_SpriteTilingProperty:
@@ -181,12 +181,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 949571bacf9e8c541b3efd9bbbcbe4f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectile: {fileID: 0}
   speed: 10
   minRange: 1
   maxRange: 7
   attackRate: 1.04
   offset: 3
   attackDelay: 0.15
+  rangedEnemy: 0
 --- !u!114 &-4671918077174565360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,7 +216,7 @@ MonoBehaviour:
   traversableTags: -1
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
-    value: -1
+    value: 1
 --- !u!60 &-5053454466031761341
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -260,12 +262,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5371c761ea4ac74bbd7e4f856a741ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tempInfo: {fileID: 3983936995590544039, guid: 238ce46de5def2a4692e251ee5767d1d, type: 3}
+  enemyInfo: {fileID: 3983936995590544039, guid: 238ce46de5def2a4692e251ee5767d1d, type: 3}
   xDisp: 0
-  yDisp: 0
+  yDisp: 1.17
   name: Green Goblin
-  minLevel: 0
-  maxLevel: 0
+  level: 1
 --- !u!114 &4138948904554254640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,6 +279,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88cba2947f1b3b04c9c422141d9ebbc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  damage: 20
-  xp: 25
+  drops:
+  - {fileID: 7582153951328868469, guid: fdd64248cda3f5b4bb9971a8c8dfe94a, type: 3}
+  dropRate: 4b000000
+  health: 10
+  damage: 1
+  xp: 40
+  die: 0

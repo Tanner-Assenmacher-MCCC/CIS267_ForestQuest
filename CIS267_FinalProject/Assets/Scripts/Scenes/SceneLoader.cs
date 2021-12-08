@@ -39,6 +39,12 @@ public class SceneLoader : MonoBehaviour
             player.position = new Vector3(-61.7f, 54.4f, 0f);
             animator.SetFloat("lastMoveVertical", -1f);
         }
+
+        else if (PlayerPrefs.GetInt("lastLevel") == 3 && SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            player.position = new Vector3(362.48f, 145.36f, 0f);
+            animator.SetFloat("lastMoveVertical", 1f);
+        }
     }
 
     // Update is called once per frame

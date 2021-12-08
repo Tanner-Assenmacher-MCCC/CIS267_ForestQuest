@@ -5,6 +5,8 @@ using Pathfinding;
 
 public class EnemyAI : MonoBehaviour
 {
+    public GameObject projectile;
+    AudioManager audioManager;
     Vector2[] colliderPoints;
     Transform t;
     PolygonCollider2D polygonCollider2D;
@@ -12,7 +14,7 @@ public class EnemyAI : MonoBehaviour
     private Animator animator;
     private Transform target;
     [Header("Speed")]
-    [Range(1f, 20f)]
+    [Range(1f, 2000f)]
     [SerializeField] private float speed;
     [Header("Follow Range")]
     [SerializeField] private float minRange;
@@ -32,10 +34,12 @@ public class EnemyAI : MonoBehaviour
     bool reachedEndOfPath = false;
     public int offset;
     public float attackDelay = 0f;
+    public bool rangedEnemy;
 
     // Start is called before the first frame update
     void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         t = gameObject.GetComponent<Transform>();
         time = attackRate;
         hasFollowed = false;
@@ -79,14 +83,19 @@ public class EnemyAI : MonoBehaviour
         // if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) <= maxRange && (hasFollowed || hitEndOfRoamingPath) && raycast.transform.gameObject.layer == blockingLayer)
         // {
         //     seeker.StartPath(rb2d.position, transform.parent.position, OnPathComplete);
-        // }
+        // 
 
-        if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) <= maxRange && (hasFollowed || hitEndOfRoamingPath) && !Physics2D.Raycast(transform.position, new Vector2(0f, -1f), 5f, blockingLayer))
+        if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) <= maxRange && (!hasFollowed || !hitEndOfRoamingPath))
         {
             seeker.StartPath(rb2d.position, target.position, OnPathComplete);
         }
 
-        if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) <= maxRange && (hasFollowed || hitEndOfRoamingPath) && Physics2D.Raycast(transform.position, new Vector2(0f, -1f), 5f, blockingLayer))
+        else if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) <= maxRange && (hasFollowed || hitEndOfRoamingPath) && !Physics2D.Raycast(transform.position, new Vector2(0f, -1f), 5f, blockingLayer))
+        {
+            seeker.StartPath(rb2d.position, target.position, OnPathComplete);
+        }
+
+        else if (seeker.IsDone() && Vector3.Distance(target.position, transform.position) <= maxRange && (hasFollowed || hitEndOfRoamingPath) && Physics2D.Raycast(transform.position, new Vector2(0f, -1f), 5f, blockingLayer))
         {
             seeker.StartPath(rb2d.position, transform.parent.position, OnPathComplete);
         }
@@ -99,7 +108,7 @@ public class EnemyAI : MonoBehaviour
 
     void UpdateRoamingPath()
     {
-        if (Vector3.Distance(target.position, transform.position) > maxRange && !hasFollowed)
+        if (Vector3.Distance(target.position, transform.position) <= 18f && !hasFollowed)
         {
             int rand;
             rand = Random.Range(0, 8);
@@ -144,10 +153,15 @@ public class EnemyAI : MonoBehaviour
 
             float distance = Vector2.Distance(rb2d.position, path.vectorPath[currentWaypoint]);
 
-            if (Vector3.Distance(target.position, transform.position) <= minRange)
+            if (Vector3.Distance(target.position, transform.position) <= minRange && !rangedEnemy)
             {
                 animator.SetBool("isMoving", false);
                 Attack();
+            }
+            else if (Vector3.Distance(target.position, transform.position) <= minRange && rangedEnemy)
+            {
+                animator.SetBool("isMoving", false);
+                ShootProjectiles();
             }
             else
             {
@@ -210,10 +224,33 @@ public class EnemyAI : MonoBehaviour
 
     private void AttackPlayer()
     {
-        Player player = FindObjectOfType<Player>();
-        Enemy enemy = GetComponent<Enemy>();
-        player.GetComponent<PlayerHealth>().subtractHealth(enemy.damage);
-        player.Flash();
+        if (Vector3.Distance(target.position, transform.position) < minRange + 1f)
+        {
+            Player player = FindObjectOfType<Player>();
+            Enemy enemy = GetComponent<Enemy>();
+            player.GetComponent<PlayerHealth>().subtractHealth(enemy.damage);
+            player.Flash();
+            audioManager.GetComponent<AudioSource>().pitch = Random.Range(1f, 1.75f);
+            audioManager.PlayOneShot("PlayerHit");
+            player.GetComponent<Rigidbody2D>().AddForce(new Vector2((animator.GetFloat("moveX") / Mathf.Abs(animator.GetFloat("moveX"))) * 1000, (animator.GetFloat("moveY") / Mathf.Abs(animator.GetFloat("moveY"))) * 1000));
+        }
+    }
+
+    private void RangedAttackPlayer()
+    {
+        if (Vector3.Distance(target.position, transform.position) < minRange + 1f)
+        {
+            Player player = FindObjectOfType<Player>();
+            Enemy enemy = GetComponent<Enemy>();
+            GameObject clone = Instantiate(projectile, this.transform);
+            Projectiles proj = clone.GetComponent<Projectiles>();
+
+            Vector2 dir = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
+            Quaternion rotation = Quaternion.LookRotation(Vector3.forward, dir);
+            clone.transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, 360f);
+
+            clone.GetComponent<Rigidbody2D>().velocity = dir.normalized * proj.speed;
+        }
     }
 
     public void Attack()
@@ -229,6 +266,24 @@ public class EnemyAI : MonoBehaviour
             Debug.Log("IN ATTACKING!");
             animator.SetBool("Attack", true);
             Invoke(nameof(AttackPlayer), attackDelay);
+            time = 0;
+            attackedOnce = true;
+        }
+    }
+
+    public void ShootProjectiles()
+    {
+        time += Time.deltaTime;
+        animator.SetBool("Attack", false);
+
+        animator.SetFloat("moveX", (target.position.x - transform.position.x));
+        animator.SetFloat("moveY", (target.position.y - transform.position.y));
+
+        if (time >= attackRate || !attackedOnce)
+        {
+            Debug.Log("IN ATTACKING!");
+            animator.SetBool("Attack", true);
+            Invoke(nameof(RangedAttackPlayer), attackDelay);
             time = 0;
             attackedOnce = true;
         }

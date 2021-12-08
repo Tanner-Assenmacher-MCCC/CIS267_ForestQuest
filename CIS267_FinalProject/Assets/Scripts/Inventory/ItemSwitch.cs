@@ -165,9 +165,9 @@ public class ItemSwitch : MonoBehaviour
             //change item in holster if you swapped that item
             if (hotbarIndex == player.itemInHolster)
             {
-                if (Hotbar.items[hotbar.iw].GetType() != typeof(Food))
+                if (Hotbar.items[hotbarIndex].GetType() != typeof(Food))
                 {
-                    player.UseItem(Hotbar.items[hotbar.iw]);
+                    player.UseItem(Hotbar.items[hotbarIndex]);
                 }
                 
             }

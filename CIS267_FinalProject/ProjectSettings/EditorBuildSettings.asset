@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MountainLevel.unity
     guid: 086cdcffd16059a47870a013b60c4439
+  - enabled: 1
+    path: Assets/Scenes/Dungeon.unity
+    guid: c0111c57e06a6d948a12659a218052c6
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 7a7bc0d7c89eab64783f2309897aa4b1
   m_configObjects: {}

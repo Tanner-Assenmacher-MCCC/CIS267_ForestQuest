@@ -198,8 +198,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63984de294aa20a4587d96a3e299c088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemInHolster: 0
   animator: {fileID: 1396712757}
   speed: 150
+  dodgeForce: 0
 --- !u!61 &3580456226963291409
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -240,8 +242,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1396712757}
   slash: {fileID: 0}
-  currentlyAttacking: 0
+  attacking: 0
   attackCooldown: 0.5
+  attackPoint: {fileID: 1732229956974865285}
+  attackRange: 0.5
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &1686885044
 MonoBehaviour:
   m_ObjectHideFlags: 0

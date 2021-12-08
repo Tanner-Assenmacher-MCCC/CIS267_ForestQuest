@@ -202,12 +202,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 949571bacf9e8c541b3efd9bbbcbe4f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectile: {fileID: 3395932211847864436, guid: f987ebd5c9ba7374aa9447b321c7481a, type: 3}
   speed: 10.06
   minRange: 6
   maxRange: 10
   attackRate: 1.26
   offset: 0
   attackDelay: 0
+  rangedEnemy: 1
 --- !u!114 &-8027744613436849886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,7 +237,7 @@ MonoBehaviour:
   traversableTags: -1
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
-    value: -1
+    value: 1
 --- !u!114 &-5605369013418374013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,12 +262,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5371c761ea4ac74bbd7e4f856a741ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tempInfo: {fileID: 3983936995590544039, guid: 238ce46de5def2a4692e251ee5767d1d, type: 3}
+  enemyInfo: {fileID: 3983936995590544039, guid: 238ce46de5def2a4692e251ee5767d1d, type: 3}
   xDisp: 0
-  yDisp: 0
+  yDisp: 0.68
   name: Flametail
-  minLevel: 0
-  maxLevel: 0
+  level: 0
 --- !u!114 &-1572778874071396932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,6 +279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88cba2947f1b3b04c9c422141d9ebbc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
-  damage: 5
-  xp: 25
+  health: 40
+  damage: 15
+  xp: 20

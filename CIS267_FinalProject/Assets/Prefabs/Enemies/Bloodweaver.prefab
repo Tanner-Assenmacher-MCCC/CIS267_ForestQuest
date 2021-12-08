@@ -216,7 +216,7 @@ MonoBehaviour:
   traversableTags: -1
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
-    value: -1
+    value: 1
 --- !u!114 &-8861158099022797298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,12 +260,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5371c761ea4ac74bbd7e4f856a741ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tempInfo: {fileID: 3983936995590544039, guid: 238ce46de5def2a4692e251ee5767d1d, type: 3}
+  enemyInfo: {fileID: 3983936995590544039, guid: 238ce46de5def2a4692e251ee5767d1d, type: 3}
   xDisp: 0
-  yDisp: 1.6
+  yDisp: 0.89
   name: Bloodweaver
-  minLevel: 0
-  maxLevel: 0
+  level: 0
 --- !u!114 &2454575397496051209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,5 +278,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 120
-  damage: 20
-  xp: 25
+  damage: 35
+  xp: 55
