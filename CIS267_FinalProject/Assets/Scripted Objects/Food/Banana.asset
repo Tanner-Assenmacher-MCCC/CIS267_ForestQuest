@@ -15,5 +15,5 @@ MonoBehaviour:
   name: Banana
   sprite: {fileID: 8017220399395655088, guid: 33c7643721d4502478f4924724170821, type: 3}
   prefab: {fileID: 2477789057826895395, guid: 36e36ea5697f6a0468813d28e2a64a29, type: 3}
-  healthValue: 30
-  xpValue: 3
+  healthValue: 20
+  xpValue: 32

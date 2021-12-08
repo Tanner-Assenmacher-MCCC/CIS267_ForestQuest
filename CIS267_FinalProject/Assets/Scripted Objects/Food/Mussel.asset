@@ -15,5 +15,5 @@ MonoBehaviour:
   name: Mussel
   sprite: {fileID: 5565783769276512231, guid: 7f71f39442d5626419fab342203c0788, type: 3}
   prefab: {fileID: 1451639900005067175, guid: dde5510ee0a26cc4dad213d952608555, type: 3}
-  healthValue: 25
-  xpValue: 5
+  healthValue: 17
+  xpValue: 53

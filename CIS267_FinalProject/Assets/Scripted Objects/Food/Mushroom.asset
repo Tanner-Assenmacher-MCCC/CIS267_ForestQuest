@@ -15,5 +15,5 @@ MonoBehaviour:
   name: Mushroom
   sprite: {fileID: -3430151719992371364, guid: 33c7643721d4502478f4924724170821, type: 3}
   prefab: {fileID: 5543323139332742524, guid: 24525f12dba984741be8c0d4f9658bfc, type: 3}
-  healthValue: 25
-  xpValue: 4
+  healthValue: 15
+  xpValue: 41

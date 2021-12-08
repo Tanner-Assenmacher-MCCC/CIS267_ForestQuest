@@ -15,5 +15,5 @@ MonoBehaviour:
   name: Peas
   sprite: {fileID: 3320898698525984529, guid: 33c7643721d4502478f4924724170821, type: 3}
   prefab: {fileID: 5371628985685273791, guid: 4a52b6117fce76946a0fc1b80b371e19, type: 3}
-  healthValue: 15
-  xpValue: 3
+  healthValue: 13
+  xpValue: 30

@@ -15,5 +15,5 @@ MonoBehaviour:
   name: Raw Ribs
   sprite: {fileID: 3172029085723581071, guid: 7f71f39442d5626419fab342203c0788, type: 3}
   prefab: {fileID: 1932358953635836701, guid: c1d8f36424ae7584c8ab314829d76a75, type: 3}
-  healthValue: 40
-  xpValue: 6
+  healthValue: 23
+  xpValue: 60

@@ -15,5 +15,5 @@ MonoBehaviour:
   name: Raw Meat
   sprite: {fileID: 1440313834226985826, guid: 7f71f39442d5626419fab342203c0788, type: 3}
   prefab: {fileID: 9180548361991590200, guid: ece0c6275897cad439319c0d8cbf9e1c, type: 3}
-  healthValue: 35
-  xpValue: 7
+  healthValue: 26
+  xpValue: 70
