@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class we_warp : MonoBehaviour
 {
+    AudioSource musicToStop;
+    public AudioSource musicToPlay;
+    public Animator animatorMusic;
+    AudioManager audioManager;
     public bool down;
 
     public GameObject target;
@@ -24,6 +28,8 @@ public class we_warp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        musicToStop = target.GetComponent<we_warp>().myAudioSource();
+        audioManager = FindObjectOfType<AudioManager>();
         myCollider = GetComponent<CircleCollider2D>();
         animator = FindObjectOfType<Player>().GetComponent<Animator>();
         player = FindObjectOfType<Player>().gameObject;
@@ -49,6 +55,11 @@ public class we_warp : MonoBehaviour
     {
         fade.speed = 3;
         fade.SetTrigger("Start");
+
+        animatorMusic.speed = 2;
+
+        animatorMusic.SetTrigger("Start");
+
         // musicFade.SetTrigger("Start");
         player.GetComponent<Player>().enabled = false;
         animator.SetFloat("Horizontal", 0);
@@ -56,9 +67,21 @@ public class we_warp : MonoBehaviour
 
         yield return new WaitForSeconds(0.75f);
 
+        musicToStop.Stop();
+
         player.GetComponent<Player>().enabled = true;
+
+        musicToPlay.Play();
+        musicToPlay.GetComponent<Animator>().SetTrigger("End");
+
         fade.SetTrigger("End");
+
         warpPlayer(player);
+    }
+
+    public AudioSource myAudioSource()
+    {
+        return musicToPlay;
     }
 
     private void warpPlayer(GameObject player)
