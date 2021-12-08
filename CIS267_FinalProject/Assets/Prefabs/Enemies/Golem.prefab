@@ -103,12 +103,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 949571bacf9e8c541b3efd9bbbcbe4f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectile: {fileID: 0}
   speed: 143
   minRange: 1
   maxRange: 7
   attackRate: 2.02
   offset: 0
-  attackDelay: 0.8
+  attackDelay: 1.5
+  rangedEnemy: 0
 --- !u!114 &-3586449175452882637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,7 +276,7 @@ MonoBehaviour:
   xDisp: 0
   yDisp: 1.44
   name: Golem
-  level: 38
+  level: 74
 --- !u!114 &1726794747898638390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,6 +289,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88cba2947f1b3b04c9c422141d9ebbc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  damage: 50
+  health: 200
+  damage: 40
   xp: 100
