@@ -204,11 +204,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 0}
   speed: 143
-  minRange: 2
+  minRange: 1
   maxRange: 7
   attackRate: 2.02
   offset: 1
-  attackDelay: 0.8
+  attackDelay: 1
   rangedEnemy: 0
 --- !u!114 &248425647830632786
 MonoBehaviour:
@@ -267,6 +267,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88cba2947f1b3b04c9c422141d9ebbc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drops: []
+  dropRate: 
   health: 100
   damage: 25
   xp: 60
