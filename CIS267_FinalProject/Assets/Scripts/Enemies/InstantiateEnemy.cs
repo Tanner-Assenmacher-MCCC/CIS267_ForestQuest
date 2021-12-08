@@ -15,16 +15,6 @@ public class InstantiateEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enemy == null)
-        {
-            StartCoroutine(Respawn());
-        }
-    }
 
-    public IEnumerator Respawn()
-    {
-        yield return new WaitForSeconds(4f);
-
-        Instantiate(enemy, gameObject.transform);
     }
 }
