@@ -54,6 +54,7 @@ public class MenuController : MonoBehaviour
             if(enter && !movingToMain)
             {
                 //Play Game
+
             }
             else if(down)
             {
@@ -69,6 +70,7 @@ public class MenuController : MonoBehaviour
             if (enter && !movingToMain)
             {
                 //Load Game
+
             }
             else if(up)
             {

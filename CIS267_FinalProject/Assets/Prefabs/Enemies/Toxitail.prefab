@@ -106,9 +106,9 @@ MonoBehaviour:
   speed: 14.4
   minRange: 6
   maxRange: 10
-  attackRate: 0.91
+  attackRate: 1.5
   offset: 2
-  attackDelay: 0
+  attackDelay: 1
 --- !u!114 &-122397014882435718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,7 +168,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
