@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef2f8b87af0cf640944190ce0e50f3f, type: 3}
   m_Name: Raw Meat
   m_EditorClassIdentifier: 
-  name: New Item
-  sprite: {fileID: 0}
-  prefab: {fileID: 0}
+  name: Raw Meat
+  sprite: {fileID: 1440313834226985826, guid: 7f71f39442d5626419fab342203c0788, type: 3}
+  prefab: {fileID: 9180548361991590200, guid: ece0c6275897cad439319c0d8cbf9e1c, type: 3}
   healthValue: 35
   xpValue: 7
