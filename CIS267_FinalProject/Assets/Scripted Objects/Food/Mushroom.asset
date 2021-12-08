@@ -15,5 +15,5 @@ MonoBehaviour:
   name: New Item
   sprite: {fileID: 0}
   prefab: {fileID: 0}
-  healthValue: 0
-  xpValue: 0
+  healthValue: 25
+  xpValue: 4
