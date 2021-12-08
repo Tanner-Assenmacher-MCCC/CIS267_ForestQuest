@@ -1,0 +1,780 @@
+fileFormatVersion: 2
+guid: da1e90fc92206f346a724cd669ab60ed
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6548714874524148087
+    second: brown-golem-walk_0
+  - first:
+      213: -6702158861819134003
+    second: brown-golem-walk_1
+  - first:
+      213: 3016152463606002645
+    second: brown-golem-walk_2
+  - first:
+      213: 8053039958848404593
+    second: brown-golem-walk_3
+  - first:
+      213: -4019479731716614588
+    second: brown-golem-walk_4
+  - first:
+      213: -7054380756952266050
+    second: brown-golem-walk_5
+  - first:
+      213: -8761721906151217471
+    second: brown-golem-walk_6
+  - first:
+      213: 7939384120906597280
+    second: brown-golem-walk_7
+  - first:
+      213: -4799778811739074934
+    second: brown-golem-walk_8
+  - first:
+      213: -3458879781399569967
+    second: brown-golem-walk_9
+  - first:
+      213: -7136271564132340182
+    second: brown-golem-walk_10
+  - first:
+      213: 798728305447651820
+    second: brown-golem-walk_11
+  - first:
+      213: -6754937833923172319
+    second: brown-golem-walk_12
+  - first:
+      213: -7920641796290622255
+    second: brown-golem-walk_13
+  - first:
+      213: -5248535905878935108
+    second: brown-golem-walk_14
+  - first:
+      213: -1908071354533762295
+    second: brown-golem-walk_15
+  - first:
+      213: -8978295130333760147
+    second: brown-golem-walk_16
+  - first:
+      213: -7244580954028042175
+    second: brown-golem-walk_17
+  - first:
+      213: 1129981038536012683
+    second: brown-golem-walk_18
+  - first:
+      213: 6666317116281368862
+    second: brown-golem-walk_19
+  - first:
+      213: -8419090163961560019
+    second: brown-golem-walk_20
+  - first:
+      213: 122468044013789502
+    second: brown-golem-walk_21
+  - first:
+      213: 8166715021329696627
+    second: brown-golem-walk_22
+  - first:
+      213: 1469538832247652898
+    second: brown-golem-walk_23
+  - first:
+      213: 9082855069976148177
+    second: brown-golem-walk_24
+  - first:
+      213: -3400695059760803186
+    second: brown-golem-walk_25
+  - first:
+      213: -5681672403596770112
+    second: brown-golem-walk_26
+  - first:
+      213: 908137090870621414
+    second: brown-golem-walk_27
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: brown-golem-walk_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 197
+        width: 43
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77124575b75b1ea50800000000000000
+      internalID: 6548714874524148087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown-golem-walk_1
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 195
+        width: 43
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcfb80556062df2a0800000000000000
+      internalID: -6702158861819134003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown-golem-walk_2
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 194
+        width: 43
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d3b7a57fa68bd920800000000000000
+      internalID: 3016152463606002645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown-golem-walk_3
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 195
+        width: 43
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17c7f2dfc2522cf60800000000000000
+      internalID: 8053039958848404593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown-golem-walk_4
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 195
+        width: 43
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4461629ea70f738c0800000000000000
+      internalID: -4019479731716614588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown-golem-walk_5
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 194
+        width: 43
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eba4287c31ec91e90800000000000000
+      internalID: -7054380756952266050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown-golem-walk_6
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 195
+        width: 43
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c62913195c186680800000000000000
+      internalID: -8761721906151217471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown-golem-walk_7
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 130
+        width: 31
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a3c3061bcb5e2e60800000000000000
+      internalID: 7939384120906597280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown-golem-walk_8
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 130
+        width: 29
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8e88ddd992c36db0800000000000000
+      internalID: -4799778811739074934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown-golem-walk_9
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 130
+        width: 36
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d9d5ec2a279fffc0800000000000000
+      internalID: -3458879781399569967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown-golem-walk_10
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 130
+        width: 31
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2eab2f62ded6fc90800000000000000
+      internalID: -7136271564132340182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown-golem-walk_11
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 130
+        width: 38
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce9c1467927a51b00800000000000000
+      internalID: 798728305447651820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown-golem-walk_12
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 130
+        width: 46
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 128a92944d3a142a0800000000000000
+      internalID: -6754937833923172319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown-golem-walk_13
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 130
+        width: 37
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dc4cfa604a341290800000000000000
+      internalID: -7920641796290622255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown-golem-walk_14
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 69
+        width: 43
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb9f33bc6647927b0800000000000000
+      internalID: -5248535905878935108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown-golem-walk_15
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 68
+        width: 43
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90baae2663b2585e0800000000000000
+      internalID: -1908071354533762295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown-golem-walk_16
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 65
+        width: 43
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6536d3e520b66380800000000000000
+      internalID: -8978295130333760147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown-golem-walk_17
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 66
+        width: 43
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14819987104167b90800000000000000
+      internalID: -7244580954028042175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown-golem-walk_18
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 68
+        width: 43
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b83bdd484cf7eaf00800000000000000
+      internalID: 1129981038536012683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown-golem-walk_19
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 65
+        width: 43
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e11be0cf814838c50800000000000000
+      internalID: 6666317116281368862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown-golem-walk_20
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 66
+        width: 43
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2406152a12692b80800000000000000
+      internalID: -8419090163961560019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown-golem-walk_21
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 2
+        width: 31
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3167c3890813b100800000000000000
+      internalID: 122468044013789502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown-golem-walk_22
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 2
+        width: 29
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3770434fa00065170800000000000000
+      internalID: 8166715021329696627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown-golem-walk_23
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 2
+        width: 36
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22283cf28c9d46410800000000000000
+      internalID: 1469538832247652898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown-golem-walk_24
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 2
+        width: 31
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d8b8482098cc0e70800000000000000
+      internalID: 9082855069976148177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown-golem-walk_25
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 2
+        width: 38
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e82188d5cdd4ec0d0800000000000000
+      internalID: -3400695059760803186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown-golem-walk_26
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 2
+        width: 46
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c4897d3d05a621b0800000000000000
+      internalID: -5681672403596770112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown-golem-walk_27
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 2
+        width: 37
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e433b46fd95a9c00800000000000000
+      internalID: 908137090870621414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

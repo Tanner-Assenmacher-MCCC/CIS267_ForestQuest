@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 7011802487874917170}
   m_Layer: 0
   m_Name: Black Dragon
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,6 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 949571bacf9e8c541b3efd9bbbcbe4f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   projectile: {fileID: 0}
   speed: 15
   minRange: 2.87
@@ -198,6 +199,16 @@ MonoBehaviour:
   offset: 2
   attackDelay: 0.7
   rangedEnemy: 0
+=======
+  projectile: {fileID: 4763443549742083725, guid: d02e09723ed53394d85dbf0a49efd8fe, type: 3}
+  speed: 15
+  minRange: 8
+  maxRange: 16
+  attackRate: 1.06
+  offset: 5
+  attackDelay: 0
+  rangedEnemy: 1
+>>>>>>> Stashed changes
 --- !u!114 &4812324506819436276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,6 +297,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88cba2947f1b3b04c9c422141d9ebbc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drops:
+  - {fileID: 7582153951328868469, guid: fdd64248cda3f5b4bb9971a8c8dfe94a, type: 3}
+  dropRate: 16000000
   health: 230
   damage: 85
   xp: 600
