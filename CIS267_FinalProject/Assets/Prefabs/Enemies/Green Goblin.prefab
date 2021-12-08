@@ -284,4 +284,5 @@ MonoBehaviour:
   dropRate: 4b000000
   health: 10
   damage: 1
-  xp: 1
+  xp: 40
+  die: 0

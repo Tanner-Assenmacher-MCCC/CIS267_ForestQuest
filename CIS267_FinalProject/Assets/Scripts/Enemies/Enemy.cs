@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     public int health = 100;
     public int damage = 5;
-    public int xp = 5;
+    public int xp = 50;
     public bool die = false;
     void Start()
     {
@@ -65,6 +65,7 @@ public class Enemy : MonoBehaviour
         int dropRateTotal = 0;
         PlayerScore playerScore = FindObjectOfType<PlayerScore>();
         playerScore.addScore(this.xp);
+        Debug.Log(this.xp);
         foreach (GameObject drop in drops)
         {
             for (int i = 0; i < dropRate.Length; i++)
